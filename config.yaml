@@ -8,13 +8,13 @@
 # lc: Library Carpentry
 # cp: Carpentries (to use for instructor training for instance)
 # incubator: The Carpentries Incubator
-# carpentry: 'lc'#
+# Note that you can also use a custom carpentry type. For more info,
+# see the documentation: https://carpentries.github.io/sandpaper-docs/editing.html
 carpentry: 'UT'
-carpentry_description: 'Universität Tübingen'
-lang: de # prepare for translation integration into sandpaper
 
-# UT-specific style
-varnish: Dr-Eberle-Zentrum/varnish
+# Custom carpentry description
+# This will be used as the alt text for the logo
+# carpentry_description: "Custom Carpentry"
 
 # Overall title for pages.
 title: 'Mit Docker vom Linuxserver zur eigenen Cloud'
@@ -65,7 +65,8 @@ contact: 'david.kirschenheuter@uni-tuebingen.de'
 
 # Order of episodes in your lesson
 episodes:
-
+- 01-vorbesprechung-md.Rmd
+- 02-linux-grundlagen.Rmd
 
 # Information for Learners
 learners:
@@ -81,4 +82,7 @@ profiles:
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
 
-#carpentry_description: 'Die eigene Nextcloud mit dem Raspberry Pi: Self-hosted Data Management'
+
+carpentry_description: Universität Tübingen
+lang: de
+varnish: Dr-Eberle-Zentrum/varnish
