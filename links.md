@@ -12,3 +12,6 @@ any links that you are not going to use.
 [ilias]: https://ovidius.uni-tuebingen.de/
 [nextcloud]: https://nextcloud.com
 [nextcloud-doc]: https://docs.nextcloud.com/server/latest/admin_manual/
+[proxmox]: https://pxe.kep2.uni-tuebingen.de/
+[docker-doc]: https://docs.docker.com/manuals/
+[npm-doc]: https://nginxproxymanager.com/guide/
