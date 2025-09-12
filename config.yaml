@@ -65,8 +65,7 @@ contact: 'david.kirschenheuter@uni-tuebingen.de'
 
 # Order of episodes in your lesson
 episodes:
-- 01-vorbesprechung-md.Rmd
-- 02-linux-grundlagen.Rmd
+- 01-vorbesprechung.Rmd
 
 # Information for Learners
 learners:
