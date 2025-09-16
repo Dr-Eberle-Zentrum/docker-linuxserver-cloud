@@ -15,3 +15,4 @@ any links that you are not going to use.
 [proxmox]: https://pxe.kep2.uni-tuebingen.de/
 [docker-doc]: https://docs.docker.com/manuals/
 [npm-doc]: https://nginxproxymanager.com/guide/
+[Ubuntu]: https://ubuntu.com/server

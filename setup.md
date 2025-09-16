@@ -4,10 +4,10 @@ title: Setup
 
 ## Voraussetzungen
 
-Um am Kurs teilnehmen zu können, müssen Sie an der Universität Tübingen immatrikuliert sein und sich über das ALMA-System zum Kurs angemeldet haben.
+Um an den Kursen teilnehmen zu können, müssen Sie an der Universität Tübingen immatrikuliert sein und sich über das ALMA-System zum Kurs angemeldet haben.
 
 :::callout
-Sie sind nicht an der Universität Tübingen immatrikuliert? 
+Sie sind **nicht** an der Universität Tübingen **immatrikuliert**? 
 
 Kein Problem. Sie können die Materialien zum Selbststudium nutzen und so dennoch einiges lernen.
 :::
@@ -41,7 +41,7 @@ Benötige Daten werden über das ILIAS-Portal zur Verfügung gestellt
 
 ### Zugriff auf die Virtualisierungsumgebung:
 
-+ Öffnen Sie die [Proxmox-WebGui][proxmox]
++ Öffnen Sie die [Proxmox Web Console][proxmox]
 
 + Melden Sie sich mit den kursspezifischen Anmeldedaten an
 
