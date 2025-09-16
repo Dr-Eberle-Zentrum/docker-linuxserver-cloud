@@ -64,17 +64,18 @@ contact: 'david.kirschenheuter@uni-tuebingen.de'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes:
+episodes: 
 - vorbesprechung.Rmd
+- betriebssystem-und-linuxgrundlagen.Rmd
 
 # Information for Learners
-learners:
+learners: 
 
 # Information for Instructors
-instructors:
+instructors: 
 
 # Learner Profiles
-profiles:
+profiles: 
 
 # Customisation ---------------------------------------------
 #
