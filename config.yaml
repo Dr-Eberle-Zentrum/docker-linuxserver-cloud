@@ -65,7 +65,7 @@ contact: 'david.kirschenheuter@uni-tuebingen.de'
 
 # Order of episodes in your lesson
 episodes:
-- 01-vorbesprechung.Rmd
+- vorbesprechung.Rmd
 
 # Information for Learners
 learners:
