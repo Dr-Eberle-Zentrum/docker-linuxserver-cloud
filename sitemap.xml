@@ -58,6 +58,9 @@
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/reference.html</loc>
   </url>
   <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/vorbesprechung.html</loc>
+  </url>
+  <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor-notes.html</loc>
   </url>
   <url>
@@ -71,5 +74,8 @@
   </url>
   <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/vorbesprechung.html</loc>
   </url>
 </urlset>

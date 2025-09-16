@@ -244,7 +244,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="01-vorbesprechung.html">1. 01-vorbesprechung.md</a>
+        <a href="vorbesprechung.html">1. Vorbesprechung</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -308,11 +308,11 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="aio-01-vorbesprechung"><p>Content from <a href="01-vorbesprechung.html">01-vorbesprechung.md</a></p>
+<section id="aio-vorbesprechung"><p>Content from <a href="vorbesprechung.html">Vorbesprechung</a></p>
 <hr>
 <p>Zuletzt aktualisiert am 2025-09-16 |
 
-        <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/01-vorbesprechung.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/vorbesprechung.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 12 Minuten</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Alle Lösungen anzeigen " data-collapse="Alle Lösungen ausblenden "> Alle Lösungen anzeigen <i aria-hidden="true" data-feather="plus"></i></button>
@@ -325,8 +325,9 @@
 <div class="inner">
 <h3 class="card-title">Fragen</h3>
 <ul>
-<li>How do you write a lesson using R Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+<li>Was ist Datenmanagement?</li>
+<li>Was ist digitale Selbstbestimmtheit?</li>
+<li>Warum ist eine selbst gehostete Datenmanagementlösung gut?</li>
 </ul>
 </div>
 </div>
@@ -336,95 +337,116 @@
 <div class="inner bordered">
 <h3 class="card-title">Ziele</h3>
 <ul>
-<li>Explain how to use markdown with the new lesson template</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
+<li>Thematische Einleitung</li>
+<li>Vorstellung der Ziele und Inhalte des Kurses</li>
+<li>Voraussetzungen, die Sie mitbringen sollten</li>
+<li>Informationen zum Ablauf des Kurses</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<section><h2 class="section-heading" id="thematische-einleitung">Thematische Einleitung<a class="anchor" aria-label="anchor" href="#thematische-einleitung"></a>
 </h2>
 <hr class="half-width">
-<p>This is a lesson created via The Carpentries Workbench. It is written
-in <a href="https://pandoc.org/MANUAL.html" class="external-link">Pandoc-flavored Markdown</a>
-for static files (with extension <code>.md</code>) and <a href="https://rmarkdown.rstudio.com/" class="external-link">R Markdown</a> for dynamic files
-that can render code into output (with extension <code>.Rmd</code>).
-Please refer to the <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link">Introduction to The
-Carpentries Workbench</a> for full documentation.</p>
-<p>What you need to know is that there are three sections required for a
-valid Carpentries lesson template:</p>
-<ol style="list-style-type: decimal">
-<li>
-<code>questions</code> are displayed at the beginning of the episode
-to prime the learner for the content.</li>
-<li>
-<code>objectives</code> are the learning objectives for an episode
-displayed with the questions.</li>
-<li>
-<code>keypoints</code> are displayed at the end of the episode to
-reinforce the objectives.</li>
-</ol>
-<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
-  <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Hinweis für den Dozenten </h3>
-</button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
-<div class="accordion-body">
-<p>Inline instructor notes can help inform instructors of timing
-challenges associated with the lessons. They appear in the “Instructor
-View”</p>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-1-can-you-do-it" class="callout challenge">
+<div class="section level3">
+<h3 id="datenmanagement-im-wissenschaftlichen-kontext">Datenmanagement im wissenschaftlichen Kontext<a class="anchor" aria-label="anchor" href="#datenmanagement-im-wissenschaftlichen-kontext"></a>
+</h3>
+<p>Der Begriff des Forschungsdatenmanagements (FDM) umschreibt den
+Umgang mit Forschungsdaten (z.B. Messdaten, Bilder, Artikel,
+Interviewdaten u.v.m.) innerhalb von Forschungsprojekten. Dabei beginnt
+FDM bei der Planung von Projekten, legt Standards für das Erstellen,
+Analysieren und Publizieren fest und sorgt durch strukturierte
+Archivierung für eine nachhaltige Speicherung und die Möglichkeit der
+Nachnutzung der Forschungsdaten.</p>
+<p>Mehr zum Thema FDM finden Sie z.B. <a href="https://uni-tuebingen.de/de/240762" class="external-link">hier</a>, <a href="https://forschungsdaten.info/" class="external-link">hier</a> oder im Kurs <a href="https://dr-eberle-zentrum.github.io/FDM-basics/" class="external-link">FDM
+Basics</a></p>
+<p>Um während der aktiven Forschungsarbeit seine Daten strukturiert und
+zugänglich speichern zu können und mit anderen Projektteilnehmenden
+kollaborieren zu können, sind online Dateispeicherung und online
+Dateibearbeitung essentiell.</p>
+<p>Häufig werden hierfür die Angebote großer Tech-Konzerne aus dem
+Ausland genutzt. Es gibt aber auch die Möglichkeit solche Lösungen
+selbst zu betreiben. Dadurch ist der Datenschutz gewährleistet, da keine
+Daten außerhalb der EU gespeichert werden. Außerdem ist man unabhängig
+von den vermeintlich günstigen Angeboten der Tech-Konzerne.</p>
+<p>Die Probleme, die eine solche Abhängigkeit auch im privaten Alltag
+herbeiführen, erfahren Sie in der folgenden Aufgabe.</p>
+<div id="aufgabe-1-mark-und-sein-sohn" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Aufgabe</span>
-<div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?</h3>
+<div id="aufgabe-1-mark-und-sein-sohn" class="callout-inner">
+<h3 class="callout-title">Aufgabe 1: Mark und sein Sohn</h3>
 <div class="callout-content">
-<p>What is the output of this command?</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">paste</span><span class="op">(</span><span class="st">"This"</span>, <span class="st">"new"</span>, <span class="st">"lesson"</span>, <span class="st">"looks"</span>, <span class="st">"good"</span><span class="op">)</span></span></code></pre>
-</div>
+<ul>
+<li><p>Lesen Sie den folgenden Artikel: <a href="https://www.spiegel.de/netzwelt/netzpolitik/google-vater-fotografiert-genitalbereich-von-krankem-kleinkind-und-der-aerger-beginnt-a-b0703d5e-7109-4271-bfa7-af07b551e105" class="external-link">SPIEGEL:
+Autoupload in die Google-Cloud</a></p></li>
+<li><p>Welche grundlegenden Probleme führten zu Marks
+Situation?</p></li>
+</ul>
 </div>
 </div>
 </div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Output </h4>
+  <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">AUSGABE<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<p>In diesem Fall ist einiges schief gelaufen. Wir werden darüber in der
+ersten Präsenzsitzung diskutieren.</p>
+<p>Auf jeden Fall hat Mark jedoch seine informationelle Selbstbestimmung
+aufgegeben.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="informationelle-selbstbestimmtheit">Informationelle Selbstbestimmtheit<a class="anchor" aria-label="anchor" href="#informationelle-selbstbestimmtheit"></a>
 </h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
+<p>Unter dem Begriff <em>informationelle Selbstbestimmtheit</em> wird
+verstanden, dass Personen selbst über ihre Daten bestimmen können. Das
+<a href="https://www.bverfg.de/e/rs19831215_1bvr020983.html" class="external-link">Bundesverfassungsgericht</a>
+hat dazu bereits 1983 geurteilt:</p>
+<blockquote>
+<p>“Das Grundrecht gewährleistet insoweit die Befugnis des Einzelnen,
+grundsätzlich selbst über die Preisgabe und Verwendung seiner
+persönlichen Daten zu bestimmen.”</p>
+</blockquote>
+<p><strong>Aber wie können wir selbst über die Preisgabe unserer Daten
+bestimmen?</strong></p>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
+<div class="section level3">
+<h3 id="digitale-mündigkeit">Digitale Mündigkeit<a class="anchor" aria-label="anchor" href="#digitale-m%C3%BCndigkeit"></a>
+</h3>
+<p>Um selbst über seine Daten zu bestimmen, sollte man die Daten und
+deren Zustandenkommen verstehen. D.h. angewendete Technik sollte
+verstanden und hinterfragt werden. Stimmt etwas nicht, sollte Kritik
+geübt werden oder ggf. nach Alternativen gesucht werden. Fragen Sie sich
+beim Einsatz digitaler Tools immer:</p>
+<ul>
+<li><p>Welche Daten gibt es?</p></li>
+<li><p>Wann entstehen welche Daten?</p></li>
+<li><p>Wer hat Zugriff auf diese Daten?</p></li>
+<li><p>Welche Daten möchte ich wem preis geben und welche behalte ich
+für mich?</p></li>
+</ul>
+<div id="wie-digital-mündig-sind-sie" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Aufgabe</span>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within
-challenge blocks?</h3>
+<div id="wie-digital-mündig-sind-sie" class="callout-inner">
+<h3 class="callout-title">Wie digital mündig sind Sie?</h3>
 <div class="callout-content">
-
+<p>Lesen Sie den folgenden Artikel von <a href="https://digitalcourage.de/digitale-selbstverteidigung/digitale-muendigkeit" class="external-link">Digitalcourage</a></p>
+<p>Welche der im Artikel genannten Punkte setzen Sie bereits um? In
+welchen Bereichen können Sie noch “mündiger” werden?</p>
 </div>
 </div>
 </div>
@@ -435,41 +457,180 @@ challenge blocks?</h3>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
+<p>Nutzen Sie ein kostenloses E-Mailpostfach? Speichern Sie Daten in
+verdächtig günstigen Onlinespeichern? Wie abhängig sind Sie von Big Tech
+(Apple, Google, Amazon, Microsoft)?</p>
 </div>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="figures">Figures<a class="anchor" aria-label="anchor" href="#figures"></a>
-</h2>
-<hr class="half-width">
-<p>You can include figures generated from R Markdown:</p>
-<div class="codewrapper sourceCode" id="cb3">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<p>Mehr zum Thema digitale Mündigkeit findet sich auch bei Simon 2024 <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<div id="digitale-selbstbestimmtheit" class="callout testimonial">
+<div class="callout-square">
+<i class="callout-icon" data-feather="heart"></i>
+</div>
+<span class="callout-header">Referenz</span>
+<div id="digitale-selbstbestimmtheit" class="callout-inner">
+<h3 class="callout-title">Digitale Selbstbestimmtheit</h3>
+<div class="callout-content">
+<p>Zu einem selbstbestimmten Leben gehört auch eine digitale
+Selbstbestimmtheit.</p>
+<p>Deshalb:</p>
+<ul>
+<li><p>eingesetzte Technik verstehen</p></li>
+<li><p>Open-Source statt Closed Source</p></li>
+<li><p>Community statt Großkonzern</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="noch-mehr-zu-digitaler-selbstbestimmtheit-und-selbstverteidigung">Noch mehr zu digitaler Selbstbestimmtheit und
+Selbstverteidigung<a class="anchor" aria-label="anchor" href="#noch-mehr-zu-digitaler-selbstbestimmtheit-und-selbstverteidigung"></a>
 </h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">pie</span><span class="op">(</span></span>
-<span>  <span class="fu">c</span><span class="op">(</span>Sky <span class="op">=</span> <span class="fl">78</span>, <span class="st">"Sunny side of pyramid"</span> <span class="op">=</span> <span class="fl">17</span>, <span class="st">"Shady side of pyramid"</span> <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>, </span>
-<span>  init.angle <span class="op">=</span> <span class="fl">315</span>, </span>
-<span>  col <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"deepskyblue"</span>, <span class="st">"yellow"</span>, <span class="st">"yellow3"</span><span class="op">)</span>, </span>
-<span>  border <span class="op">=</span> <span class="cn">FALSE</span></span>
-<span><span class="op">)</span></span></code></pre>
+<p>Noch mehr Informationen zum Thema finden Sie bei Interesse unter
+anderem bei den folgenden Quellen:</p>
+<ul>
+<li><p><a href="https://github.com/Dr-Eberle-Zentrum/Digitale-Selbstverteidigung" class="external-link">Seminar
+zur digitalen Selbstverteidigung</a></p></li>
+<li><p>E. Snowden, Permanent Record - Meine Geschichte, (Berlin
+2019)</p></li>
+<li><p>J. Caspar, Wir Datensklaven - Wege aus der digitalen Ausbeutung,
+(Berlin 2023)</p></li>
+<li><p><a href="https://www.digitalcourage.org" class="external-link">Digitalcourage</a></p></li>
+<li><p><a href="https://www.netzpolitik.org" class="external-link">Netzpolitik</a></p></li>
+<li><p><a href="https://www.ccc.de" class="external-link">ChaosComputerClub</a> und <a href="https://media.ccc.de/" class="external-link">Streams des CCC</a></p></li>
+</ul>
 </div>
-<figure style="text-align: center"><img src="../fig/01-vorbesprechung-rendered-pyramid-1.png" alt="pie chart illusion of a pyramid" class="figure mx-auto d-block"><figcaption>
-Sun arise each and every morning
-</figcaption></figure><p>Or you can use pandoc markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure></section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a>
+</section><section><h2 class="section-heading" id="ziele-und-inhalte-des-kurses">Ziele und Inhalte des Kurses<a class="anchor" aria-label="anchor" href="#ziele-und-inhalte-des-kurses"></a>
 </h2>
 <hr class="half-width">
-<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
+<div class="section level3">
+<h3 id="allgemeine-ziele">Allgemeine Ziele<a class="anchor" aria-label="anchor" href="#allgemeine-ziele"></a>
+</h3>
+<ul>
+<li><p>Einstieg die Linux-(Server)-Welt</p></li>
+<li><p>Weniger Angst vor Technik (und Fehlern)</p></li>
+<li><p>Einstieg in die Systemadministration</p></li>
+<li><p>Einrichten einer selbst betriebenen Webanwendung zur
+Dateiverwaltung (“Cloud”) mittels Docker</p></li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="inhaltliche-schwerpunkte">Inhaltliche Schwerpunkte<a class="anchor" aria-label="anchor" href="#inhaltliche-schwerpunkte"></a>
+</h3>
+<ul>
+<li><strong>Betriebssystem: Installation und grundlegende
+Verwaltung:</strong></li>
+</ul>
+<p>Wir beginnen ganz am Anfang mit der Installation und dem Kennenlernen
+des Linux-Betriebssystems. Wir nutzen dazu das Betriebssystem <a href="https://ubuntu.com/server" class="external-link">Ubuntu</a> in der Servervariante,
+welches wiederum auf dem Debian-Betriebssystem aufbaut.</p>
+<ul>
+<li><strong>Sicherheit: Backup, Firewall, Fern-Zugriff:</strong></li>
+</ul>
+<p>Vor der Installation der eigentlichen Cloud-Software muss der Server
+eingerichtet werden. Dazu zählen z.B. Funktionen zum Fernzugriff (SSH),
+verschiedene Techniken zum Absichern des Servers (Firewall, Benutzer und
+Zugriffsrechte) aber auch das Thema Backup.</p>
+<figure><img src="../fig/01_rsync_firewall_ssh.png" alt="Drei Screenshot von Kommandozeilen. Der erste zeigt einen Befehl zum herstellen einer SSH-Verbindung, der zweite den rsync-Befehl zum erstellen von Backups und der dritte den Befehl zur erlauben von SSH-Verbindungen in der Firewall." class="figure mx-auto d-block"><div class="figcaption">Wir werden die meiste Zeit mit der Kommandozeile
+arbeiten (hier am Beispiel von SSH (Fernzugriff), Rsync
+(Dateisynchronisation) und ufw (Firewall)</div>
+</figure><ul>
+<li><strong>Docker und Webserver</strong></li>
+</ul>
+<p>Im zweiten Teil des Kurses liegt der Fokus auf Webservern, mit
+welchen Webanwendungen verfügbar gemacht werden und Docker, mit welchem
+Software unabhängig vom Betriebssystem installiert und konfiguriert
+werden kann. Als Webserver werden wir mit Apache2 und NGINX arbeiten und
+lernen, wie wir TLS-Zertifiakte zur Sicherung der Webanwendung
+erhalten.</p>
+<ul>
+<li><strong>Nextcloud und mehr Services</strong></li>
+</ul>
+<p>Im dritten Teil des Kurses werden die zuvor erlernten Grundlagen
+angewendet, um mit Docker die Kollaborationsplattform Nextcloud und
+andere spannende Webanwendungen zu installieren und zu
+konfigurieren.</p>
+</div>
+</section><section><h2 class="section-heading" id="voraussetzungen">Voraussetzungen<a class="anchor" aria-label="anchor" href="#voraussetzungen"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="allgemeine-voraussetzungen">Allgemeine Voraussetzungen<a class="anchor" aria-label="anchor" href="#allgemeine-voraussetzungen"></a>
+</h3>
+<ul>
+<li><p>Sie sollten sicher mit Ihrem PC (Windows oder Linux) oder Ihrem
+Mac umgehen können</p></li>
+<li><p>Sie sollten keine Angst vor Technik und der Kommandozeile
+haben</p></li>
+<li><p>Sie benötigen ein Notebook oder Tablett mit Tastatur (keine
+Touch-Geräte).</p></li>
+<li><p>Zugriff mit Ihrem Gerät auf das Eduroam- und das VPN-Netzwerk der
+Universität Tübingen</p></li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="technische-voraussetzungen">Technische Voraussetzungen<a class="anchor" aria-label="anchor" href="#technische-voraussetzungen"></a>
+</h3>
+<p>Allen Teilnehmenden wird ein virtueller Server im Rechenzentrum der
+Universität zur Verfügung gestellt. Sie benötigen keinen eigenen Server.
+Sollten Sie die im Kurs erlangten Kenntnisse später auf eigener Hardware
+umsetzen wollen, eignen sich Einplatinen-Computer (System-on-Chip, kurz
+SoC) wie ein Raspberry Pi 5.</p>
+</div>
+</section><section><h2 class="section-heading" id="organisatorisches">Organisatorisches<a class="anchor" aria-label="anchor" href="#organisatorisches"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="wöchentlicher-ablauf">Wöchentlicher Ablauf:<a class="anchor" aria-label="anchor" href="#w%C3%B6chentlicher-ablauf"></a>
+</h3>
+<p>Die Wochen laufen i.d.R. wie folgt ab:</p>
+<ol style="list-style-type: decimal">
+<li><p>Sie arbeiten das Selbstlernmaterial auf <a href="https://dr-eberle-zentrum.github.io/docker-linuxserver-cloud/" class="external-link">Github</a>
+durch</p></li>
+<li><p>Sie absolvieren auf <a href="https://ovidius.uni-tuebingen.de/" class="external-link">ILIAS</a> den Test zum
+Selbstlernmaterial</p></li>
+<li><p>Sie setzen die Arbeitsschritte selbstständig auf Ihrem Server um.
+Dazu können Sie (online oder in Präsenz) zum Übungstermin
+kommen.</p></li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="gruppenarbeit">Gruppenarbeit<a class="anchor" aria-label="anchor" href="#gruppenarbeit"></a>
+</h3>
+<p>Um die praktische Umsetzung des Projekts zu erleichtern, werden im
+Kurs Gruppen gebildet. Nutzen Sie diese Gruppen, um Fragen zu klären,
+das praktische Vorgehen gemeinsam zu planen und bei Problemen gemeinsam
+nach Lösungen zu suchen.</p>
+</div>
+<div class="section level3">
+<h3 id="leistungsnachweis">Leistungsnachweis<a class="anchor" aria-label="anchor" href="#leistungsnachweis"></a>
+</h3>
+<ul>
+<li><p>Bei erbrachter Leistung erhalten Sie für diesen Kurs 3
+ECTS-Punkte</p></li>
+<li><p>Der Kurs ist anrechenbar für das Zertifikat <em><a href="https://uni-tuebingen.de/de/180835" class="external-link">Data Literacy</a></em> im
+Wahlbereich praktische Anwendungen</p></li>
+<li>
+<p>Die erforderlichen Leistungen sind:</p>
+<ul>
+<li><p>wöchentliche Bearbeitung der Lernmaterialien</p></li>
+<li><p>wöchentlicher Test auf <a href="https://ovidius.uni-tuebingen.de/" class="external-link">ILIAS</a></p></li>
+<li><p>selbstständige Konfiguration eines Cloud-Servers</p></li>
+<li><p>Verfassen eines Abschlussberichts (ca. 3-4 Seiten)</p></li>
+</ul>
+</li>
+<li><p>Der Workload beträgt entsprechend 3 ECTS ca. 90 Stunden im
+Semester. Davon entfallen ca. 21 Stunden auf die Übungen, 9 Stunden auf
+den Abschlussbericht und 60 Stunden auf die Vor- und Nachbereitung der
+Sitzungen inkl. den Tests D.h. pro Woche müssen Sie während der
+Vorlesungszeit durchschnittlich ca. 4,3 Stunden Arbeitszeit zusätzlich
+zu den Übungssitzungen einplanen.</p></li>
+</ul>
+<p><strong>Mehr Informationen folgen in der ersten
+Präsenzsitzung.</strong></p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -478,14 +639,16 @@ this:</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>Die eigene Cloud schützt die Privatsphäre und reduziert die
+Abhängigkeit von großen Monopolisten</li>
+<li>Der Kurs begleitet Sie vom Linux Betriebssystem über die
+Grundkonfiguration des Servers bis hin zur Installation und
+Konfiguration des eigenen Cloudservers im Docker Container</li>
+<li>Sie müssen jede Woche Selbstlernmaterial durcharbeiten, auf ILIAS
+einen Test durchführen und die praktischen Aufgaben absolvieren</li>
+<li>Am Ende des Kurses müssen Sie noch einen Abschlussbericht
+verfassen</li>
+<li>Für den Kurs erhalten Sie 3 ECTS-Punkte</li>
 </ul>
 </div>
 </div>
@@ -494,7 +657,14 @@ locally</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section>
+</div>
+</section><div class="footnotes footnotes-end-of-document">
+<hr>
+<ol>
+<li id="fn1"><p>L. Simon, Digitale Mündigkeit - Wie wir mit einer neuen
+Haltung die Welt retten können, (Bielefeld 2024)<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div></section>
 </div>
     </main>
 </div>
