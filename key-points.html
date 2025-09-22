@@ -243,7 +243,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="vorbesprechung.html">1. Vorbesprechung</a>
+        <a href="01_vorbesprechung.html">1. Vorbesprechung</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -255,7 +255,43 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="betriebssystem-und-linuxgrundlagen.html">2. Betriebssystem und Linuxgrundlagen</a>
+        <a href="02_betriebssystem-und-linuxgrundlagen.html">2. Betriebssystem und Linuxgrundlagen</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="03-remote-access-rmd.html">3. Remote Access: das SSH-Protokoll.rmd</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="04-sicherheit-1-benutzer-dateien-rmd.html">4. Sicherheit 1: Benutzer und Dateirechte</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="05-sicherheit-2-firewall-file2ban-rmd.html">5. Sicherheit 2: Firewall und Fail2Ban</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -318,7 +354,7 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="vorbesprechung"><h2 class="section-heading"><a href="vorbesprechung.html">Vorbesprechung</a></h2>
+<section id="01_vorbesprechung"><h2 class="section-heading"><a href="01_vorbesprechung.html">Vorbesprechung</a></h2>
 <hr class="half-width">
 <ul>
 <li>Die eigene Cloud schützt die Privatsphäre und reduziert die
@@ -331,7 +367,7 @@ einen Test durchführen und die praktischen Aufgaben absolvieren</li>
 <li>Am Ende des Kurses müssen Sie noch einen Abschlussbericht
 verfassen</li>
 <li>Für den Kurs erhalten Sie 3 ECTS-Punkte</li>
-</ul></section><section id="betriebssystem-und-linuxgrundlagen"><h2 class="section-heading"><a href="betriebssystem-und-linuxgrundlagen.html">Betriebssystem und LinuxgrundlagenDie Hard- und Software<a class="anchor" aria-label="anchor" href="#die-hard--und-software"></a></a></h2>
+</ul></section><section id="02_betriebssystem-und-linuxgrundlagen"><h2 class="section-heading"><a href="02_betriebssystem-und-linuxgrundlagen.html">Betriebssystem und LinuxgrundlagenDie Hard- und Software<a class="anchor" aria-label="anchor" href="#die-hard--und-software"></a></a></h2>
 <hr class="half-width">
 <ul>
 <li>Die Wahl der richtigen Hard- und Software erfolgt ganz am Anfang und
@@ -345,6 +381,45 @@ welchem alle Festplatten eingebunden sind</li>
 <li>Software wird unter Linux in einer zentralen Paketverwaltung
 organisiert</li>
 <li>Linux-Server-Systeme werden mit der Kommandozeile verwaltet</li>
+</ul></section><section id="03-remote-access-rmd"><h2 class="section-heading"><a href="03-remote-access-rmd.html">Remote Access: das SSH-Protokoll.rmd</a></h2>
+<hr class="half-width">
+<ul>
+<li><p>das SSH-Protokoll erlaubt den Zugriff auf die Kommandozeile
+entfernter Computer</p></li>
+<li><p>zur Erhöhung der Sicherheit empfiehlt sich die Nutzung eines
+Schlüsselpaares anstatt eines Passworts</p></li>
+<li><p>zur Reduzierung der Angriffsfläche sollte die Konfiguration des
+SSH-Servers angepasst werden</p></li>
+<li><p>ein privater (SSH-)Schlüssel darf niemals das eigene Gerät
+verlassen</p></li>
+<li><p>der Aufbau der SSH-Verbindung geschieht wie folgt:
+<code>ssh -p &lt;Portnummer&gt; -i &lt;Pfad-zum-privaten-Schlüssel&gt; &lt;user&gt;@&lt;server&gt;</code></p></li>
+</ul></section><section id="04-sicherheit-1-benutzer-dateien-rmd"><h2 class="section-heading"><a href="04-sicherheit-1-benutzer-dateien-rmd.html">Sicherheit 1: Benutzer und Dateirechte</a></h2>
+<hr class="half-width">
+<ul>
+<li><p>der <em>root</em>-Account ist der Administrator des
+Systems</p></li>
+<li><p>Mitglieder der <em>sudo</em>-Gruppe haben administrative Rechte,
+welche sie mit dem <code>sudo</code>-Kommando nutzen können</p></li>
+<li><p>Dateien und Ordner sind immer einem Benutzer und einer Gruppe
+zugeordnet. Die Besitzverhältnisse können mit <code>chown</code>
+geändert werden.</p></li>
+<li><p>Dateien und Ordner haben einen <em>mode</em>, welcher die Rechte
+von Besitzer und besitzender Gruppe steuert, er kann mit
+<code>chmod</code> geändert werden</p></li>
+</ul></section><section id="05-sicherheit-2-firewall-file2ban-rmd"><h2 class="section-heading"><a href="05-sicherheit-2-firewall-file2ban-rmd.html">Sicherheit 2: Firewall und Fail2Ban</a></h2>
+<hr class="half-width">
+<ul>
+<li><p>Computer kommunizieren im Netzwerk nach Standards, das
+OSI-Schichten-Modell stellt einen Leitrahmen für diese Standards
+dar</p></li>
+<li><p>Versendete Daten im Netzwerk haben immer einen Absender- und
+einen Empfänger (in Form von MAC-Adresse, Netzwerk-ID, IP-Adresse und
+Port)</p></li>
+<li><p>Mit einer Firewall können Ports geöffnet und geschlossen
+werden</p></li>
+<li><p>Mit Fail2Ban können fehlerhafte Loginversuche festgestellt und
+blockiert werden</p></li>
 </ul></section>
 </div>
     </main>
