@@ -283,7 +283,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Betriebssystem und Linuxgrundlagen</h1>
-        <p>Zuletzt aktualisiert am 2025-09-16 |
+        <p>Zuletzt aktualisiert am 2025-09-22 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/betriebssystem-und-linuxgrundlagen.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -391,8 +391,7 @@ Z.B. unterstützt nicht jedes Betriebssystem jede Art von Prozessor
 Betriebssystem gewählt werden. Für viele Serveranwendungen, wie die in
 diesem Kurs genutzte Software <a href="https://nextcloud.com" class="external-link">Nextcloud</a>, werden Linux-Betriebssysteme
 empfohlen. In vielen Fällen werden für die Funktion des Hauptprogramms
-(in unserem Fall Nextcloud) weitere Programme benötigt. Das sind häufig
-ein <a href="https://de.wikipedia.org/wiki/Datenbank#Komponenten_eines_Datenbanksystems" class="external-link">Datenbankmanagementsystem</a>
+weitere Programme benötigt. Das sind häufig ein <a href="https://de.wikipedia.org/wiki/Datenbank#Komponenten_eines_Datenbanksystems" class="external-link">Datenbankmanagementsystem</a>
 wie Mysql oder MariaDB, die Skriptsprache PHP, und ein Webserver wie <a href="https://httpd.apache.org/" class="external-link">Apache2</a>. In dieser Kombination
 spricht man auch von einem LAMP-Stack (<strong>L</strong>inux,
 <strong>A</strong>pache, <strong>M</strong>ysql/<strong>M</strong>ariaDB
@@ -462,13 +461,334 @@ Menü der virtuellen Maschine in den Bereich <em>Console</em> und klicken
 Sie im Konsolen-Fenster auf <em>starten</em>. Die virtuelle Maschine
 startet und der Ubuntu-Installationsassistent leitet durch die
 Installation des Servers.</p>
-<!--Installation abschließen -->
+<div class="section level4">
+<h4 id="installationsassistent">Installationsassistent<a class="anchor" aria-label="anchor" href="#installationsassistent"></a></h4>
+<p>Die meisten Schritte sind selbsterklärend und können für den Einsatz
+in diesem Kurs auf dem Standardwert belassen werden. Vorsicht ist aber
+bei der Wahl des richtigen Tatstaturlayouts walten zu lassen. Nutzen Sie
+am besten die Möglichkeit der Tastaturerkennung.</p>
+<figure><img src="fig/02_Ubuntu_Installation_03.png" alt="Die Abbildung zeigt den Ubuntu-Installationsassistenten: Festlegung des Tastaturlayouts" class="figure mx-auto d-block"><div class="figcaption">Installationsassistent: Festlegung des
+Tastaturlayouts</div>
+</figure><p>Bei der Erstellung des ersten Benutzerprofils ist auf folgendes zu
+achten:</p>
+<ul><li><p><strong>Name:</strong> Der Name des Benutzers sollte der
+natürliche Name der Person sein, die das System verwenden wird.</p></li>
+<li><p><strong>Servername (Hostname):</strong> Der Servername, auch
+Hostname genannt, ist der eindeutige Name des Servers im Netzwerk. Er
+sollte nur aus Kleinbuchstaben bestehen und keine Leerzeichen enthalten.
+Der Hostname dient zur Identifikation des Servers und sollte sinnvoll
+gewählt werden, um Verwechslungen zu vermeiden.</p></li>
+<li><p><strong>Benutzername:</strong> Der Benutzername sollte ebenfalls
+nur aus Kleinbuchstaben bestehen und keine Leerzeichen enthalten. Dies
+stellt sicher, dass der Benutzername in allen Systemkomponenten korrekt
+erkannt und verarbeitet wird.</p></li>
+<li><p><strong>Passwort:</strong> Im Produktivbetrieb sollte das
+Passwort mindestens 20 Zeichen lang sein. Ein starkes Passwort erhöht
+die Sicherheit des Systems und schützt vor unbefugtem Zugriff. Es wird
+empfohlen, eine Kombination aus Groß- und Kleinbuchstaben, Zahlen und
+Sonderzeichen zu verwenden.</p></li>
+</ul><figure><img src="fig/02_Ubuntu_Installation_07.png" alt="Die Abbildung zeigt den Ubuntu-Installationsassistenten: Erstellung der Anmeldeinformationen" class="figure mx-auto d-block"><div class="figcaption">Installationsassistent: Profil erstellen</div>
+</figure><p>Wählen Sie außerdem die Option, den SSH-Server (Secure Shell) zu
+installieren. Der SSH-Server ermöglicht einen sicheren Fernzugriff zu
+Ihrem Server, um ihn zu Administrieren. Mehr dazu folgt in den nächsten
+Sitzungen.</p>
+<figure><img src="fig/02_Ubuntu_Installation_08.png" alt="Die Abbildung zeigt den Ubuntu-Installationsassistenten: Installation des SSH-Servers" class="figure mx-auto d-block"><div class="figcaption">Installationsassistent: SSH-Server
+installieren</div>
+</figure><p>Achten Sie darauf, dass Sie keine Snap-Pakete installieren.
+Snap-Pakete sind speziell verpackte Programme von Ubuntu, die einfach zu
+installieren sind und in einer isolierten Umgebung ausgeführt werden.
+Allerdings bieten Snap-Pakete aufgrund ihrer isolierten Umgebung nicht
+immer die beste Leistung und sind weniger flexibel als traditionelle
+Paketverwaltungsmethoden wie apt. Für eine Serverumgebung, in der
+Leistung und Flexibilität wichtig sind, ist es daher empfehlenswert, auf
+Snap-Pakete zu verzichten.</p>
+<figure><img src="fig/02_Ubuntu_Installation_09.png" alt="Die Abbildung zeigt den Ubuntu-Installationsassistenten: Auswahl von snap-Paketen" class="figure mx-auto d-block"><div class="figcaption">Installationsassistent: Keine snap-Pakete
+auswählen</div>
+</figure><p>Nachdem die Installation abgeschlossen ist, starten Sie den Server
+neu, um sicherzustellen, dass alle Änderungen übernommen wurden.
+Anschließend können Sie sich mit den während der Installation erstellten
+Anmeldeinformationen anmelden.</p>
+<figure><img src="fig/02_Ubuntu_Installation_10.png" alt="Die Abbildung zeigt den Ubuntu-Installationsassistenten: Abschluss der Installation und Neustart" class="figure mx-auto d-block"><div class="figcaption">Installationsassistent: Neustart nach Abschluss
+der Installation</div>
+</figure></div>
 </div>
 <div class="section level3">
 <h3 id="linux-grundlagen">Linux Grundlagen<a class="anchor" aria-label="anchor" href="#linux-grundlagen"></a></h3>
-<ul><li><p>Dateisystem</p></li>
-<li><p>Kommandozeile</p></li>
-<li><p>Arbeit mit Dateien</p></li>
+<div class="section level4">
+<h4 id="dateisystem">Dateisystem<a class="anchor" aria-label="anchor" href="#dateisystem"></a></h4>
+<p>Das Linux-Dateisystem ist für alle Linux-Distributionen weitestgehend
+einheitlich. Die oberste Hierarchie-Ebene ist dabei immer das
+Verzeichnis <code>/</code> (Slash). Dieses ist vergleichbar mit der
+obersten Hierarchieebene unter Windows, welche in der Regel dem
+“C:”-Laufwerk entspricht.</p>
+<p>Weitere wichtige Verzeichnisse sind:</p>
+<ul><li>die Benutzerverzeichnisse unter
+<code>/home/&lt;username&gt;/</code>, z.B.
+<code>/home/linus/</code>
+</li>
+</ul><p>Hier liegen die Dateien, Dokumente und Konfigurationen der User.
+Schreib- und Leserechte haben nur die jeweiligen User und Personen mit
+administrativen Rechten. Die Verzeichnisse sind mit dem
+Benutzerverzeichnis unter Windows (in der Regel unter
+<code>C:\Users\&lt;username&gt;\</code> zu finden) vergleichbar.</p>
+<ul><li>Die Systemverzeichnisse (z.B. <code>/etc/</code>,
+<code>/var/</code>, <code>/mnt/</code>, <code>/lib/</code>,
+<code>/bin/</code>, <code>/sys/</code>)</li>
+</ul><p>Diese Verzeichnisse beinhalten Systemdaten, z.B. Programme,
+Programmbibliotheken, temporäre Dateien, Log-Dateien oder systemweite
+Konfigurationen. Deshalb haben in diesen Verzeichnissen i.d.R. nur
+Personen mit administrativen Rechten Schreibrechte.</p>
+<p>Im Vergleich mit dem Dateisystem von Windows fällt auf, dass es unter
+Linux nur einen Verzeichnisbaum für alle Dateien, Festplatten und
+Laufwerke gibt. Auch zusätzliche Festplatten oder externe Datenträger
+werden in Linux-Systemen zunächst durch eine Gerätedatei im Verzeichnis
+<code>/dev/</code> identifiziert und können dann über sogenannte
+Einhängepunkte oder Mountpoints an einer beliebigen Stelle des
+Verzeichnisbaumes verfügbar gemacht werden (“eingehängt” oder
+“gemountet” werden). Unter Windows haben zusätzliche Datenträger und
+Laufwerke stets ihre eigene unabhängige Verzeichnishierarchie, was die
+Verwaltung von Festplatten weniger flexibel macht.</p>
+<figure><img src="fig/02_Filesystem.png" alt="Die Abbildung zeigt nebeneinander drei Verzeichnisbäume. Je einen für die Betriebssystem Linux, Mac und Windows. Dabei wird insbesondere die unterschiedliche Art der Einhängung von zusätzlichen Datenträgern wie Festplatten oder USB-Sticks hervorgehoben." class="figure mx-auto d-block"><div class="figcaption">Vergleich der Dateisysteme von Linux, Mac und
+Windows (Quelle: <a href="https://itoss.org/faq/filesystem-hierarchy-standard/" class="external-link uri">https://itoss.org/faq/filesystem-hierarchy-standard/</a>)</div>
+</figure><ul><li>Systemweite Konfigurationen in <code>/etc/</code>
+</li>
+</ul><p>Das Verzeichnis <code>/etc/</code> enthält zahlreiche
+Konfigurationsdateien für die systemweite Verwaltung von Programmen.
+Viele Programme haben hier eigene Unterordner (z.B.
+<code>/etc/apache2</code> für die Konfiguration des Apache-Webservers).
+Möchte man die Konfiguration eines Programms systemweit ändern, ist das
+<code>/etc/</code> Verzeichnis i.d.R. ein guter Startpunkt.
+Schreibrechte haben hier nur Personen mit administrativen Rechten.</p>
+<ul><li>
+<p>Programmverzeichnnisse: <code>/bin/</code>, <code>/sbin/</code>,
+<code>/usr/bin/</code> <code>/usr/sbin/</code></p>
+<ul><li><p><code>/bin/</code>: Essentielle Systemprogramme (Start, Restore,
+Basisprogramm des Betriebssystems)</p></li>
+<li><p><code>/usr/bin/</code>: ergänzende Systemprogramme</p></li>
+<li><p><code>/sbin/</code> und <code>/usr/sbin/</code>: Systemprogramme
+für die Systemadministration, die i.d.R. nur von Personen mit
+administrativen Rechten nutzbar sind</p></li>
+</ul></li>
+<li><p>Dynamische Programmdateien: <code>/var/</code></p></li>
+</ul><p>Das Betriebssystem und darauf installierte Software erzeugt ständig
+neue Dateien, z.B. werden in Log-Dateien Systemereignisse protokolliert.
+Solche dynamischen Inhalte werden i.d.R. im
+<code>/var/</code>-Verzeichnis gespeichert (v.a. im Unterverzeichnis
+<code>/var/log</code>).</p>
+<ul><li>Einhängepunkte <code>/mnt/</code> und <code>/media/</code>
+</li>
+</ul><p>Externe Laufwerke und Wechselmedien werden standardmäßig in den
+Verzeichnisse <code>/mnt/</code> und <code>/media/</code> eingebunden.
+Dies ist allerdings keine zwingende Vorgabe und häufig gibt es gute
+Gründe eine Festplatte an einer anderen Stelle des Verzeichnisbaumes
+einzuhängen, z.B. im Home-Verzeichnis eines Users.</p>
+<ul><li>Temporäre Dateien: <code>/tmp/</code>
+</li>
+</ul><p>Das Verzeichnis <code>/tmp/</code> dient der Speicherung von
+temporären Dateien. Viele Anwendungen und Systemprozesse nutzen es, um
+ihre Arbeit auszuführen. Die Dateien in <code>/tmp/</code> werden in der
+Regel automatisch gelöscht, wenn der Rechner neu gestartet wird oder
+wenn sie nicht mehr benötigt werden.</p>
+<ul><li>Prozesse und Hardware: <code>/proc/</code> und
+<code>/sys/</code>
+</li>
+</ul><p>Das Verzeichnis <code>/proc/</code> enthält Informationen über
+laufende Prozesse und Systemhardware. Viele Systemtools lesen
+Informationen aus <code>/proc/</code>, um die Systemleistung zu
+überwachen. Das Verzeichnis <code>/sys/</code> enthält Informationen
+über Systemhardware und Gerätetreiber. Systemtools und Anwendungen
+nutzen <code>/sys/</code>, um Informationen über die Systemhardware zu
+erhalten und die Hardware-Konfiguration zu ändern. Mit dem Befehl
+<code>cat /proc/cpuinfo</code> erhält man z.B. Informationen zum
+verbauten Prozessor oder mit <code>cat /sys/power/state</code>
+Informationen zu den unterstützten Standby- und Power-Modi des
+Systems.</p>
+<ul><li>Weitere Quellen</li>
+</ul><p>Mehr zur Verzeichnisstruktur von Linux findet sich z.B. bei <a href="https://wiki.ubuntuusers.de/Verzeichnisstruktur/" class="external-link">Ubuntuusers</a>
+oder bei der Tuxacademy im Handbuch zur <a href="https://www.tuxcademy.org/product/lxes/" class="external-link">Linux-Essentials-Zertifizierung</a>
+auf den Seiten 146-154.</p>
+</div>
+<div class="section level4">
+<h4 id="softwareverwaltung">Softwareverwaltung<a class="anchor" aria-label="anchor" href="#softwareverwaltung"></a></h4>
+<p>Programme (oder auch Pakete, Packages, Software oder Apps) werden in
+Linux i.d.R. durch eine zentrale Paketverwaltung ähnlich einem App-Store
+auf dem Smartphone installiert. Da auch Android auf dem Linux-Kernel
+aufbaut, sind die Prozesse zur Softwareverwaltung in Ubuntu vergleichbar
+mit den Prozessen, die im Hintergrund ablaufen, wenn man auf dem
+Smartphone eine App installiert oder aktualisiert.</p>
+<p><strong>- Paketquellen</strong></p>
+<p>Zur Installation verfügbare Software wird unter Linux in
+Paketrepositorien (oder auch Paketkatalog oder Paketquelle) aufgelistet
+und verfügbar gemacht. Ein Repositorium wird i.d.R. vom Hersteller des
+Betriebssystems zur Verfügung gestellt und ähnelt in der Funktion dem
+Google-Play-Store auf einem Android-Smartphone.</p>
+<p>Die in den Repositorien des OS-Herstellers beinhaltete Software ist
+kompatibel mit dem Betriebssystem und, je nach konkretem “Unterkatalog”,
+auch getestet. Allerdings handelt es sich nicht immer um die neueste
+Version eines Programms. Denn neue Versionen werden aufgrund der Tests
+und Abhängigkeiten zu anderer Software erst zeitverzögert in die
+Kataloge aufgenommen.</p>
+<p>Mehr Informationen zur Funktionalität der Paketquellen findet sich
+bei <a href="https://wiki.ubuntuusers.de/Paketquellen/" class="external-link">Ubuntuusers</a>.</p>
+<p>Bevor Software Software installiert werden kann, muss das
+Betriebssystem die aktuelle Version des Katalogs herunterladen. Dies
+erfolgt auf der Kommandozeile mit dem Befehl
+<code>sudo apt-get update</code> oder <code>sudo apt update</code>.
+Möchte man anschließend ein Programm installieren, muss der Name des
+entsprechenden Pakets bekannt sein. Die Installation erfolgt mit
+<code>sudo apt-get install &lt;Paketname&gt;</code>.</p>
+<p>Der Vorteil der zentralen Paketverwaltung ist, dass in den
+Repositorien stets festgehalten ist, welche Version eines Programms die
+aktuelle ist. Durch den Abgleich der Versionen aller installierter
+Programme mit dem Repositorium kann die Paketverwaltung schnell
+ermitteln, für welche Programme es Aktualisierungen gibt. Um diese zu
+installieren, muss der Befehl <code>sudo apt-get upgrade</code>
+ausgeführt werden.</p>
+<p><strong>- Fremdquellen</strong></p>
+<p>Ist in den Paketquellen des OS-Herstellers nicht die nötige Software
+enthalten, können auch Fremdquellen zum System hinzugefügt werden.
+Hierbei handelt es sich um Paketkataloge, die nicht vom OS-Hersteller
+(oder der Community) überprüft wurden. Deshalb besteht hier stets die
+Gefahr, dass die enthaltende Software das System beschädigt oder es sich
+um Schadsoftware handelt. Es gibt jedoch immer wieder Fälle, bei welchen
+solche Fremdquellen nötig sind. Wie diese dem System hinzugefügt werden
+können, ist z.B. <a href="https://linuxize.com/post/how-to-add-apt-repository-in-ubuntu/" class="external-link">hier</a>
+geschildert.</p>
+<p><strong>- Weitere Befehle wichtige Befehle für die
+Paketverwaltung</strong></p>
+<ul><li><p><code>sudo apt-get autoremove</code>: entfernt Abhängigkeiten von
+Programmen, die selbst nicht mehr installiert sind. Dadurch wird das
+System aufgeräumt.</p></li>
+<li><p><code>sudo apt list --upgradeable</code>: zeigt installierte
+Programme an, für welche Aktualisierungen verfügbar sind</p></li>
+<li><p><code>sudo apt-get remove &lt;Paketname&gt;</code>: entfernt ein
+Paket, nicht jedoch dessen Konfigurationsdateien</p></li>
+<li><p><code>sudo apt-get purge &lt;Paketname&gt;</code>: entfernt ein
+Paket inkl. dessen Konfigurationsdateien</p></li>
+</ul><p><strong>- Stolpersteine bei der Paketverwaltung</strong></p>
+<ul><li><p>Abhängigkeitsprobleme: v.a. bei der manuellen Installation von
+Paketen oder der Nutzung von Fremdquellen besteht die Möglichkeit, dass
+ein Programm ein anderes Programm als Abhängigkeit benötigt. Diese
+Abhängigkeit ist aber nicht in den Paketquellen enthalten. Dadurch kommt
+es zu einem nicht automatisch auflösbaren Abhängigkeitsproblem. Mögliche
+Maßnahmen sind die manuelle Installation der Abhängigkeiten (die aber
+weitere Abhängigkeiten haben können) oder der Downgrade auf eine
+kompatible Version.</p></li>
+<li><p>Paketname: häufig sind die Paketnamen für ein Programm nicht
+eindeutig. Um den genauen Namen für die Installation zu finden, können
+die Programmkataloge durchsucht werden:
+<code>sudo apt-cache search &lt;Suchbegriff&gt;</code>. Alternativ kann
+natürlich auch im Internet nach dem genauen Namen eines Pakets gesucht
+werden.</p></li>
+</ul><div id="webserver" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Aufgabe</span>
+<div id="webserver" class="callout-inner">
+<h3 class="callout-title">Webserver</h3>
+<div class="callout-content">
+<p>Sie möchten auf Ihrem Linux-Server eine Website betreiben. Dazu
+wollen Sie den Webserver <em>Apache</em> installieren. Wie gehen Sie
+vor?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Zeige mir die Lösung </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p>Der erste Schritt bei der Softwareverwaltung sollte immer die
+Aktualisierung der Paketquellen sein:
+<code>sudo apt-get update</code>.</p>
+<p>Anschließend wird das System auf den aktuellen Stand gebracht:
+<code>sudo apt-get upgrade</code>.</p>
+<p>Nun müssen Sie herausfinden, wie das Paket, das den Apache-Webserver
+für Ubuntu liefert, heißt. Das können Sie mit einer Internetrecherche
+oder dem Befehl <code>sudo apt-cache search apache</code> tun.</p>
+<p>Wenn Sie wissen, wie das Paket lautet, können Sie dieses mit dem
+Befehl <code>sudo apt-get install &lt;Paketname&gt;</code>
+installieren.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level4">
+<h4 id="kommandozeile">Kommandozeile<a class="anchor" aria-label="anchor" href="#kommandozeile"></a></h4>
+<ul><li>
+<p>Grundlegende Bedienung:</p>
+<ul><li><p><em>ENTER-Taste</em> nach Eingabe eines Befehls wird dieser mit
+der ENTER-Taste ausgeführt</p></li>
+<li><p><em>Pfeiltasten</em> hoch/runter: durch bisherige Befehle
+blättern und diese wieder aufrufen</p></li>
+<li><p><em>Tab-Taste:</em> Autovervollständigung von Pfaden und
+Befehlen. Erste Buchstaben eines Pfades tippen, dann TAB-Taste für die
+Autovervollständigung oder anzeigen von Optionen.</p></li>
+<li><p><em>STRG + C</em>: bricht den laufenden Befehl ab</p></li>
+<li><p>Kopieren: mit dem Cursor Text auswählen, dann <em>STRG + Umschalt
++ C</em></p></li>
+<li><p>Einfügen: <em>STRG + Umschalt + V</em></p></li>
+<li><p>Cursor-Position: mit Pfeiltasten ändern, geht nicht per
+Mausklick</p></li>
+</ul></li>
+<li>
+<p>Mit der Kommandozeile im Dateisystem navigieren:</p>
+<ul><li><p>Verzeichnis wechseln: <code>cd &lt;Pfadangabe&gt;</code>, z.B.
+<code>cd /home/david/Dokumente</code></p></li>
+<li><p>in das eigene Home-Verzeichnis wechseln: <code>cd</code></p></li>
+<li><p>Eine Ordnerebene nach oben gehen: <code>cd ..</code></p></li>
+<li><p>Zwei Ordnerebenen nach oben gehen: <code>cd ../..</code></p></li>
+<li><p>Aktuelle Position im Dateisystem anzeigen:
+<code>pwd</code></p></li>
+<li><p>Verzeichnisinhalt anzeigen lassen: <code>ls</code> oder mit mehr
+Informationen <code>ls -l</code></p></li>
+</ul></li>
+<li>
+<p>Dateioperationen:</p>
+<ul><li><p>Datei erstellen:
+<code>touch &lt;Dateipfad&gt;/&lt;Dateiname&gt;</code></p></li>
+<li><p>Verzeichnis anlegen:
+<code>mkdir &lt;Dateipfad&gt;/&lt;Neuer-Ordner&gt;</code></p></li>
+<li><p>Inhalt einer Textdatei ausgeben:
+<code>cat &lt;Dateiname&gt;</code></p></li>
+<li><p>Oberste oder letzte 10 Zeilen einer Datei anzeigen lassen:
+<code>head &lt;Dateiname&gt;</code> oder
+<code>tail &lt;Dateiname&gt;</code></p></li>
+<li>
+<p>Datei kopieren/verschieben/löschen:</p>
+<ul><li><p>Copy:
+<code>cp &lt;Quelldatei&gt; &lt;Zieldatei&gt;</code></p></li>
+<li><p>Move:
+<code>mv &lt;Quelldatei&gt; &lt;Zeildatei&gt;</code></p></li>
+<li><p>remove: <code>rm &lt;Dateiname&gt;</code> oder remove recursive:
+<code>rm -r &lt;Verzeichnispfad&gt;</code></p></li>
+</ul></li>
+</ul></li>
+<li><p>Textdateien bearbeiten: Nano-Editor:</p></li>
+</ul><p>Es gibt viele Texteditoren für Linux. Weit verbreitet sind z.B.
+<strong>nano</strong> und <strong>vim</strong>, wobei nano der
+einsteigerfreundlichere Editor ist. Deshalb arbeiten wir im Kurs mit dem
+nano-Editor. Wer dennoch mit dem Vim-Editor arbeiten möchte, kann sich
+z.B. <a href="https://www.youtube.com/playlist?list=PLT98CRl2KxKHy4A5N70jMRYAROzzC2a6x" class="external-link">dieses
+Tutorial</a> anschauen</p>
+<ul><li><p>Datei im Nano-Editor öffnen:
+<code>nano &lt;Dateipfad&gt;/&lt;Dateiname&gt;</code></p></li>
+<li><p>Die Navigation erfolgt ohne Maus, nur mit den
+Pfeiltasten!</p></li>
+<li><p>Datei schließen und speichern: <em>STRG + X</em>, dann
+<em>J</em>, dann <em>ENTER</em></p></li>
+<li><p>Schließen ohne zu speichern: <em>STRG + X</em>, dann
+<em>N</em></p></li>
+<li><p>Komplette Zeile löschen: <em>STRG + K</em></p></li>
+<li><p>Kopieren und einfügen erfolgt wie auf dem Terminal</p></li>
+<li><p>Text suchen: <em>STRG + W</em>, dann Suchbegriff eingeben oder
+für weitere Treffer direkt mit <em>ENTER</em> bestätigen</p></li>
+<li><p>Zu bestimmter Zeile springen: <em>STRG + /</em>, dann
+Zeilennummer eingeben</p></li>
 </ul><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -476,12 +796,17 @@ Installation des Servers.</p>
 <span class="callout-header">Hauptpunkte</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>Für viele Heimanwender und Kleinprojekte reichen Mini-PCs (SoC)
-aus.</li>
-<li>Für große Projekte wird spezialisierte Serverhardware benötigt</li>
+<ul><li>Die Wahl der richtigen Hard- und Software erfolgt ganz am Anfang und
+muss auf den Einsatzzweck abgestimmt sein und untereinander komptibel
+sein.</li>
 <li>In diesem Kurs wird auf einem virtuellen Server mit
 Linux-Betriebssystem die Cloud-Software <a href="https://nextcloud.com" class="external-link">Nextcloud</a> als Docker-Container
 installiert.</li>
+<li>Das Dateisystem unter Linux hat nur einen Verzeichnisbaum, unter
+welchem alle Festplatten eingebunden sind</li>
+<li>Software wird unter Linux in einer zentralen Paketverwaltung
+organisiert</li>
+<li>Linux-Server-Systeme werden mit der Kommandozeile verwaltet</li>
 </ul></div>
 </div>
 </div>
@@ -489,6 +814,7 @@ installiert.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </div>
 </div>
 </div>
@@ -553,8 +879,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/betriebssystem-und-linuxgrundlagen.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/betriebssystem-und-linuxgrundlagen.html",
   "dateCreated": "2025-08-18",
-  "dateModified": "2025-09-16",
-  "datePublished": "2025-09-16"
+  "dateModified": "2025-09-22",
+  "datePublished": "2025-09-22"
 }
 
   </script><script>
