@@ -13,10 +13,22 @@
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/03-remote-access-rmd.html</loc>
   </url>
   <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/03-remote-access.html</loc>
+  </url>
+  <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/04-sicherheit-1-benutzer-dateien-rmd.html</loc>
   </url>
   <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/04-sicherheit-1-benutzer-dateien.html</loc>
+  </url>
+  <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/05-sicherheit-2-firewall-file2ban-rmd.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/05-sicherheit-2-firewall-file2ban.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/06-docker-basics.html</loc>
   </url>
   <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/404.html</loc>
@@ -52,10 +64,22 @@
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/03-remote-access-rmd.html</loc>
   </url>
   <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/03-remote-access.html</loc>
+  </url>
+  <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/04-sicherheit-1-benutzer-dateien-rmd.html</loc>
   </url>
   <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/04-sicherheit-1-benutzer-dateien.html</loc>
+  </url>
+  <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/05-sicherheit-2-firewall-file2ban-rmd.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/05-sicherheit-2-firewall-file2ban.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/06-docker-basics.html</loc>
   </url>
   <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/404.html</loc>
