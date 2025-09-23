@@ -356,7 +356,7 @@
         
 <section id="aio-01_vorbesprechung"><p>Content from <a href="01_vorbesprechung.html">Vorbesprechung</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2025-09-22 |
+<p>Zuletzt aktualisiert am 2025-09-23 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/01_vorbesprechung.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -440,7 +440,7 @@ Situation?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>In diesem Fall ist einiges schief gelaufen. Wir werden darüber in der
 ersten Präsenzsitzung diskutieren.</p>
@@ -500,7 +500,7 @@ welchen Bereichen können Sie noch “mündiger” werden?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Nutzen Sie ein kostenloses E-Mailpostfach? Speichern Sie Daten in
 verdächtig günstigen Onlinespeichern? Wie abhängig sind Sie von Big Tech
@@ -711,7 +711,7 @@ Haltung die Welt retten können, (Bielefeld 2024)<a href="#fnref1" class="footno
 </ol>
 </div></section><section id="aio-02_betriebssystem-und-linuxgrundlagen"><p>Content from <a href="02_betriebssystem-und-linuxgrundlagen.html">Betriebssystem und Linuxgrundlagen</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2025-09-22 |
+<p>Zuletzt aktualisiert am 2025-09-23 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/02_betriebssystem-und-linuxgrundlagen.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1300,7 +1300,7 @@ any links that you are not going to use.
 </div>
 </div></section><section id="aio-03-remote-access-rmd"><p>Content from <a href="03-remote-access-rmd.html">Remote Access: das SSH-Protokoll.rmd</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2025-09-22 |
+<p>Zuletzt aktualisiert am 2025-09-23 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/03-remote-access-rmd.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1411,7 +1411,7 @@ die Bedingungen für eine erfolgreiche SSH-Verbindung?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Netzwerkverbindung: der Server muss im Netzwerk erreichbar sein.
@@ -1593,7 +1593,7 @@ unterschiedlich bewerkstelligt werden.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <p>Unter Windows muss das Programm scp genutzt werden, mit welchem über
 eine SSH-Verbindung Dateien (in diesem Fall der öffentliche Schlüssel)
 übertragen werden können:</p>
@@ -1611,13 +1611,13 @@ eine SSH-Verbindung Dateien (in diesem Fall der öffentliche Schlüssel)
 <p>SSH-Verbindung mit privatem Schlüssel testen:
 <code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh\&lt;privater-schlüssel&gt;</code></p>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <p>Mit macOS kann das Programm <em>ssh-copy-id</em> genutzt werden:
 <code>ssh-copy-id -i &lt;öffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;</code></p>
 <p>SSH-Verbindung mit privatem Schlüssel testen:
 <code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh/&lt;privater-schlüssel&gt;</code></p>
 </div>
-<div id="nav-tabpanel-1-3" class="tab-pane" aria-labelledby="nav-tab-1-3" role="tabpanel">
+<div id="nav-tabpanel-1-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-3">
 <p>Mit Linux kann das Programm <em>ssh-copy-id</em> genutzt werden:
 <code>ssh-copy-id -i &lt;öffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;</code></p>
 <p>SSH-Verbindung mit privatem Schlüssel testen:
@@ -1723,7 +1723,7 @@ den folgenden Befehl:
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Der SSH-Server erfordert ein Schlüsselpaar für die Anmeldung. Zwar
 wurde der private Schlüssel <em>eberhard.key</em> angegeben. Allerdings
@@ -1769,7 +1769,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-04-sicherheit-1-benutzer-dateien-rmd"><p>Content from <a href="04-sicherheit-1-benutzer-dateien-rmd.html">Sicherheit 1: Benutzer und Dateirechte</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2025-09-22 |
+<p>Zuletzt aktualisiert am 2025-09-23 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/04-sicherheit-1-benutzer-dateien-rmd.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2176,7 +2176,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-05-sicherheit-2-firewall-file2ban-rmd"><p>Content from <a href="05-sicherheit-2-firewall-file2ban-rmd.html">Sicherheit 2: Firewall und Fail2Ban</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2025-09-22 |
+<p>Zuletzt aktualisiert am 2025-09-23 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/05-sicherheit-2-firewall-file2ban-rmd.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2688,8 +2688,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/aio.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/aio.html",
   "dateCreated": "2025-08-18",
-  "dateModified": "2025-09-22",
-  "datePublished": "2025-09-22"
+  "dateModified": "2025-09-23",
+  "datePublished": "2025-09-23"
 }
 
   </script><script>
