@@ -79,7 +79,7 @@ Typische Adressen könnten wie folgt lauten:
 
 ### Ports
 
-Ist ein Datenpaket innerhalb eines IP-Netzwerks an einem Host (also einem Gerät) angekommen, muss noch geklärt werden, wohin das Paket innerhalb des Geräts gehört. Da auf einem Computer viele Programme gleichzeitig aktiv sind, muss entschieden werden, für welches der Programme ein Paket gedacht ist. Dazu werden **Ports** genutzt. Ein Programm, welches Daten aus dem Netzwerk empfangen soll, nutzt dabei einen festgelegten Port. Kommt am Gerät ein Datenpaket an, das mit dem Port des Programms adressiert ist, wird das Paket an das entsprechende Programm geleitet und von diesem verarbeitet. Zum Beispiel "lauscht" der SSH-Server standardmäßig auf Port 22 für eingehenden Datenverkehr. Wir haben diesen Port in [Lektion 3](03-remote-access-rmd.Rmd) manuell abgeändert.
+Ist ein Datenpaket innerhalb eines IP-Netzwerks an einem Host (also einem Gerät) angekommen, muss noch geklärt werden, wohin das Paket innerhalb des Geräts gehört. Da auf einem Computer viele Programme gleichzeitig aktiv sind, muss entschieden werden, für welches der Programme ein Paket gedacht ist. Dazu werden **Ports** genutzt. Ein Programm, welches Daten aus dem Netzwerk empfangen soll, nutzt dabei einen festgelegten Port. Kommt am Gerät ein Datenpaket an, das mit dem Port des Programms adressiert ist, wird das Paket an das entsprechende Programm geleitet und von diesem verarbeitet. Zum Beispiel "lauscht" der SSH-Server standardmäßig auf Port 22 für eingehenden Datenverkehr. Wir haben diesen Port in [Lektion 3](03-remote-access.Rmd) manuell abgeändert.
 
 Einige Ports sind fest für bestimmte Programme definiert und sollten nicht von anderen Programmen oder manuell belegt werden. Andere Ports können jedoch von Systemadministratoren frei genutzt werden. Die Portnummern reichen von 0 bis 65.535. Eine Auflistung aller Ports und deren Verwendung findet sich bei [Wikipedia](https://de.wikipedia.org/wiki/Liste_der_standardisierten_Ports).
 
@@ -212,7 +212,7 @@ Einige wichtige und grundlegende Maßnahmen können sein:
 
 5. Regelmäßige Wartung: Sowohl der Server als auch alle anderen Netzwerkkomponenten (Router, Switche etc) müssen stets mit aktueller Soft- und oder Firmware ausgestattet werden.
 
-6. der SSH-Serverdienst sollte entsprechend [Kapitel 3](03-remote-access-rmd.Rmd) konfiguriert werden
+6. der SSH-Serverdienst sollte entsprechend [Lektion 3](03-remote-access.Rmd) konfiguriert werden
 
 7. Noch mehr Sicherheit erhalten Sie durch eine Netzwerksegmentierung: sie trennen das Netzwerk in mehrere logische Bereiche auf, zwischen denen ein Router mit Firewall vermittelt.
 
