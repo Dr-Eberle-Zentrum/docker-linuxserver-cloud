@@ -179,6 +179,8 @@ Der Befehl `docker network` bietet verschiedene Unterbefehle zur Verwaltung von 
 - `docker network inspect <Netzwerkname>` zeigt detaillierte Informationen über ein bestimmtes Netzwerk an, z.B. IP-Adressen und verbundene Container
 - `docker network create <Netzwerkname>` erstellt ein neues Netzwerk (standardmäßig als sog. Bridge-Netzwerk).
 
+Siehe dazu auch [Dockernetzwerke](#kommunikation-im-dockerversum-dockernetzwerke)
+
 #### `docker prune`
 Der Befehl `docker prune` bietet verschiedene Unterbefehle zur Bereinigung von Docker-Ressourcen:
 - `docker system prune` entfernt alle ungenutzten Daten (Images, Container, Netzwerke und Volumes).
@@ -191,34 +193,29 @@ Der Befehl `docker exec` wird verwendet, um einen Befehl in einem laufenden Cont
 
 ### Kommunikation im "Dockerversum": Dockernetzwerke
 
-Docker Engine erstellt virtuelle Netzwerke.
+Um Containern die Kommunikation im Netzwerk zu ermöglichen, erstellt die Docker beim Start der Container standardmäßig auch **virtuelle Netzwerke**. In der Standardkonfiguration haben Container Internetzugriff über die Internetschnittstelle des Hosts. Allerdings kommunizieren Sie in einem eigenen Subnetz und sind daher nicht von außen erreichbar.
 
-#### Netzwerktypen
+#### Docker-Netzwerke
 
-Die wichtigsten:
+Es gibt verschiedene Netzwerktypen, die von der Docker Engine oder manuell erstellt werden können. Die wichtigsten sind Bridge, Host und Overlay.
 
-- Bridge
+**Bridge-Netzwerke** sind virtuelle Netzwerke, an welche Container gebunden werden können. Alle Container innerhalb desselben Bridge-Netzwerks können miteinander kommunizieren, entweder über ihre IP-Adressen oder über ihre Container-Namen. Auf dem Host ist das Bridg-Netzwerk ebenfalls sichtbar, allerdings ist das Bridge-Netzwerk nicht direkt mit der Netzwerkschnittstelle des Hosts verbunden, sondern befindet sich hinter der Netzwerkschnittstelle des Hosts. Damit hat das Bridge-Netzwerk keinen Zugriff auf das LAN des Hosts. Über [Portmapping](#portmapping) kann aber die Kommunikation mit dem LAN-Netzwerk des Hosts ermöglicht werden.
 
-- Host
+**Host-Netzwerke** verbinden Container auf derselben physischen Netzwerkschnittstelle wie den Host. Dadurch befindet sich das Host-Netzwerk "neben" dem Host selbst und hat direkten Zugriff auf das LAN des Hosts und erhält auch dort eine IP-Adresse. Dies hat zwar den Vorteil des direkten Zugriffs, ist aber aufgrund der geringeren Isolierung des der verbundenen Container auch weniger sicher.
 
-#### Host-Gast-Kommunikation
+**Overlay-Netzwerke** dienen der Verbindung von Containern über unterschiedliche Hosts hinweg. So ist es z.B. möglich Docker-Container, die auf zwei unterschiedlichen Servern laufen und dort jeweils in einem Bridge-Netzwerk isoliert sind, zusätzlich mit einem Overlay-Netzwerk kommunizieren zu lassen.
 
-- Portmapping: Host:Gast
+#### Portmapping
+Um die Kommunikation von Host zu Gast zu ermöglichen können Anfragen an bestimmte Ports des Hosts an bestimmte Ports des Gasts weitergeleitet werden. Dadurch können Container von außerhalb eines Bridge-Netzwerks erreicht werden. Es ist jedoch wichtig zu beachten, dass dadurch die Regeln der UFW umgangen werden. Deshalb sind für im Internet exponierte Container ggf. eigene Firewallregeln zu erstellen (siehe dazu das [Handbuch](https://docs.docker.com/engine/network/packet-filtering-firewalls/)). Um Ports des Containers auf dem Host verfügbar zu machen (zu veröffentlichen ("publish")) dient der Parameter `-p` des `docker run`-Befehls.
 
-- dadurch von extern erreichbar
-
-- Achtung: passiert UFW-Firewall!
-
-#### Gast-Gast-Kommunikation
-
-- Container im selben Netzwerk: erreichen sich per interner IP-Adresse oder container-name
+Mehr Informationen zu Docker-Netzwerken findet sich im [Handbuch](https://docs.docker.com/engine/network/).
 
 ### Container mit der Docker Engine erstellen
 
-Der Befehl `docker run <Imagename>:<Image-Tag>` wird verwendet, um einen neuen Container aus einem Image zu starten. Wenn das angegebene Image nicht lokal vorhanden ist, wird es automatisch aus einem Repositorium wie *Docker Hub* heruntergeladen und der Container wird gestartet. Dabei gibt es verschiedene Parameter, die die Konfiguration des Containers beeinflussen können. Einige wichtig Parameter sind dabei die Folgenden:
+Der Befehl `docker run <Imagename>:<Image-Tag>` wird verwendet, um einen neuen Container aus einem Image zu starten. Wenn das angegebene Image nicht lokal vorhanden ist, wird es automatisch aus einer Registry wie *Docker Hub* heruntergeladen und der Container wird gestartet. Dabei gibt es verschiedene Parameter, die die Konfiguration des Containers beeinflussen können. Einige wichtig Parameter sind dabei die Folgenden:
 
 - **`-p` für Portfreigaben**:
-  Dieser Parameter wird verwendet, um Ports auf dem Host-System an Ports im Container zu binden. Dies ermöglicht es, auf Dienste im Container von außerhalb zuzugreifen.
+  Dieser Parameter wird verwendet, um Ports auf dem Host-System an Ports im Container zu binden. Dies ermöglicht es, auf Dienste im Container von außerhalb zuzugreifen. Beispiel: `docker run -p 80:80 nginx`. Dieser Befehl startet einen Docker-Container basierend auf dem nginx-Image. Dabei wird der Port `80` auf dem Host-System auf den Port `80` innerhalb des Containers weitergeleitet. Dadurch kann von außerhalb des Containers auf Port `80` innerhalb des Containers zugegriffen werden. Es ist aber auch möglich unterschiedliche Ports zu nutzen: `docker run -p 12000:80 nginx`
 
 - **`-v` für Volumes**:
   Dieser Parameter wird verwendet, um Verzeichnisse oder Dateien zwischen dem Host-System und dem Container zu teilen. Dies ist nützlich, um Daten persistent zu speichern oder Konfigurationsdateien zu teilen.
@@ -251,6 +248,7 @@ Um einen Apache Webserver in einem Docker-Container zu starten, können Sie den 
 - durch Virtualisierung können Ressourcen effektiver genutzt werden
 - Container bieten eine performante Virtualisierungslösung an
 - mit Docker können verschiedene Anwendungen in isolierten Umgebungen (Containern) auf demselben System betrieben werden
+- Mit Docker Netzwerken kann die Kommunikation zwischen Containern und dem Host gesteuert werden
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
