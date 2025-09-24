@@ -72,6 +72,7 @@ episodes:
 - 05-sicherheit-2-firewall-file2ban.Rmd
 - 06-docker-basics.Rmd
 - 07-docker-compose.Rmd
+- 08-webserver-docker-compose.Rmd
 
 # Information for Learners
 learners: 
