@@ -73,6 +73,7 @@ episodes:
 - 06-docker-basics.Rmd
 - 07-docker-compose.Rmd
 - 08-webserver-docker-compose.Rmd
+- 09-proxy-docker-compose.Rmd
 
 # Information for Learners
 learners: 
