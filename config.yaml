@@ -74,6 +74,7 @@ episodes:
 - 07-docker-compose.Rmd
 - 08-webserver-docker-compose.Rmd
 - 09-proxy-docker-compose.Rmd
+- 10-nextcloud-aio.Rmd
 
 # Information for Learners
 learners: 
