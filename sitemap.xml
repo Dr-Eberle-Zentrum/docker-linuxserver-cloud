@@ -37,6 +37,12 @@
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/08-webserver-docker-compose.html</loc>
   </url>
   <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/09-proxy-docker-compose.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/10-nextcloud-aio.html</loc>
+  </url>
+  <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/404.html</loc>
   </url>
   <url>
@@ -92,6 +98,12 @@
   </url>
   <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/08-webserver-docker-compose.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/09-proxy-docker-compose.html</loc>
+  </url>
+  <url>
+    <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/10-nextcloud-aio.html</loc>
   </url>
   <url>
     <loc>https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/404.html</loc>

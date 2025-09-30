@@ -336,6 +336,30 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush10">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading10">
+        <a href="09-proxy-docker-compose.html">9. 09_proxy-docker-compose</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush11">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading11">
+        <a href="10-nextcloud-aio.html">10. Nextcloud mit Docker installieren</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -478,8 +502,33 @@ compose.yaml-Konfigurationsdatei</p></li>
 <code>docker compose</code></p></li>
 </ul></section><section id="08-webserver-docker-compose"><h2 class="section-heading"><a href="08-webserver-docker-compose.html">Webserver mit Docker Compose</a></h2>
 <hr class="half-width">
-<ul><li>
-</li></ul></section>
+<ul>
+<li><p>Webserver sind die Kommunikationszentrale zwischen Client und
+Webapplikation</p></li>
+<li><p>Um den Webserver per Domain zu erreichen, kann bei einem
+DDNS-Dienst eine dynamische Domain beantragt werden</p></li>
+<li><p>Zur Absicherung der Kommunikation zwischen Server und Client muss
+ein TLS-Zertifikat beantragt und eingerichtet werden</p></li>
+<li><p>Mit Docker Compose kann der Apache-Webserver zusammen mit Certbot
+für das HTTPS-Protokoll eingerichtet werden</p></li>
+</ul></section><section id="09-proxy-docker-compose"><h2 class="section-heading"><a href="09-proxy-docker-compose.html">09_proxy-docker-compose</a></h2>
+<hr class="half-width">
+<ul>
+<li><p>Mit dem NGINX-Proxy Manager besteht eine vereinfachte Möglichkeit
+für den Erhalt von TLS-Zertifikaten</p></li>
+<li><p>Mit einem Reverse Proxy können mehrere Webapplikationen parallel
+betrieben werden</p></li>
+<li><p>Mit korrekter Docker Netzwerkkonfiguration ist die Kommunikation
+zwischen Containern schnell hergestellt</p></li>
+</ul></section><section id="10-nextcloud-aio"><h2 class="section-heading"><a href="10-nextcloud-aio.html">Nextcloud mit Docker installieren</a></h2>
+<hr class="half-width">
+<ul>
+<li><p>Die Nextcloud-Software-Suite ist eine Open Source Alternative für
+Datensychronistaion und Kollaboration im Team</p></li>
+<li><p>Nextcloud auf dem eigenen Server installiert werden</p></li>
+<li><p>Eine Installationsvariante für einen schnellen Start ist das
+All-in-One Dockerimage</p></li>
+</ul></section>
 </div>
     </main>
 </div>

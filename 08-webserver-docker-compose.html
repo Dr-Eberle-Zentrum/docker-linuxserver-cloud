@@ -118,11 +118,11 @@
   Mit Docker vom Linuxserver zur eigenen Cloud
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 98%" class="percentage">
-    98%
+<aside class="col-md-12 lesson-progress"><div style="width: 70%" class="percentage">
+    70%
   </div>
   <div class="progress UT">
-    <div class="progress-bar UT" role="progressbar" style="width: 98%" aria-valuenow="98" aria-label="Lernfortschritt" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar UT" role="progressbar" style="width: 70%" aria-valuenow="70" aria-label="Lernfortschritt" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -281,8 +281,27 @@
       <div class="accordion-body">
         <ul><li><a href="#allgemeines-zu-webservern">Allgemeines zu Webservern</a></li>
 <li><a href="#externer-zugriff">Externer Zugriff</a></li>
+<li><a href="#webserver-mit-docker">Webserver mit Docker</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush10">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading10">
+        <a href="09-proxy-docker-compose.html">9. 09_proxy-docker-compose</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush11">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading11">
+        <a href="10-nextcloud-aio.html">10. Nextcloud mit Docker installieren</a>
+    </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -330,7 +349,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Vorheriges und nächstes Kapitel"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="07-docker-compose.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Zurück</a>
-        <a class="chapter-link float-end" href="index.html">Weiter<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="09-proxy-docker-compose.html">Weiter<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -338,8 +357,8 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Zurück: Docker compose
         </a>
-        <a class="chapter-link float-end" href="index.html" rel="next">
-          Startseite
+        <a class="chapter-link float-end" href="09-proxy-docker-compose.html" rel="next">
+          Weiter: 09_proxy-docker-comp...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -429,8 +448,8 @@ verwendet)</li>
 </ul></section><section><h2 class="section-heading" id="externer-zugriff">Externer Zugriff<a class="anchor" aria-label="anchor" href="#externer-zugriff"></a></h2>
 <hr class="half-width"><p>Um einen Webserver aus dem Internet erreichen zu können, muss der
 Server, auf welchem die Webserver-Software installiert ist, und das
-Netzwerk in welchem er sich befindet eine öffentliche IP-Adresse und
-idealerweise auch einen öffentlich bekannten Domainnamen haben.</p>
+Netzwerk in welchem sich der Server befindet eine öffentliche IP-Adresse
+und idealerweise auch einen öffentlich bekannten Domainnamen haben.</p>
 <p>Für diesen Kurs ist der Hypervisor, auf welchem die virtuellen Server
 laufen, über eine IP-Adresse im Internet erreichbar. Ein zentraler
 Webserver ist als Proxy-Server konfiguriert und leitet Anfragen abhängig
@@ -443,13 +462,14 @@ Hierzu kann kostenpflichtig eine vollwertige Domain erworben werden
 (DDNS=Dynamic Domain Name System).</p>
 <p>DDNS funktioniert unter Zuhilfenahme eines externen Dienstleisters.
 Bei diesem wird eine Subdomain beantragt, z.B.
-<em>server.dns-anbieter.de</em>. Auf dem eigenen Server kann das
+<em>server.ddns-anbieter.de</em>. Auf dem eigenen Server kann das
 Programm <strong>DDClient</strong> installiert werden. Dieses
 kontaktiert regelmäßig eine Internetseite und erhält von dieser die
 eigene öffentliche IP-Adresse als Echo zurück. Dadurch erfährt DDClient,
 unter welcher IP-Adresse der Server erreichbar ist und schickt diese an
 den DDNS-Anbieter, bei welchem die eigene Domain beantragt wurde. Dieser
-Anbieter wiederum trägt die IP-Adresse in seinem DNS ein.</p>
+Anbieter wiederum trägt die IP-Adresse in seinem DNS ein und macht
+dadurch die IP-Adresse zur Domain öffentlich bekannt.</p>
 <div id="dns" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -465,7 +485,7 @@ DNS findet sich z.B. beim <a href="https://www.elektronik-kompendium.de/sites/ne
 </div>
 </div>
 </div>
-<p>Ruft ein Computer die Adresse <em>server.dns-anbieter.de</em> auf,
+<p>Ruft ein Computer die Adresse <em>server.ddns-anbieter.de</em> auf,
 wird im DNS des DDNS-Anbieters die öffentliche IP-Adresse des Servers
 (in unserem Fall die Adresse des zentralen Proxy-Servers) ausgelesen und
 übermittelt. Dadurch wird die Anfrage an die richtige IP-Adresse
@@ -473,20 +493,21 @@ geschickt.</p>
 <p>Es gibt verschiedene Anbieter für DDNS-Dienste. Gut geeignet sind
 z.B. <a href="https://noip.com" class="external-link">No-IP</a> oder <a href="https://www.ddnss.de/" class="external-link">DDNSS</a>.</p>
 <p>DDNS wird eigentlich primär verwendet, um an privaten
-Internetanschlüssen, die häufig die IP-Adresse ändern, dennoch immer
-über die gleiche Domain erreichbar zu sein. Im Fall des Kurses ist eine
-statische öffentliche IP-Adresse vorhanden und es wäre sauberer eine
-ordentliche Domain zu kaufen (oder im Rechenzentrum der Universität zu
-beantragen). Für die Testzwecke dieses Kurses genügt aber auch eine
+Internetanschlüssen, die häufig eine sich änderende IP-Adresse haben,
+immer über die gleiche Domain erreichbar zu sein. Im Fall des Kurses ist
+eine statische öffentliche IP-Adresse vorhanden und es wäre sauberer
+eine ordentliche Domain zu kaufen (oder im Rechenzentrum der Universität
+zu beantragen). Für die Testzwecke dieses Kurses genügt aber eine
 DDNS-Domain. Zeitgleich kann die damit erlernte Technik auch gut für
-Zwecke des Selfhosting im heimischen Wohnzimmer angewendet werden.</p>
+Zwecke des Selfhostings im heimischen Wohnzimmer oder kleinen Büros ohne
+statische IP-Adresse angewendet werden.</p>
 <div class="section level3">
 <h3 id="umsetzung-ddns-unter-ubuntu">Umsetzung DDNS unter Ubuntu<a class="anchor" aria-label="anchor" href="#umsetzung-ddns-unter-ubuntu"></a></h3>
 <p>Für die Implementierung des DDNS-Verfahrens wird wie folgt
 vorgegangen:</p>
 <ul><li><p>Account bei einem DDNS-Anbieter registrieren</p></li>
-<li><p>Im Falle von <em>No-IP</em> muss im <a href="https://noip.com" class="external-link">Webportal</a> des Anbieters ein Benutzername
-festgelegt werden</p></li>
+<li><p>Im Falle von <em>No-IP</em> muss im <a href="https://noip.com" class="external-link">Webportal</a> des Anbieters nach der
+Registrierung noch ein Benutzername festgelegt werden</p></li>
 <li><p>Beim gewählten Anbieter muss ein Domainname reserviert werden
 (A-Record für IPv4 oder AAAA-Record für IPv6)</p></li>
 <li>
@@ -551,15 +572,306 @@ die Konfigurationsdatei unterschiedlich aus.</p>
 </div>
 </div>
 </div>
-<div id="keypoints1" class="callout keypoints">
+<p>Wird die Konfigurationsdatei manuell geändert, muss ddclient neu
+gestartet werden:
+<code>sudo systemctl restart ddclient.service</code></p>
+</div>
+</section><section><h2 class="section-heading" id="webserver-mit-docker">Webserver mit Docker<a class="anchor" aria-label="anchor" href="#webserver-mit-docker"></a></h2>
+<hr class="half-width"><p>Damit auf dem eigenen Server auf Anfragen aus dem Internet auch
+reagiert wird, muss ein Webserver installiert werden. Dazu kann in einem
+Docker Compose Projekt der Apache-Webserver installiert werden. Um die
+Grundfunktionalität zu testen, wird vorerst keine besondere
+Konfiguration vorgenommen.</p>
+<div class="section level3">
+<h3 id="docker-compose-projekt-erstellen">Docker Compose Projekt erstellen<a class="anchor" aria-label="anchor" href="#docker-compose-projekt-erstellen"></a></h3>
+<ol style="list-style-type: decimal"><li><p>Arbeitsverzeichnis anlegen: z.B.
+<code>sudo mkdir /opt/apache-docker/</code> und
+<code>sudo chown &lt;username&gt;:&lt;username&gt; /opt/apache-docker</code></p></li>
+<li><p>Ins Arbeitsverzeichnis wechseln (<code>cd</code>-
+Befehl)</p></li>
+<li><p>Dort die Compose-Datei erstellen
+(<code>nano compose.yaml</code>)</p></li>
+</ol><div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">apache</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="at">  </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="at">  </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">'80:80'</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="at">  </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ./website:/usr/local/apache2/htdocs</span></span></code></pre>
+</div>
+<ol start="4" style="list-style-type: decimal"><li><p>Volume-Verzeichnis für den Datenaustausch mit dem Container
+erstellen: <code>mkdir website</code></p></li>
+<li><p>Website-Beispiel erstellen: <code>nano website/index.html</code>,
+z.B. wie folgt</p></li>
+</ol><div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">HTML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode html" tabindex="0"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Apache-Test<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>        body {</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>            <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>        }</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>        h1 {</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>            <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>        }</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>        p {</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>            <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>        }</span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Welcome to Apache-Test<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This is a simple paragraph to test the Apache server.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre>
+</div>
+<ol start="6" style="list-style-type: decimal"><li><p>Docker Container starten: <code>sudo docker compose up</code>
+oder im Hintergrund <code>sudo docker compose up -d</code></p></li>
+<li><p>Erreichbarkeit testen: öffnen Sie auf einem Endgerät im
+Webbrowser ihre registrierte DDNS-Domain. Wird Ihnen die
+Beispiel-HTML-Datei angezeigt?</p></li>
+<li><p>Container stoppen: <code>STRG</code>+ <code>c</code> oder im
+Hintergrund <code>sudo docker compose down</code></p></li>
+</ol></div>
+<div class="section level3">
+<h3 id="tls-verschlüsselung">TLS-Verschlüsselung<a class="anchor" aria-label="anchor" href="#tls-verschl%C3%BCsselung"></a></h3>
+<div class="section level4">
+<h4 id="kommunikationsweg">Kommunikationsweg:<a class="anchor" aria-label="anchor" href="#kommunikationsweg"></a></h4>
+<p>Aktuell erfolgt die Kommunikation mit dem Server über das
+HTTP-Protokoll mit Port 80. Diese Verbindung ist unverschlüsselt. Das
+bedeutet, dass sämtliche Daten (z.B. Passwörter und Dateien) die zum
+Server geschickt oder vom Server verschickt werden, von einem “Zuhörer”
+auf der Leitung mitgelesen werden können (das geht z.B. mit dem Tool <a href="https://www.wireshark.org/about.html" class="external-link">Wireshark</a> v.a. im LAN
+recht einfach, siehe z.B. diese Anleitung von <a href="https://www.varonis.com/de/blog/verwendung-von-wireshark" class="external-link">Varonis</a>).</p>
+</div>
+<div class="section level4">
+<h4 id="grundlagen-der-https-verbindung">Grundlagen der HTTPS-Verbindung<a class="anchor" aria-label="anchor" href="#grundlagen-der-https-verbindung"></a></h4>
+<p>Um das Auslesen der Verbindung und damit das Abfangen sämtlicher
+Kommunikation zu unterbinden, muss die Verbindung verschlüsselt werden.
+Um eine HTTP-Verbindung zu verschlüsseln wird diese durch das
+TLS-Protokoll zu einer HTTP<strong>S</strong>-Verbindung erweitert.
+HTTPS ist heute glücklicherweise der Standard bei den meisten
+Internetseiten. Dass Sie eine HTTPS-Verbindung zu einer Seite aufgebaut
+haben, erkennen Sie in der Adresszeile Ihres Browsers anhand eines
+Schlosssymbols, bei besonders starken Zertifikaten ggf. zusätzlich auch
+anhand einer grünen Markierung (siehe die folgende Abbildung).</p>
+<figure><img src="fig/08_https-browser.png" alt="Browseradresszeile mit der Adresse https://uni-tuebingen.de. Durch ein Schlosssymbol wird die https-Verbindung dargestellt." class="figure mx-auto d-block"><div class="figcaption">HTTPS-Verbindung im Browser. das Schloss zeigt
+eine verschlüsselte HTTPS-Verbindung an</div>
+</figure><p>Die Grundlage des TLS-Protokolls stellen Zertifikate dar, die die
+Authentizität der Website bestätigen.</p>
+<p>Dazu ein nicht technisches Vergleichsbeispiel: Sie wollen bei einem
+Geschäftsvorgang die Identität des Gegenübers überprüfen. Zeigt Ihnen
+die Person einen selbst ausgestellten Ausweis, werden Sie diesem
+Personalausweis nicht vertrauen. Zeigt die Person jedoch einen Ausweis,
+der von einer staatlichen Behörde ausgestellt wurde, welcher Sie
+vertrauen, können Sie auch dem vorgelegten Ausweis vertrauen.</p>
+<p>Übertragen auf die HTTPS-Verbindung sieht es wie folgt aus: Ein
+Website-Betreiber kann sich selbst ein TLS-Zertifikat ausstellen (unter
+Linux z.B. mit dem Programm <em>OpenSSL</em>) und dieses einem
+anfragendem Webbrowser oder sonstigem Client präsentieren. Allerdings
+kann einem solchen selbst ausgestellten Zertifikat nicht von Dritten
+vertraut werden. Der Browser wird die Verbindung als unsicher ablehnen
+und eine Warnmeldung zeigen. Damit ein Client dem Zertifikat vertrauen
+kann, muss dieses genau wie beim Personalausweis von einer zentralen
+Stelle ausgestellt werden. Diese zentralen Stellen (als
+<em>Zertifizierungsstellen</em> oder im Englischen als <em>Certificate
+Authority</em> bezeichnet) können auf Anfrage ein Zertifikat ausstellen,
+sofern die Identität der anfragenden Stelle gewährleistet ist.</p>
+<p>Gleichzeitig besitzt die Zertifizierungsstelle selbst ein Zertifikat,
+dass deren Identität bestätigt. Dieses Zertifizierungsstellenzertifikat
+wiederum ist vom Hersteller Ihres Betriebssystems auf Ihrem PC
+hinterlegt und als vertrauenswürdig eingestuft worden. Überprüft Ihr
+Browser nun das Zertifikat der Website, stellt er zunächst fest, dass
+das präsentierte Zertifikat von einer Zertifizierungsstelle ausgestellt
+wurde, welcher er vertraut. Außerdem wird überprüft, ob die aufgerufene
+Adresse auch der im Zertifikat hinterlegten Adresse entspricht.</p>
+<p>Rufen Sie eine Website auf, die ein falsches Zertifikat präsentiert
+(z.B. für die falsche Adresse, ein abgelaufenes oder selbst
+ausgestelltes Zertifikat), erhalten Sie eine Warnmeldung. Diese sollten
+Sie ernst nehmen, da es auf einen Betrugsversuch hindeuten kann, in
+welchem eine angreifende Person sich für die Website ausgibt, die Sie
+eigentlich aufrufen wollten (z.B. die Seite Ihres Online-Bankings).</p>
+<figure><img src="fig/08_https-browser-unsecure.png" alt='Browserfenster, dass eine unsichere https-Verbindung zeigt, welche mit einer Warnung angezeigt wird: "Warnung: Mögliches Sicherheitsrisiko erkannt"' class="figure mx-auto d-block"><div class="figcaption">Fehlgeschlagene HTTPS-Verbindung im Browser mit
+Sicherheitswarnung: die Verbindung schläg fehl, da die aufgerufne
+Adresse (134.2.5.1) nicht der Adresse im Zertifikat entspricht
+(ersichtlich nach Klick auf den Erweitert-Button)</div>
+</figure></div>
+<div class="section level4">
+<h4 id="tls-verschlüsselung-einrichten">TLS-Verschlüsselung einrichten<a class="anchor" aria-label="anchor" href="#tls-verschl%C3%BCsselung-einrichten"></a></h4>
+<p>Um die eigene Website per HTTPS erreichen zu können, muss der Server
+ein Zertifikat von einer Zertifizierungsstelle erhalten, die von allen
+Computern anerkannt ist. Während dies früher nur gegen Bezahlung möglich
+war, existiert seit einigen Jahren mit <a href="https://letsencrypt.org/" class="external-link">Letsencrypt</a> ein gemeinnütziger
+Anbieter, der kostenlose Zertifikate zur Verfügung stellt. Diese sind
+jedoch nur <strong>drei Monate gültig</strong> und müssen dann
+<strong>verlängert</strong> werden.</p>
+<p>Um ein solches Zertifikat zu erhalten, muss man gegenüber Letsencrypt
+nachweisen, dass man die Eigentümer der Domain ist, für welche das
+Zertifikat angefragt wird. Das heißt: wenn Sie für die Adresse
+<em>server.ddns-provider.de</em> ein Zertifikat erhalten wollen, müssen
+Sie nachweisen, dass sie den Webserver, der die Seite
+<em>server.ddns-provider.de</em> ausliefert, verwalten. Diesen Nachweis
+erbringen Sie nicht manuell, sondern mit Hilfe verschiedener Programme
+(z.B. Certbot). Mit diesen Programmen werden automatisiert einige
+Informationen zwischen Ihrem Webserver und den Servern von Letsencrypt
+ausgetauscht, anhand deren die Eigentümerschaft nachgewiesen werden
+kann. Anschließend wird das Zertifikat von der Zertifizierungsstelle
+(Letsencrypt) ausgestellt und kann dann in den eigenen Webserver
+integriert werden.</p>
+</div>
+<div class="section level4">
+<h4 id="zertifikat-erhalten">Zertifikat erhalten:<a class="anchor" aria-label="anchor" href="#zertifikat-erhalten"></a></h4>
+<p>In Docker kann das Hilfsprogramm für den Erhalt des Zertifikats in
+das Docker Compose Projekt integriert werden. Hierzu bestehen, wie eine
+Internetrecherche schnell aufzeigen wird, verschiedene
+Möglichkeiten.</p>
+<p>Im Folgenden eine Möglichkeit, in welcher das Program certbot als
+zweiter Container dem Docker Compose Projekt hinzugefügt wird:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="at">  </span><span class="fu">apache</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">'80:80'</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">'443:443'</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">    #Beispiel-Internetseite</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./website:/usr/local/apache2/htdocs</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">    #Webinhalte für certbot challenge</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/usr/local/apache2/htdocs:ro</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">    #Zertifikate</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf:/usr/local/apache2/ssl:ro</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> apache-net</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="at">  </span><span class="fu">certbot</span><span class="kw">:</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache-certbot</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> certbot/certbot:latest</span></span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/var/www/certbot:rw</span></span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf:/etc/letsencrypt:rw</span></span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/log:/var/log/letsencrypt:rw</span></span>
+<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> apache-net</span></span>
+<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a><span class="at">  </span><span class="fu">apache-net</span><span class="kw">:</span></span>
+<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> apache-net</span></span>
+<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a><span class="at">    </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
+</div>
+<div id="challenge1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Aufgabe</span>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>Schauen Sie sich die compose.yaml-Datei genau an. Was bewirken die
+einzelnen Parameter?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<p>Im Unterschied zum ersten einfachen Beispiel, ist in diesem Projekt
+der certbot-Container als zweiter Dienst hinzugekommen. Außerdem hat der
+Apache-Container zusätzliche Volumes erhalten. Certbot und Apache teilen
+sich dabei einige der Volumes, da beide Container auf die Dateien
+zugreifen müssen.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Um nun das Zertifikat zu erhalten, muss im Certbot-Container ein
+Befehl abgesetzt werden. Dazu wird der
+<code>docker compose run</code>-Befehl genutzt:
+<code>sudo docker compose run --rm certbot certonly --webroot --webroot-path /var/www/certbot -d &lt;server.ddns-provider.de&gt;</code>
+(eigenen Domainnamen nutzen).</p>
+<p>Wurde das Zertifikat erhalten, kann es später mit folgendem Befehle
+erneuert werden: <code>docker compose run --rm certbot renew</code></p>
+</div>
+<div class="section level4">
+<h4 id="webserver-von-http-auf-https-umstellen">Webserver von HTTP auf HTTPS umstellen<a class="anchor" aria-label="anchor" href="#webserver-von-http-auf-https-umstellen"></a></h4>
+<p>Um das Zertifikat für die Sicherung des eigenen Webservers zu nutzen,
+müssen einige Konfigurationsschritte vorgenommen werden.</p>
+<ol style="list-style-type: decimal"><li><p>Apache-Konfigurationsdateien aus dem Container zum Host kopieren
+(bei laufendem Container): `sudo docker cp
+apache-docker:/usr/local/apache2/conf apache2/</p></li>
+<li><p>Wurde das Zertifikat erhalten muss in der
+<strong>Firewall</strong> Port 80 geschlossen und Port 443 geöffnet
+werden.</p></li>
+<li><p>Konfigurationsdatei für die Test-Webseite erstellen:
+<code>nano apache2/conf/webseite.conf</code></p></li>
+</ol><pre class="apacheconf"><code>&lt;VirtualHost *:80&gt;
+  DocumentRoot /usr/local/apache2/htdocs
+  ServerName  server.ddns-provider.de
+
+  RewriteEngine on
+  RewriteCond %{SERVER_NAME} =server.ddns-provider.de
+  RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+&lt;/VirtualHost&gt;
+
+&lt;VirtualHost *:443&gt;
+  DocumentRoot /usr/local/apache2/htdocs
+  ServerName  server.ddns-provider.de
+  SSLCertificateFile /usr/local/apache2/ssl/live/server.ddns-provider.de/fullchain.pem
+  SSLCertificateKeyFile /usr/local/apache2/ssl/live/server.ddns-provider.de/privkey.pem
+&lt;/VirtualHost&gt;</code></pre>
+<ol start="4" style="list-style-type: decimal"><li>Angepasste Apache-Konfiguration über die compose.yaml Datei
+einbinden:</li>
+</ol><div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="at">  </span><span class="fu">apache</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">    #... wie gehabt</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">    #Beispiel-Internetseite</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./website:/usr/local/apache2/htdocs</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">    #Webinhalte für certbot challenge</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/usr/local/apache2/htdocs:ro</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">    #Zertifikate</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf:/usr/local/apache2/ssl:ro</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">    #Konfiguration</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./apache2/conf/:/usr/local/apache2/conf/</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">    #...wie gehabt</span></span></code></pre>
+</div>
+<ol start="5" style="list-style-type: decimal"><li><p>Das gesamte Compose-Projekt starten:
+<code>sudo docker compose up -d</code></p></li>
+<li><p>Überprüfen mit <code>sudo docker compose logs</code> und im
+Webbrowser am Endgerät durch Eingabe der eigenen Domain.</p></li>
+<li><p>Ggf. stoppen mit <code>sudo docker compose down</code></p></li>
+</ol><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <span class="callout-header">Hauptpunkte</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>
-</li></ul></div>
+<ul><li><p>Webserver sind die Kommunikationszentrale zwischen Client und
+Webapplikation</p></li>
+<li><p>Um den Webserver per Domain zu erreichen, kann bei einem
+DDNS-Dienst eine dynamische Domain beantragt werden</p></li>
+<li><p>Zur Absicherung der Kommunikation zwischen Server und Client muss
+ein TLS-Zertifikat beantragt und eingerichtet werden</p></li>
+<li><p>Mit Docker Compose kann der Apache-Webserver zusammen mit Certbot
+für das HTTPS-Protokoll eingerichtet werden</p></li>
+</ul></div>
 </div>
 </div>
 <!--
@@ -567,10 +879,11 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
+</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Vorheriges und nächstes Kapitel"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="07-docker-compose.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Zurück</a>
-        <a class="chapter-link float-end" href="index.html">Weiter<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="09-proxy-docker-compose.html">Weiter<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -578,8 +891,8 @@ any links that you are not going to use.
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Zurück: Docker compose
         </a>
-        <a class="chapter-link float-end" href="index.html" rel="next">
-          Startseite
+        <a class="chapter-link float-end" href="09-proxy-docker-compose.html" rel="next">
+          Weiter: 09_proxy-docker-comp...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
