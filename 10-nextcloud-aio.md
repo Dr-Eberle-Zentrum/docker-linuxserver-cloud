@@ -70,7 +70,13 @@ Hat man eine compose.yaml-Datei erstellt müssen, müssen ggf. lokale Ordner und
 
 ## Nextcloud All-in-One
 
-Installieren Sie einen Nextlcoud-Server mit Hilfe des Nextcloud All-in-One Images. Nutzen Sie dabei den NGINX-Proxy-Manager als Reverse Proxy.
+Installieren Sie einen Nextlcoud-Server mit Hilfe des Nextcloud All-in-One Images. Nutzen Sie dabei den NGINX Proxy Manager als Reverse Proxy.
+
+
+::::::solution
+
+Nach erfolgreicher Installation erreichen Sie Nextcloud AIO im Webbrowser unter der URL, die Sie im NGINX Proxy Manager hinterlegt haben.
+::::::
 
 :::
 
