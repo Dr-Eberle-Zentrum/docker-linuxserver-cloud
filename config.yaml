@@ -76,6 +76,7 @@ episodes:
 - 09-proxy-docker-compose.Rmd
 - 10-nextcloud-aio.Rmd
 - 11-nextcloud-aio-konfiuguration.Rmd
+- 12-joplin.Rmd
 
 # Information for Learners
 learners: 
