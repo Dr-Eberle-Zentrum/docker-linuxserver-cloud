@@ -77,6 +77,7 @@ episodes:
 - 10-nextcloud-aio.Rmd
 - 11-nextcloud-aio-konfiuguration.Rmd
 - 12-joplin.Rmd
+- 13-mehr-docker.Rmd
 
 # Information for Learners
 learners: 
