@@ -174,13 +174,14 @@ Die Wochen laufen i.d.R. wie folgt ab:
 
 1. Sie arbeiten das Selbstlernmaterial auf [Github][github] durch
 
+<!-- macht wegen KI keinen Sinn mehr
+
 2. Sie absolvieren auf [ILIAS][ilias] den Test zum Selbstlernmaterial
+-->
 
-3. Sie setzen die Arbeitsschritte selbstständig auf Ihrem Server um. Dazu können Sie (online oder in Präsenz) zum Übungstermin kommen.
+2. Sie setzen die Arbeitsschritte selbstständig auf Ihrem Server um. Dazu können Sie (online oder in Präsenz) zum Übungstermin kommen.
 
-### Gruppenarbeit
-
-Um die praktische Umsetzung des Projekts zu erleichtern, werden im Kurs Gruppen gebildet. Nutzen Sie diese Gruppen, um Fragen zu klären, das praktische Vorgehen gemeinsam zu planen und bei Problemen gemeinsam nach Lösungen zu suchen.
+3. Sie kommen am Ende jeder Studieneinheit (3x pro Semester) zu einem Gespräch Vertiefungsgespräch
 
 ### Leistungsnachweis
 
@@ -192,13 +193,13 @@ Um die praktische Umsetzung des Projekts zu erleichtern, werden im Kurs Gruppen 
 
   - wöchentliche Bearbeitung der Lernmaterialien
 
-  - wöchentlicher Test auf [ILIAS][ilias]
-  
   - selbstständige Konfiguration eines Cloud-Servers
+  
+  - 3 Vertiefungsgespräche im Semester
   
   - Verfassen eines Abschlussberichts (ca. 3-4 Seiten)
   
-- Der Workload beträgt entsprechend 3 ECTS ca. 90 Stunden im Semester. Davon entfallen ca. 21 Stunden auf die Übungen, 9 Stunden auf den Abschlussbericht und 60 Stunden auf die Vor- und Nachbereitung der Sitzungen inkl. den Tests D.h. pro Woche müssen Sie während der Vorlesungszeit durchschnittlich ca. 4,3 Stunden Arbeitszeit zusätzlich zu den Übungssitzungen einplanen.
+- Der Workload beträgt entsprechend 3 ECTS ca. 90 Stunden im Semester. Davon entfallen ca. 21 Stunden auf die Übungen, 9 Stunden auf den Abschlussbericht und 60 Stunden auf die Vor- und Nachbereitung der Sitzungen inkl. den Vertiefungsgesprächen. D.h. pro Woche müssen Sie während der Vorlesungszeit durchschnittlich ca. 4,3 Stunden Arbeitszeit zusätzlich zu den Übungssitzungen einplanen.
 
 **Mehr Informationen folgen in der ersten Präsenzsitzung.**
 
