@@ -7,12 +7,12 @@ any links that you are not going to use.
 [r-markdown]: https://rmarkdown.rstudio.com/
 [rstudio]: https://www.rstudio.com/
 [carpentries-workbench]: https://carpentries.github.io/sandpaper-docs/
-[guacamole]: https://pool.kep2.uni-tuebingen.de/
+[guacamole]: https://pool.dh-center.uni-tuebingen.de/
 [github]: https://dr-eberle-zentrum.github.io/docker-linuxserver-cloud/
 [ilias]: https://ovidius.uni-tuebingen.de/
 [nextcloud]: https://nextcloud.com
 [nextcloud-doc]: https://docs.nextcloud.com/server/latest/admin_manual/
-[proxmox]: https://pxe.kep2.uni-tuebingen.de/
+[proxmox]: https://pool.dh-center.uni-tuebingen.de/
 [docker-doc]: https://docs.docker.com/manuals/
 [npm-doc]: https://nginxproxymanager.com/guide/
 [Ubuntu]: https://ubuntu.com/server
