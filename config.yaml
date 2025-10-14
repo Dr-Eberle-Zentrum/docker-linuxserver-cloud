@@ -27,7 +27,7 @@ keywords: 'Nextcloud, Self-hosted, Docker, Linux, Webserver, HTTPS'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'alpha'
+life_cycle: 'beta'
 
 # License of the lesson materials (recommended CC-BY 4.0)
 license: 'CC-BY 4.0'
@@ -64,7 +64,7 @@ contact: 'david.kirschenheuter@uni-tuebingen.de'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
+episodes:
 - 01_vorbesprechung.Rmd
 - 02_betriebssystem-und-linuxgrundlagen.Rmd
 - 03-remote-access.Rmd
@@ -80,13 +80,13 @@ episodes:
 - 13-mehr-docker.Rmd
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #
