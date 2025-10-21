@@ -12,7 +12,7 @@ any links that you are not going to use.
 [ilias]: https://ovidius.uni-tuebingen.de/
 [nextcloud]: https://nextcloud.com
 [nextcloud-doc]: https://docs.nextcloud.com/server/latest/admin_manual/
-[proxmox]: https://pool.dh-center.uni-tuebingen.de/
+[proxmox]: https://pool.dh-center.uni-tuebingen.de:8006/
 [docker-doc]: https://docs.docker.com/manuals/
 [npm-doc]: https://nginxproxymanager.com/guide/
 [Ubuntu]: https://ubuntu.com/server
