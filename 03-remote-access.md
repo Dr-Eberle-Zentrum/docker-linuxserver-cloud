@@ -233,6 +233,14 @@ Tip: mit Angabe des Parameters -v erhält man beim Verbingungsversuch mehr Infor
 
 ::::::
 
+## Besonderheiten zur SSH Anmeldung im Kurssetup
+
+Da die virtuellen Server nicht im Uninetzwerk erreichbar sind, sondern nur eine "virtuelle" IP-Adresse innerhalb der Proxmox-Plattform erhalten haben, sind die Server nicht direkt per SSH erreichbar.
+
+Um dennoch per SSH auf die Server zuzugreifen, wurde auf einem Proxy-Server, der einerseits eine IP-Adresse im Uni-Netzwerk hat und andererseits auch ein Adresse innerhalb der Proxmox-Plattform, eine Weiterleitung eingerichtet.
+
+Deshalb muss für den SSH-Zugriff die Verbindung zum Proxyserver (IP-Adresse: 134.2.17.196) aufgebaut werden und dieser leitet die Anfrage dann intern an die richtige Adresse weiter. Dazu muss der SSH-Befehl wie folgt angepasst werden: `ssh -o ProxyCommand="openssl s_client -quiet -connect 134.2.17.196:15101 -servername <name>-ssh" <username>@<name>-ssh -i <Pfad-zum-SSH-Key` (Dabei natürlich die Werte in `< >` jeweils anpassen).
+
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - das SSH-Protokoll erlaubt den Zugriff auf die Kommandozeile entfernter Computer
