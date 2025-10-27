@@ -445,15 +445,14 @@ FIXME: place any data you want learners to use in `episodes/data` and then use
 gestellt</p>
 </section><section><h2 class="section-heading" id="software-setup">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a></h2>
 <hr class="half-width"><div class="section level3">
-<h3 id="zugriff-auf-den-virtuellen-server">Zugriff auf den virtuellen Server<a class="anchor" aria-label="anchor" href="#zugriff-auf-den-virtuellen-server"></a></h3>
-<ul><li><p>Öffnen Sie <a href="https://pool.dh-center.uni-tuebingen.de/" class="external-link">guacamole</a></p></li>
-<li><p>Melden Sie sich mit den kursspezifischen Anmeldedaten an</p></li>
-<li><p>Verbinden Sie sich mit Ihrem persönlichen Server durch
-Doppelklicken auf die entsprechende Verbindung</p></li>
-<li><p>ACHTUNG: wenn Sie das Browserfenster schließen oder den Tab neu
-laden, geht die entfernte Sitzung verloren und Sie müssen sich neu
-anmelden</p></li>
-</ul></div>
+<h3 id="ssh-zugriff">SSH-Zugriff<a class="anchor" aria-label="anchor" href="#ssh-zugriff"></a></h3>
+<p>Angepasster SSH-Befehl:
+<code>ssh -o ProxyCommand="openssl s_client -quiet -connect 134.2.17.196:15101 -servername &lt;name&gt;-ssh" &lt;username&gt;@&lt;name&gt;-ssh -i &lt;Pfad-zum-SSH-Key</code>
+(Dabei natürlich die Werte in <code>&lt; &gt;</code> jeweils
+anpassen).</p>
+<p>Siehe dazu auch <a href="03-remote-access.html#besonderheiten-zur-ssh-anmeldung-im-kurssetup">Lektion
+3</a></p>
+</div>
 <div class="section level3">
 <h3 id="zugriff-auf-die-virtualisierungsumgebung">Zugriff auf die Virtualisierungsumgebung:<a class="anchor" aria-label="anchor" href="#zugriff-auf-die-virtualisierungsumgebung"></a></h3>
 <ul><li><p>Öffnen Sie die <a href="https://pool.dh-center.uni-tuebingen.de:8006/" class="external-link">Proxmox Web
@@ -515,8 +514,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/index.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/index.html",
   "dateCreated": "2025-08-18",
-  "dateModified": "2025-10-21",
-  "datePublished": "2025-10-21"
+  "dateModified": "2025-10-27",
+  "datePublished": "2025-10-27"
 }
 
   </script><script>
