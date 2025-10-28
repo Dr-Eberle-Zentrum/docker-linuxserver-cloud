@@ -52,26 +52,28 @@ Sie haben wie in [Sitzung 2](02_betriebssystem-und-linuxgrundlagen.Rmd) besproch
 :::solution
 1. Netzwerkverbindung: der Server muss im Netzwerk erreichbar sein. Dazu müssen entweder Server und Client im selben Netzwerk (z.B. demselben Heimnetzwerk) sein oder der Server muss im Internet erreichbar sein.
 
-2. Software: Auf dem Server muss die SSH-Server-Software installiert sein (das **Paket openssh-server**) und auf dem Client ein SSH-Client-Programm (das  OpenSSH-Client-Programm für die Kommandozeile ist i.d.R. auf allen PCs installiert. Für Windows kann auch das graphische Programm [Putty](https://putty.org/) installiert werden).
+2. Software: Auf dem Server muss die SSH-Server-Software installiert sein (das **Paket openssh-server**) und auf dem Client ein SSH-Client-Programm (das  OpenSSH-Client-Programm für die Kommandozeile ist i.d.R. auf allen PCs installiert. Für Windows kann auch das graphische Programm [Putty](https://putty.software/) installiert werden).
 
 3. Berechtigungen: die Anmeldung am entfernten Server ist nur möglich, wenn Sie die Berechtigungen dazu haben. Sie benötigen also einen Account unter Ubuntu und dessen Passwort.
 
 4. Firewall: eine Firewall am Server oder auf dem Weg dorthin muss die SSH-Verbindung zulassen
 
-5. Identifizierung: der Server muss für eine ordentliche Verbindung eindeutig identifizierbar sein. Dies geschieht durch sogenannte Host-Keys, die bei der erstmaligen Verbindung vom Server zum Client übertragen werden und manuell akzeptiert werden müssen. Ändert sich der Host-Key (z.B. nach einer Neuinstallation oder weil ein bösartiger Akteur sich als Ihr Server ausgibt) und passt nicht mehr zum ursprünglich übertragenen Key, schlägt die Verbindung fehl. Erst wenn der neue Key akzeptiert wird ist eine Verbindung wieder möglich (gespeicherte Keys finden Sie in der Datei *know_hosts.conf* im Verzeichis *.ssh* in Ihrem persönlichen Ordner).
+5. Identifizierung: der Server muss für eine ordentliche Verbindung eindeutig identifizierbar sein. Dies geschieht durch sogenannte Host-Keys, die bei der erstmaligen Verbindung vom Server zum Client übertragen werden und manuell akzeptiert werden müssen. Ändert sich der Host-Key (z.B. nach einer Neuinstallation oder weil ein bösartiger Akteur sich als Ihr Server ausgibt) und passt nicht mehr zum ursprünglich übertragenen Key, schlägt die Verbindung fehl. Erst wenn der neue Key akzeptiert wird ist eine Verbindung wieder möglich (gespeicherte Keys finden Sie in der Datei *know_hosts.conf* im Verzeichnis *.ssh* in Ihrem persönlichen Ordner).
 :::
 
 ::::::
 
 ### Grundlegender Verbindungsaufbau
 
-Wenn die Voraussetzungen stimmen (siehe [Vorraussetzungen für die SSH-Verbindung](#voraussetzung-für-die-ssh-verbindung)), kann eine einfache SSH-Verbindung mit folgendem Befehl aufgebaut werden: `ssh <user>@<server>` Dabei ist `<user>` der Username am entferten Gerät und `<server>` ist die Adresse des Servers. Die Adresse kann entweder in Form einer IP-Adresse (z.B. 192.168.178.10) oder als Hostname (z.B. mein-cloudserver) angegeben werden. Die Variante mit dem Hostnamen funktioniert jedoch nur, wenn dieser im lokalen Netzwerk bekannt ist (z.B. in einem Heimnetzwerk im Router eingezeigt wird).
+Wenn die Voraussetzungen stimmen (siehe [Vorraussetzungen für die SSH-Verbindung](#voraussetzung-für-die-ssh-verbindung)), kann eine einfache SSH-Verbindung mit folgendem Befehl aufgebaut werden: `ssh <user>@<server>` Dabei ist `<user>` der Username am entfernten Gerät und `<server>` ist die Adresse des Servers. Die Adresse kann entweder in Form einer IP-Adresse (z.B. 192.168.178.10), als URL (z.B. mein-cloudserver.domain.de) oder als Hostname (z.B. mein-cloudserver) angegeben werden. Die Variante mit dem Hostnamen funktioniert jedoch nur, wenn dieser im lokalen Netzwerk bekannt ist (z.B. in einem Heimnetzwerk im Router angezeigt wird).
 
 ::: callout
 
 ### SSH-Verbindung
 
 - So bauen Sie eine einfache SSH-Verbindung auf: **`ssh <user>@<server>`**
+
+  - dabei ggf. die [besonderen Bedingungen im Kurssetup beachten](#besonderheiten-zur-ssh-anmeldung-im-kurssetup)
 
 :::
 
@@ -93,7 +95,7 @@ Aufgrund der komplexen kryptographischen Struktur der Schlüssel sind diese deut
 
 Für eine sichere SSH-Verbindung empfiehlt es sich, auf Passwörter zu verzichten und sich stattdessen mit einem Schlüsselpaar zu authentifizieren.
 
-Ist ein Schlüsselpaar erzeugt, erfolgt die Verbindung wie folgt: `ssh <user>@<server> -i <Pfad-zum-privaten-schlüssel>`. Mit dem Befehlsparameter *-i* wird der Pfad zum privaten Schlüssel am Client angegeben.
+Ist ein Schlüsselpaar erzeugt, erfolgt die Verbindung wie folgt: `ssh <user>@<server> -i <Pfad-zum-privaten-schlüssel>`. Mit dem Befehlsparameter *-i* wird der Pfad zum privaten Schlüssel am Client angegeben (Achtung: für die Kursumgebung die [besonderen Bedingungen im Kurssetup](#besonderheiten-zur-ssh-anmeldung-im-kurssetup) beachten).
 
 Mehr zur Schlüsselauthenfikation finden Sie z.B. bei [ManageEngine](https://www.manageengine.com/key-manager/information-center/what-is-ssh-key-management.html) (hier v.a. die ersten drei Absätze).
 
@@ -146,17 +148,23 @@ SSH-Verbindung verlassen: `exit`
 
 SSH-Verbindung mit privatem Schlüssel testen: `ssh <username>@<server> -i .ssh\<privater-schlüssel>`
 
+Achtung: sowohl der `scp`- als auch der `ssh`-Befehl müssen an die [besonderen Bedingungen im Kurssetup](#besonderheiten-zur-ssh-anmeldung-im-kurssetup) angepasst werden.
+
 ### Mac
 
 Mit macOS kann das Programm *ssh-copy-id* genutzt werden: `ssh-copy-id -i <öffentlicher-schlüssel.pub> <username>@<server>`
 
 SSH-Verbindung mit privatem Schlüssel testen: `ssh <username>@<server> -i .ssh/<privater-schlüssel>`
 
+Achtung: `ssh-copy-id`-Befehl muss an die [besonderen Bedingungen im Kurssetup](#besonderheiten-zur-ssh-anmeldung-im-kurssetup) angepasst werden.
+
 ### Linux
 
 Mit Linux kann das Programm *ssh-copy-id* genutzt werden: `ssh-copy-id -i <öffentlicher-schlüssel.pub> <username>@<server>`
 
 SSH-Verbindung mit privatem Schlüssel testen: `ssh <username>@<server> -i .ssh/<privater-schlüssel>`
+
+Achtung: `ssh-copy-id`-Befehl muss an die [besonderen Bedingungen im Kurssetup](#besonderheiten-zur-ssh-anmeldung-im-kurssetup) angepasst werden.
 
 :::
 
@@ -187,11 +195,11 @@ UsePAM no
 
 - Abmeldung bei Inaktivität: `ClientAliveInterval 300` und `ClientAliveCountMax 0`
 
-Nach Änderungen an der Konfiguration eines Programms muss dieses in der Regel **neu gestartet** werden, um die neue Konfiguration zu übernehmen. Dies geschieht für den SSH-Server mit dem Befehl `sudo systemctl restart sshd.service` (siehe dazu auch das [Callout zu systemd](#programme-mit-systemd-steuern))
+Nach Änderungen an der Konfiguration eines Programms muss dieses in der Regel **neu gestartet** werden, um die neue Konfiguration zu übernehmen. Dies geschieht für den SSH-Server mit dem Befehl `sudo systemctl restart ssh.service` (siehe dazu auch das [Callout zu systemd](#programme-mit-systemd-steuern))
 
 Weitere Anpassungen des SSH-Servers sind je nach eigenem Sicherheitsbedürfnis möglich. Z.B. finden sich bei [cyberciti.biz](https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html) einige weitere Möglichkeiten.
 
-Möchte man sich nun per SSH anmelden, müssen die vorgenommenen Änderungen berücksichtigt werden. V.a. muss die geänderte Portnummer angegeben werden: `ssh -p <Portnummer> -i <Pfad-zum-privaten-Schlüssel> <user>@<server>`
+Möchte man sich nun per SSH anmelden, müssen die vorgenommenen Änderungen berücksichtigt werden. V.a. muss die geänderte Portnummer angegeben werden: `ssh -p <Portnummer> -i <Pfad-zum-privaten-Schlüssel> <user>@<server>` (Achtung: für die Kursumgebung die [besonderen Bedingungen im Kurssetup](#besonderheiten-zur-ssh-anmeldung-im-kurssetup) beachten).
 
 :::callout
 ### Programme mit systemd Steuern
