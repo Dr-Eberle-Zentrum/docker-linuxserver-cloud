@@ -1,5 +1,5 @@
 ---
-title: 'Remote Access: das SSH-Protokoll.rmd'
+title: 'Remote Access: das SSH-Protokoll'
 teaching: 45
 exercises: 45
 ---

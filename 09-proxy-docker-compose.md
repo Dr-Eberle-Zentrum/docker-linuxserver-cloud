@@ -1,5 +1,5 @@
 ---
-title: '09_proxy-docker-compose'
+title: 'Proxysrever mit docker compose'
 teaching: 45
 exercises: 90
 ---
