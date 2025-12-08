@@ -60,11 +60,11 @@ Für den NGINX-Webserver existiert mit dem [NGINX-Proxy-Manager](https://nginxpr
 
 4. Starten Sie das Projekt: `sudo docker compose up -d
 
-5. Öffnen Sie im Webbrowser den NGINX-Proxy-Manager mit der URL: http://server.ddns-provider.de:81
+5. Öffnen Sie im Webbrowser den NGINX-Proxy-Manager mit der URL: `http://server.ddns-provider.de:81`
 
 :::challenge
 
-Was bedeutet die angehängte Nummer in der URL http://server.ddns-provider.de:81 und warum ist sie wichtig?
+Was bedeutet die angehängte Nummer in der URL `http://server.ddns-provider.de:81` und warum ist sie wichtig?
 
 ::::::solution
 
