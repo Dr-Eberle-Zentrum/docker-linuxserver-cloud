@@ -214,22 +214,20 @@ Im Folgenden eine Möglichkeit, in welcher das Program certbot als zweiter Conta
 
 ```YAML
 services:
-  apache:
-    image: httpd:latest
-    container_name: apache
-    ports:
-    - '80:80'
-    - '443:443'
-    volumes:
-    #Beispiel-Internetseite
-    - ./website:/usr/local/apache2/htdocs
-    #Webinhalte für certbot challenge
-      - ./certbot/www:/usr/local/apache2/htdocs:ro
-    #Zertifikate
-      - ./certbot/conf:/usr/local/apache2/ssl:ro
-    networks:
-      - apache-net
-  certbot:
+   apache:
+      image: httpd:latest
+      container_name: apache
+      ports:
+         - "80:80"
+         - "443:443"
+      volumes:
+      #Webinhalte für certbot challenge
+      - ./certbot/www:/usr/local/apache2/htdocs
+      #Beispiel-Internetseite
+      - ./website/index.html:/usr/local/apache2/htdocs/index.html
+      networks:
+      - webapp
+   certbot:
     container_name: apache-certbot
     image: certbot/certbot:latest
     volumes:
@@ -237,12 +235,13 @@ services:
       - ./certbot/conf:/etc/letsencrypt:rw
       - ./certbot/log:/var/log/letsencrypt:rw
     networks:
-      - apache-net
+      - webapp
 
 networks:
-  apache-net:
-    name: apache-net
+  webapp:
+    name: webapp
     external: true
+
 ```
 
 :::challenge
@@ -254,7 +253,7 @@ Im Unterschied zum ersten einfachen Beispiel, ist in diesem Projekt der certbot-
 
 :::
 
-Um nun das Zertifikat zu erhalten, muss im Certbot-Container ein Befehl abgesetzt werden. Dazu wird der `docker compose run`-Befehl genutzt: `sudo docker compose run --rm certbot certonly --webroot --webroot-path /var/www/certbot -d <server.ddns-provider.de>` (eigenen Domainnamen nutzen).
+Um nun das Zertifikat zu erhalten, muss im Certbot-Container ein Befehl abgesetzt werden. Dazu wird der `docker compose run`-Befehl genutzt: `sudo docker compose run --rm certbot certonly --webroot --webroot-path /var/www/certbot -d <server.ddns-provider.de> --dry-run` (eigenen Domainnamen nutzen). Hierbei wird die Zertifikatsausstellung simuliert. Verläuft der Prozess erfolgreich (Rückmeldung `The dry run was successful.`), wird der Parameter `--dry-run` weggelassen, um die Ausstellung auszuführen.
 
 Wurde das Zertifikat erhalten, kann es später mit folgendem Befehle erneuert werden: `docker compose run --rm certbot renew`
 
@@ -262,28 +261,41 @@ Wurde das Zertifikat erhalten, kann es später mit folgendem Befehle erneuert we
 
 Um das Zertifikat für die Sicherung des eigenen Webservers zu nutzen, müssen einige Konfigurationsschritte vorgenommen werden.
 
-1. Apache-Konfigurationsdateien aus dem Container zum Host kopieren (bei laufendem Container): `sudo docker cp apache-docker:/usr/local/apache2/conf apache2/
+1. Apache-Konfigurationsdateien aus dem Container zum Host kopieren (bei laufendem Container): `sudo docker cp apache:/usr/local/apache2/conf apache-conf/`
 
-2. Wurde das Zertifikat erhalten muss in der **Firewall** Port 80 geschlossen und Port 443 geöffnet werden.
+2. Wurde das Zertifikat erhalten muss ggf. in der **Firewall** Port 80 geschlossen und Port 443 geöffnet werden. Im Falle von Docker-Container, wird die UFW-Firewall standardmäßig umgangen, weshalb die Ports nicht explizit geöffnet werden müssen.
 
-3. Konfigurationsdatei für die Test-Webseite erstellen: `nano apache2/conf/webseite.conf`
+3. Konfigurationsdatei für die Test-Webseite erstellen: `sudo nano apache-conf/webseite.conf`
 
 ```apacheconf
 <VirtualHost *:80>
   DocumentRoot /usr/local/apache2/htdocs
-  ServerName  server.ddns-provider.de
+  ServerName <ddns-domain>
 
   RewriteEngine on
-  RewriteCond %{SERVER_NAME} =server.ddns-provider.de
+  RewriteCond %{SERVER_NAME} =<ddns-domain>
   RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
 </VirtualHost>
 
+#SSL-Einstellungen (siehe auch apache-conf/extra/httpd-ssl.conf)
+Listen 443
+SSLSessionCache        "shmcb:/usr/local/apache2/logs/ssl_scache(512000)"
+SSLSessionCacheTimeout  300
+SSLCipherSuite HIGH:MEDIUM:!MD5:!RC4:!3DES
+SSLProxyCipherSuite HIGH:MEDIUM:!MD5:!RC4:!3DES
+SSLHonorCipherOrder on
+SSLProtocol all -SSLv3
+SSLProxyProtocol all -SSLv3
+SSLPassPhraseDialog  builtin
+
 <VirtualHost *:443>
+  SSLEngine on
   DocumentRoot /usr/local/apache2/htdocs
-  ServerName  server.ddns-provider.de
-  SSLCertificateFile /usr/local/apache2/ssl/live/server.ddns-provider.de/fullchain.pem
-  SSLCertificateKeyFile /usr/local/apache2/ssl/live/server.ddns-provider.de/privkey.pem
+  ServerName <ddns-domain>
+  SSLCertificateFile /usr/local/apache2/server.crt
+  SSLCertificateKeyFile /usr/local/apache2/server.key
 </VirtualHost>
+
 ```
 
 4. Angepasste Apache-Konfiguration über die compose.yaml Datei einbinden:
@@ -293,18 +305,35 @@ services:
   apache:
     #... wie gehabt
     volumes:
-    #Beispiel-Internetseite
-    - ./website:/usr/local/apache2/htdocs
     #Webinhalte für certbot challenge
       - ./certbot/www:/usr/local/apache2/htdocs:ro
-    #Zertifikate
-      - ./certbot/conf:/usr/local/apache2/ssl:ro
+    #Zertifikat und Key
+      - ./certbot/conf/live/<ddns-domain>/cert.pem:/usr/local/apache2/server.crt:ro
+      - ./certbot/conf/live/<ddns-domain>/privkey.pem:/usr/local/apache2/server.key:ro
+    #Beispiel-Internetseite
+    - ./website/indey.html:/usr/local/apache2/htdocs/index.html
     #Konfiguration
-      - ./apache2/conf/:/usr/local/apache2/conf/
+      - ./apache-conf/:/usr/local/apache2/conf
     #...wie gehabt
 ```
+5. Apache-Konfiguration anpassen: `sudo nano apache-conf/httpd.conf`
 
-5. Das gesamte Compose-Projekt starten: `sudo docker compose up -d`
+```apache-conf
+#...
+#SSL-Modul aktivieren
+LoadModule ssl_module modules/mod_ssl.so
+#...
+#Rewrite-Modul aktivieren
+LoadModule rewrite_module modules/mod_rewrite.so
+#...
+#Socache aktivieren
+LoadModule socache_shmcb_module modules/mod_socache_shmcb.so
+#...
+#Neue Zeile ergänzen
+Include conf/webseite.conf
+```
+
+5. Das gesamte Compose-Projekt stoppen und wieder starten: `sudo docker compose down && sudo docker compose up -d`
 
 6. Überprüfen mit `sudo docker compose logs` und im Webbrowser am Endgerät durch Eingabe der eigenen Domain.
 
