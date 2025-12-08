@@ -195,7 +195,7 @@ UsePAM no
 
 - Abmeldung bei Inaktivität: `ClientAliveInterval 300` und `ClientAliveCountMax 0`
 
-Nach Änderungen an der Konfiguration eines Programms muss dieses in der Regel **neu gestartet** werden, um die neue Konfiguration zu übernehmen. Dies geschieht für den SSH-Server mit dem Befehl `sudo systemctl restart ssh.service` (siehe dazu auch das [Callout zu systemd](#programme-mit-systemd-steuern))
+Nach Änderungen an der Konfiguration eines Programms muss dieses in der Regel **neu gestartet** werden, um die neue Konfiguration zu übernehmen. Dies geschieht für den SSH-Server mit den Befehlen `sudo systemctl daemon-reload` und `sudo systemctl restart ssh.service` (siehe dazu auch das [Callout zu systemd](#programme-mit-systemd-steuern))
 
 Weitere Anpassungen des SSH-Servers sind je nach eigenem Sicherheitsbedürfnis möglich. Z.B. finden sich bei [cyberciti.biz](https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html) einige weitere Möglichkeiten.
 
