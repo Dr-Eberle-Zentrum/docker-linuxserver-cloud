@@ -75,7 +75,53 @@ Installieren Sie einen Nextlcoud-Server mit Hilfe des Nextcloud All-in-One Image
 
 ::::::solution
 
-Nach erfolgreicher Installation erreichen Sie Nextcloud AIO im Webbrowser unter der URL, die Sie im NGINX Proxy Manager hinterlegt haben.
+Ergänzend zu den oben verlinkten Materialien ist folgendes zu beachten:
+
+1. Es werden **drei** Domains benötigt: 1. für NGINX-Proxy-Manager, zweiters für den Nextcloud Mastercontainer, 3. für Nextcloud selbst.
+
+  1. eine Domain muss weiterleiten an https://nextcloud-aio-mastercontainer:8080
+
+  2. eine Domain muss während der Installation weiterleiten an http://nextcloud-aio-domaincheck:11000 und anschließend an http://nextcloud-aio-apache:11000
+
+![Proxy Hosts für die Installation](fig/12_hosts_installation.png){alt='Proxy Hosts für die Installation in NPM'}
+
+![Proxy Hosts nach der Installation](fig/12_hosts_nach_installation.png){alt='Proxy Hosts nach der Installation in NPM'}
+
+2. NGINX-Proxy-Manager muss in das Docker-Netzwerk nextcloud-aio integriert werden
+
+3. Bei der Installation sollten alle optionalen Container abgewählt werden (der Speicherplatz auf den virtuellen Computern ist limitiert)
+
+![AIO-Installation: nur essentielle Container](fig/12_aio_container.png){alt='Benötigte Docker Container'}
+
+4. Die Compose-Datei kann wie folgt angepasst und ggf. noch entsprechend den eigenen Bedürfnisse geändert werden:
+
+```yaml
+services:
+  nextcloud-aio-mastercontainer:
+    image: ghcr.io/nextcloud-releases/all-in-one:latest 
+    init: true 
+    restart: always 
+    container_name: nextcloud-aio-mastercontainer 
+    volumes:
+      - nextcloud_aio_mastercontainer:/mnt/docker-aio-config 
+      - /var/run/docker.sock:/var/run/docker.sock:ro 
+    networks: ["nextcloud-aio"]
+    ports:
+      - 8080:8080
+    environment: 
+      APACHE_PORT: 11000 
+      APACHE_IP_BINDING:  127.0.0.1 
+
+volumes:
+  nextcloud_aio_mastercontainer:
+   name: nextcloud_aio_mastercontainer 
+
+networks:
+   nextcloud-aio:
+     name: nextcloud-aio
+     external: true
+
+```
 ::::::
 
 :::
