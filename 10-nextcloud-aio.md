@@ -122,6 +122,8 @@ networks:
      external: true
 
 ```
+
+5. die bei der Installation angezeigten **Passwörter** für den mastercontainer und den admin-Account unbedingt **notieren**!
 ::::::
 
 :::
