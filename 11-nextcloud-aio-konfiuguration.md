@@ -136,7 +136,11 @@ Die Sicherungen können zunächst auf einer zweiten Festplatte, die im Server ei
 
 #### Nextcloud AIO Backup-Funktion
 
-In Nextcloud AIO ist bereits eine [Backup-Programm](https://github.com/nextcloud/all-in-one?tab=readme-ov-file#backup) enthalten. Dieses muss jedoch zu Beginn konfiguriert werden. Da es auf dem weit verbreiteten Backup-Programm BorgBackup basiert, kann das Backup entweder auf einen lokalen Datenträger (lokales BorgBackup-Repository) erstellt werden. Oder auf einem entfernten Computer wird eine BorgBackup-Repository manuell erstellt und dieses Remote-Repository wird als Backup-Destination gewählt. Für die Grundlagen können die oben verlinkten Hinweise bezüglich Backup in AIO genutzt werden. Wer mehr Informationen zur Nutzung von BorgBackup benötigt (z.B. um ein Remote-Repositiory zu erstellen), kann sich direkt bei [BorgBackup](https://borgbackup.readthedocs.io/en/1.4-maint/) informieren. Mit [Vorta](https://vorta.borgbase.com/) existiert für Desktop-Betriebssysteme (Linux und MacOS) auch eine graphische Oberfläche.
+In Nextcloud AIO ist bereits eine [Backup-Programm](https://github.com/nextcloud/all-in-one?tab=readme-ov-file#backup) enthalten. Dieses muss jedoch zu Beginn konfiguriert werden. Da es auf dem weit verbreiteten Backup-Programm BorgBackup basiert, kann das Backup entweder auf einen lokalen Datenträger (lokales BorgBackup-Repository) erstellt werden. Oder auf einem entfernten Computer wird ein BorgBackup-Repository manuell erstellt und dieses Remote-Repository wird als Backup-Destination gewählt. Für die Grundlagen können die oben verlinkten Hinweise bezüglich Backup in AIO genutzt werden. Wer mehr Informationen zur Nutzung von BorgBackup benötigt (z.B. um ein Remote-Repositiory zu erstellen), kann sich direkt bei [BorgBackup](https://borgbackup.readthedocs.io/en/1.4-maint/) informieren. Mit [Vorta](https://vorta.borgbase.com/) existiert für Desktop-Betriebssysteme (Linux und MacOS) auch eine graphische Oberfläche.
+
+#### Externe Speicher
+
+Sinnvolerweise wird das Backup nicht auf demselben Datenträger wie die Nextcloud gespeichert. Um einen weiteren Datenträger im Linux-System einzubinden, müssen ein paar Schritte durchgeführt werden. Diese finden Sie in den Lernmaterialien des Kurses zu [Self-Hosted Datamanagemtn](https://dr-eberle-zentrum.github.io/self-hosted-datamanagement/07-installationsvorbereitung-1.html#externer-speicher) beschrieben.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
