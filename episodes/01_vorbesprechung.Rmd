@@ -179,9 +179,9 @@ Die Wochen laufen i.d.R. wie folgt ab:
 2. Sie absolvieren auf [ILIAS][ilias] den Test zum Selbstlernmaterial
 -->
 
-2. Sie setzen die Arbeitsschritte selbstständig auf Ihrem Server um. Dazu können Sie (online oder in Präsenz) zum Übungstermin kommen.
+2. Sie setzen die Arbeitsschritte selbstständig auf Ihrem Server um. Dazu können Sie zum Übungstermin kommen.
 
-3. Sie kommen am Ende jeder Studieneinheit (3x pro Semester) zu einem Gespräch Vertiefungsgespräch
+3. Sie kommen am Ende jeder Studieneinheit (3x pro Semester) zu einem Vertiefungsgespräch
 
 ### Leistungsnachweis
 
@@ -207,7 +207,7 @@ Die Wochen laufen i.d.R. wie folgt ab:
 
 - Die eigene Cloud schützt die Privatsphäre und reduziert die Abhängigkeit von großen Monopolisten
 - Der Kurs begleitet Sie vom Linux Betriebssystem über die Grundkonfiguration des Servers bis hin zur Installation und Konfiguration des eigenen Cloudservers im Docker Container
-- Sie müssen jede Woche Selbstlernmaterial durcharbeiten, auf ILIAS einen Test durchführen und die praktischen Aufgaben absolvieren
+- Sie müssen jede Woche Selbstlernmaterial durcharbeiten und die praktischen Aufgaben absolvieren
 - Am Ende des Kurses müssen Sie noch einen Abschlussbericht verfassen
 - Für den Kurs erhalten Sie 3 ECTS-Punkte
 
