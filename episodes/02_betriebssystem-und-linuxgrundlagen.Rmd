@@ -67,7 +67,7 @@ Welche Hardware wählen Sie dafür? Schauen Sie sich dafür die [System requirem
 
 3. [Odroid H4 Ultra](https://www.hardkernel.com/shop/odroid-h4-ultra/) mit einer [2 TB SSD-Festplatte](https://geizhals.de/crucial-p310-ssd-2tb-ct2000p310ssd2-a3234426.html?hloc=at&hloc=de)
 
-4. Einen Tower Server [Intel RI1104-SMXEH Serie](https://www.thomas-krenn.com/de/produkte/rack-server/1he-server/intel-single-cpu/1he-intel-single-cpu-ri1104-smxeh-server)
+4. Einen Tower Server [Intel RI1104-SMXEH Serie](https://www.thomas-krenn.com/de/produkte/rack-server/1he-server/intel-single-cpu/1he-intel-single-cpu-ri1104-smxeh-server-1)
 
 :::solution
 Die genauen Hardwareanforderungen sind (v.a. am Anfang des Projekts und ohne Vorkenntnisse) schwer abzuschätzen. Geeignete Lösungen können aber die Nummern 2. und 3. sein. Die Nummer 4 wäre überdimensioniert und mit der Nummer 1. kommt das System an seine Grenzen. Auch der Raspberry Pi 5 ist für 10 Personen vermutlich zu schwach. Das hängt aber stark von der Art und der Intensivität der Nutzung ab.
@@ -166,7 +166,7 @@ Das Verzeichnis `/proc/` enthält Informationen über laufende Prozesse und Syst
 
 - Weitere Quellen
 
-Mehr zur Verzeichnisstruktur von Linux findet sich z.B. bei [Ubuntuusers](https://wiki.ubuntuusers.de/Verzeichnisstruktur/) oder bei der Tuxacademy im Handbuch zur [Linux-Essentials-Zertifizierung](https://www.tuxcademy.org/product/lxes/) auf den Seiten 146-154.
+Mehr zur Verzeichnisstruktur von Linux findet sich z.B. bei [Ubuntuusers](https://wiki.ubuntuusers.de/Verzeichnisstruktur/).
 
 #### Softwareverwaltung
 
