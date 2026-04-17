@@ -269,7 +269,7 @@
       </button>
     </div><!--/div.accordion-header-->
 
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#docker-run-versus-docker-compose"><code>docker run</code> versus <code>docker compose</code></a></li>
         </ul></div><!--/div.accordion-body-->
@@ -390,7 +390,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Docker compose</h1>
-        <p>Zuletzt aktualisiert am 2026-04-14 |
+        <p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/07-docker-compose.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -496,11 +496,11 @@ enthalten:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> &lt;image&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="at">  </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> 80:80</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> 443:443</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> &lt;image&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="at">  </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="at">    </span><span class="kw">-</span><span class="at"> 80:80</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="at">    </span><span class="kw">-</span><span class="at"> 443:443</span></span></code></pre>
 </div>
 <p>Dieser Auszug einer compose-Datei zeigt die “ports”-Map mit zwei
 Listeneinträgen. Der entsprechende <code>docker run</code>-Befehl würde
@@ -541,21 +541,21 @@ folgt aussehen:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="at">  </span><span class="fu">frontend</span><span class="kw">:</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> nginx:latest</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"80:80"</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> web</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> NGINX_PORT=80</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./html:/usr/share/nginx/html</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> web</span></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="at">    </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="at">  </span><span class="fu">frontend</span><span class="kw">:</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> nginx:latest</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"80:80"</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1" aria-label="code-block-2-7"></a><span class="at">      </span><span class="kw">-</span><span class="at"> web</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1" aria-label="code-block-2-8"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1" aria-label="code-block-2-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> NGINX_PORT=80</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1" aria-label="code-block-2-10"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1" aria-label="code-block-2-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./html:/usr/share/nginx/html</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1" aria-label="code-block-2-12"></a><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1" aria-label="code-block-2-13"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1" aria-label="code-block-2-14"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> web</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1" aria-label="code-block-2-15"></a><span class="at">    </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
 </div>
 <p>In diesem Beispiel definiert die <code>compose.yaml</code>-Datei
 einen Service namens <code>frontend</code>, der auf einem Nginx-Image
@@ -597,26 +597,26 @@ jedoch für beide Services erklärt werden.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">'3'</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> web-app</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5000:5000"</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_USER=db_user</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_PASSWORD=db_password</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_HOST=db</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_NAME=my_db</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="at">    </span><span class="fu">depends_on</span><span class="kw">:</span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> db</span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="at">  </span><span class="fu">db</span><span class="kw">:</span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> mariadb</span></span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_USER=db_user</span></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_PASSWORD=db_password</span></span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_DATABASE=my_db</span></span>
-<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_ROOT_PASSWORD=root_password</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">'3'</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> web-app</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5000:5000"</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1" aria-label="code-block-3-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_USER=db_user</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1" aria-label="code-block-3-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_PASSWORD=db_password</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1" aria-label="code-block-3-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_HOST=db</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1" aria-label="code-block-3-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_NAME=my_db</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1" aria-label="code-block-3-12"></a><span class="at">    </span><span class="fu">depends_on</span><span class="kw">:</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1" aria-label="code-block-3-13"></a><span class="at">      </span><span class="kw">-</span><span class="at"> db</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1" aria-label="code-block-3-14"></a><span class="at">  </span><span class="fu">db</span><span class="kw">:</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1" aria-label="code-block-3-15"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> mariadb</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1" aria-label="code-block-3-16"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1" aria-label="code-block-3-17"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_USER=db_user</span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1" aria-label="code-block-3-18"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_PASSWORD=db_password</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1" aria-label="code-block-3-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_DATABASE=my_db</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1" aria-label="code-block-3-20"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_ROOT_PASSWORD=root_password</span></span></code></pre>
 </div>
 <p>In diesem Beispiel gibt es zwei Dienste: <code>web</code> und
 <code>db</code>. Der <code>web</code>-Dienst verwendet das (erfundene)
@@ -648,34 +648,34 @@ gestartet wird.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="at">DATABASE_USER=db_user</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="at">DATABASE_PASSWORD=db_password</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="at">DATABASE_HOST=db</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="at">DATABASE_NAME=my_db</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="at">MYSQL_USER=db_user</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="at">MYSQL_PASSWORD=db_password</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="at">MYSQL_DATABASE=my_db</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="at">MYSQL_ROOT_PASSWORD=root_password</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="at">DATABASE_USER=db_user</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a><span class="at">DATABASE_PASSWORD=db_password</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a><span class="at">DATABASE_HOST=db</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a><span class="at">DATABASE_NAME=my_db</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a><span class="at">MYSQL_USER=db_user</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a><span class="at">MYSQL_PASSWORD=db_password</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a><span class="at">MYSQL_DATABASE=my_db</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1" aria-label="code-block-4-8"></a><span class="at">MYSQL_ROOT_PASSWORD=root_password</span></span></code></pre>
 </div>
 <p>Durch den Verweis auf diese Datei in der compose.yaml-Datei, müssen
 die Variablen nur einmal geschrieben werden:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">'3'</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> my-web-app</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5000:5000"</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="at">    </span><span class="fu">env_file</span><span class="kw">:</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> variables.env</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="at">    </span><span class="fu">depends_on</span><span class="kw">:</span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> db</span></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="at">  </span><span class="fu">db</span><span class="kw">:</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> mariadb</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="at">    </span><span class="fu">env_file</span><span class="kw">:</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> variables.env</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">'3'</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> my-web-app</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5000:5000"</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a><span class="at">    </span><span class="fu">env_file</span><span class="kw">:</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> variables.env</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a><span class="at">    </span><span class="fu">depends_on</span><span class="kw">:</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> db</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1" aria-label="code-block-5-11"></a><span class="at">  </span><span class="fu">db</span><span class="kw">:</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1" aria-label="code-block-5-12"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> mariadb</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1" aria-label="code-block-5-13"></a><span class="at">    </span><span class="fu">env_file</span><span class="kw">:</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1" aria-label="code-block-5-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> variables.env</span></span></code></pre>
 </div>
 <p>Ändert sich der Wert einer der genannten Variablen, genügt es bei
 diesem Setup, nur in der variables.env-Datei die Änderung
@@ -773,7 +773,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Vorlage lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> von <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
+        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -795,8 +795,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/07-docker-compose.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/07-docker-compose.html",
   "dateCreated": "2025-08-18",
-  "dateModified": "2026-04-14",
-  "datePublished": "2026-04-14"
+  "dateModified": "2026-04-17",
+  "datePublished": "2026-04-17"
 }
 
   </script><script>

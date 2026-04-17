@@ -451,11 +451,11 @@
         <!-- START: inst/pkgdown/templates/content-extra.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <main id="main-content" class="main-content"><div class="container lesson-content">
-        
+        <h1>Alles auf einen Blick</h1>
         
 <section id="aio-01_vorbesprechung"><p>Content from <a href="01_vorbesprechung.html">Vorbesprechung</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2026-04-14 |
+<p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/01_vorbesprechung.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 12 Minuten</p>
@@ -807,7 +807,7 @@ Haltung die Welt retten können, (Bielefeld 2024)<a href="#fnref1" class="footno
 </ol>
 </div></section><section id="aio-02_betriebssystem-und-linuxgrundlagen"><p>Content from <a href="02_betriebssystem-und-linuxgrundlagen.html">Betriebssystem und Linuxgrundlagen</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2026-04-14 |
+<p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/02_betriebssystem-und-linuxgrundlagen.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 12 Minuten</p>
@@ -1397,7 +1397,7 @@ any links that you are not going to use.
 </div>
 </div></section><section id="aio-03-remote-access"><p>Content from <a href="03-remote-access.html">Remote Access: das SSH-Protokoll</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2026-04-14 |
+<p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/03-remote-access.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 90 Minuten</p>
@@ -1509,7 +1509,7 @@ die Bedingungen für eine erfolgreiche SSH-Verbindung?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Netzwerkverbindung: der Server muss im Netzwerk erreichbar sein.
@@ -1699,7 +1699,7 @@ unterschiedlich bewerkstelligt werden.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
 <p>Unter Windows muss das Programm scp genutzt werden, mit welchem über
 eine SSH-Verbindung Dateien (in diesem Fall der öffentliche Schlüssel)
 übertragen werden können:</p>
@@ -1720,7 +1720,7 @@ eine SSH-Verbindung Dateien (in diesem Fall der öffentliche Schlüssel)
 <code>ssh</code>-Befehl müssen an die <a href="#besonderheiten-zur-ssh-anmeldung-im-kurssetup">besonderen
 Bedingungen im Kurssetup</a> angepasst werden.</p>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
+<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
 <p>Mit macOS kann das Programm <em>ssh-copy-id</em> genutzt werden:
 <code>ssh-copy-id -i &lt;öffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;</code></p>
 <p>SSH-Verbindung mit privatem Schlüssel testen:
@@ -1728,7 +1728,7 @@ Bedingungen im Kurssetup</a> angepasst werden.</p>
 <p>Achtung: <code>ssh-copy-id</code>-Befehl muss an die <a href="#besonderheiten-zur-ssh-anmeldung-im-kurssetup">besonderen
 Bedingungen im Kurssetup</a> angepasst werden.</p>
 </div>
-<div id="nav-tabpanel-1-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-3">
+<div id="nav-tabpanel-1-3" class="tab-pane" aria-labelledby="nav-tab-1-3" role="tabpanel">
 <p>Mit Linux kann das Programm <em>ssh-copy-id</em> genutzt werden:
 <code>ssh-copy-id -i &lt;öffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;</code></p>
 <p>SSH-Verbindung mit privatem Schlüssel testen:
@@ -1838,7 +1838,7 @@ den folgenden Befehl:
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Der SSH-Server erfordert ein Schlüsselpaar für die Anmeldung. Zwar
 wurde der private Schlüssel <em>eberhard.key</em> angegeben. Allerdings
@@ -1901,7 +1901,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-04-sicherheit-1-benutzer-dateien"><p>Content from <a href="04-sicherheit-1-benutzer-dateien.html">Sicherheit 1: Benutzer und Dateirechte</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2026-04-14 |
+<p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/04-sicherheit-1-benutzer-dateien.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 135 Minuten</p>
@@ -2130,9 +2130,9 @@ aussehen:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">total</span> 4</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">drwxrwxr-x</span> 2 linus linus 4096 Aug 21 15:35 Ordner1</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 linus linus   15 Aug 21 15:34 testdatei.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="ex">total</span> 4</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="ex">drwxrwxr-x</span> 2 linus linus 4096 Aug 21 15:35 Ordner1</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a><span class="ex">-rw-rw-r--</span> 1 linus linus   15 Aug 21 15:34 testdatei.txt</span></code></pre>
 </div>
 <p>Dies ist wie folgt zu verstehen:</p>
 <ul>
@@ -2309,7 +2309,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-05-sicherheit-2-firewall-file2ban"><p>Content from <a href="05-sicherheit-2-firewall-file2ban.html">Sicherheit 2: Firewall und Fail2Ban</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2026-04-14 |
+<p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/05-sicherheit-2-firewall-file2ban.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 135 Minuten</p>
@@ -2688,17 +2688,17 @@ definiert und mit Detaileinstellungen konfiguriert:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#Standardeinstellungen vornehmen</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">bantime</span> = 60m </span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="ex">findtime</span> = 15m</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="ex">maxretry</span> = 3 </span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="co"># Im Bereich [sshd]</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="ex">[sshd]</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="ex">enabeld</span> = true</span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="ex">port</span> = <span class="op">&lt;</span>ssh-port<span class="op">&gt;</span></span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="ex">logpath</span> = %<span class="er">(</span><span class="ex">sshd_log</span><span class="kw">)</span><span class="ex">s</span></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="ex">backend</span> = systemd</span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="ex">filter</span> = sshd</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="co">#Standardeinstellungen vornehmen</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="ex">bantime</span> = 60m </span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="ex">findtime</span> = 15m</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="ex">maxretry</span> = 3 </span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="co"># Im Bereich [sshd]</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a><span class="ex">[sshd]</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a><span class="ex">enabeld</span> = true</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1" aria-label="code-block-1-8"></a><span class="ex">port</span> = <span class="op">&lt;</span>ssh-port<span class="op">&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1" aria-label="code-block-1-9"></a><span class="ex">logpath</span> = %<span class="er">(</span><span class="ex">sshd_log</span><span class="kw">)</span><span class="ex">s</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1" aria-label="code-block-1-10"></a><span class="ex">backend</span> = systemd</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1" aria-label="code-block-1-11"></a><span class="ex">filter</span> = sshd</span></code></pre>
 </div>
 <div id="netzwerksicherheit" class="callout challenge">
 <div class="callout-square">
@@ -2775,7 +2775,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-06-docker-basics"><p>Content from <a href="06-docker-basics.html">Grundlegendes zu Docker</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2026-04-14 |
+<p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/06-docker-basics.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 135 Minuten</p>
@@ -3015,13 +3015,13 @@ Zeilen der <code>daemon.json</code>-Datei hinzu.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  <span class="dt">"log-driver"</span><span class="fu">:</span> <span class="st">"json-file"</span><span class="fu">,</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>  <span class="dt">"log-opts"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="dt">"max-size"</span><span class="fu">:</span> <span class="st">"10m"</span><span class="fu">,</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    <span class="dt">"max-file"</span><span class="fu">:</span> <span class="st">"3"</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>  <span class="fu">}</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a>  <span class="dt">"log-driver"</span><span class="fu">:</span> <span class="st">"json-file"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a>  <span class="dt">"log-opts"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a>    <span class="dt">"max-size"</span><span class="fu">:</span> <span class="st">"10m"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a>    <span class="dt">"max-file"</span><span class="fu">:</span> <span class="st">"3"</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a>  <span class="fu">}</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a><span class="fu">}</span></span></code></pre>
 </div>
 <p>Weitere Informationen zur Logrotation finden Sie in der offiziellen
 Dokumentation: <a href="https://docs.docker.com/engine/logging/drivers/json-file/" class="external-link">Docker
@@ -3036,8 +3036,8 @@ erfoglt unter Ubuntu mit Systemd:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">sudo</span> systemctl enable docker.service</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">sudo</span> systemctl enable containerd.service</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="fu">sudo</span> systemctl enable docker.service</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="fu">sudo</span> systemctl enable containerd.service</span></code></pre>
 </div>
 <p>Weitere Informationen dazu finden Sie in der <a href="https://docs.docker.com/engine/install/linux-postinstall/#configure-docker-to-start-on-boot-with-systemd" class="external-link">Dokumentation</a>.</p>
 <div id="die-qual-der-wahl" class="callout challenge">
@@ -3321,7 +3321,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-07-docker-compose"><p>Content from <a href="07-docker-compose.html">Docker compose</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2026-04-14 |
+<p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/07-docker-compose.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 135 Minuten</p>
@@ -3433,11 +3433,11 @@ enthalten:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> &lt;image&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="at">  </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> 80:80</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> 443:443</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> &lt;image&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="at">  </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="at">    </span><span class="kw">-</span><span class="at"> 80:80</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="at">    </span><span class="kw">-</span><span class="at"> 443:443</span></span></code></pre>
 </div>
 <p>Dieser Auszug einer compose-Datei zeigt die “ports”-Map mit zwei
 Listeneinträgen. Der entsprechende <code>docker run</code>-Befehl würde
@@ -3480,21 +3480,21 @@ folgt aussehen:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="at">  </span><span class="fu">frontend</span><span class="kw">:</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> nginx:latest</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"80:80"</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> web</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> NGINX_PORT=80</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./html:/usr/share/nginx/html</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> web</span></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="at">    </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="at">  </span><span class="fu">frontend</span><span class="kw">:</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> nginx:latest</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"80:80"</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1" aria-label="code-block-2-7"></a><span class="at">      </span><span class="kw">-</span><span class="at"> web</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1" aria-label="code-block-2-8"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1" aria-label="code-block-2-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> NGINX_PORT=80</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1" aria-label="code-block-2-10"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1" aria-label="code-block-2-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./html:/usr/share/nginx/html</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1" aria-label="code-block-2-12"></a><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1" aria-label="code-block-2-13"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1" aria-label="code-block-2-14"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> web</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1" aria-label="code-block-2-15"></a><span class="at">    </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
 </div>
 <p>In diesem Beispiel definiert die <code>compose.yaml</code>-Datei
 einen Service namens <code>frontend</code>, der auf einem Nginx-Image
@@ -3538,26 +3538,26 @@ jedoch für beide Services erklärt werden.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">'3'</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> web-app</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5000:5000"</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_USER=db_user</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_PASSWORD=db_password</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_HOST=db</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_NAME=my_db</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="at">    </span><span class="fu">depends_on</span><span class="kw">:</span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> db</span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="at">  </span><span class="fu">db</span><span class="kw">:</span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> mariadb</span></span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_USER=db_user</span></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_PASSWORD=db_password</span></span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_DATABASE=my_db</span></span>
-<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_ROOT_PASSWORD=root_password</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">'3'</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> web-app</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5000:5000"</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1" aria-label="code-block-3-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_USER=db_user</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1" aria-label="code-block-3-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_PASSWORD=db_password</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1" aria-label="code-block-3-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_HOST=db</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1" aria-label="code-block-3-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> DATABASE_NAME=my_db</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1" aria-label="code-block-3-12"></a><span class="at">    </span><span class="fu">depends_on</span><span class="kw">:</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1" aria-label="code-block-3-13"></a><span class="at">      </span><span class="kw">-</span><span class="at"> db</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1" aria-label="code-block-3-14"></a><span class="at">  </span><span class="fu">db</span><span class="kw">:</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1" aria-label="code-block-3-15"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> mariadb</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1" aria-label="code-block-3-16"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1" aria-label="code-block-3-17"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_USER=db_user</span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1" aria-label="code-block-3-18"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_PASSWORD=db_password</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1" aria-label="code-block-3-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_DATABASE=my_db</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1" aria-label="code-block-3-20"></a><span class="at">      </span><span class="kw">-</span><span class="at"> MYSQL_ROOT_PASSWORD=root_password</span></span></code></pre>
 </div>
 <p>In diesem Beispiel gibt es zwei Dienste: <code>web</code> und
 <code>db</code>. Der <code>web</code>-Dienst verwendet das (erfundene)
@@ -3590,34 +3590,34 @@ gestartet wird.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="at">DATABASE_USER=db_user</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="at">DATABASE_PASSWORD=db_password</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="at">DATABASE_HOST=db</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="at">DATABASE_NAME=my_db</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="at">MYSQL_USER=db_user</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="at">MYSQL_PASSWORD=db_password</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="at">MYSQL_DATABASE=my_db</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="at">MYSQL_ROOT_PASSWORD=root_password</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="at">DATABASE_USER=db_user</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a><span class="at">DATABASE_PASSWORD=db_password</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a><span class="at">DATABASE_HOST=db</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a><span class="at">DATABASE_NAME=my_db</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a><span class="at">MYSQL_USER=db_user</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a><span class="at">MYSQL_PASSWORD=db_password</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a><span class="at">MYSQL_DATABASE=my_db</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1" aria-label="code-block-4-8"></a><span class="at">MYSQL_ROOT_PASSWORD=root_password</span></span></code></pre>
 </div>
 <p>Durch den Verweis auf diese Datei in der compose.yaml-Datei, müssen
 die Variablen nur einmal geschrieben werden:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">'3'</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> my-web-app</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5000:5000"</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="at">    </span><span class="fu">env_file</span><span class="kw">:</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> variables.env</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="at">    </span><span class="fu">depends_on</span><span class="kw">:</span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> db</span></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="at">  </span><span class="fu">db</span><span class="kw">:</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> mariadb</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="at">    </span><span class="fu">env_file</span><span class="kw">:</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> variables.env</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">'3'</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> my-web-app</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5000:5000"</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a><span class="at">    </span><span class="fu">env_file</span><span class="kw">:</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> variables.env</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a><span class="at">    </span><span class="fu">depends_on</span><span class="kw">:</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> db</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1" aria-label="code-block-5-11"></a><span class="at">  </span><span class="fu">db</span><span class="kw">:</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1" aria-label="code-block-5-12"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> mariadb</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1" aria-label="code-block-5-13"></a><span class="at">    </span><span class="fu">env_file</span><span class="kw">:</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1" aria-label="code-block-5-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> variables.env</span></span></code></pre>
 </div>
 <p>Ändert sich der Wert einer der genannten Variablen, genügt es bei
 diesem Setup, nur in der variables.env-Datei die Änderung
@@ -3684,7 +3684,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-08-webserver-docker-compose"><p>Content from <a href="08-webserver-docker-compose.html">Webserver mit Docker Compose</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2026-04-14 |
+<p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/08-webserver-docker-compose.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 12 Minuten</p>
@@ -3878,25 +3878,25 @@ die Konfigurationsdatei unterschiedlich aus.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#für ddnss.de</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="va">protocol</span><span class="op">=</span>dyndns2</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>https://api.ipify.org/ </span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="va">server</span><span class="op">=</span>ddnss.de</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="va">login</span><span class="op">=&lt;</span>DDNSSLoginName<span class="op">&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="va">password</span><span class="op">=</span><span class="st">'&lt;Passwort&gt;'</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="op">&lt;</span>domainname<span class="op">&gt;</span>.ddnss.de</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="co">#für ddnss.de</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="va">protocol</span><span class="op">=</span>dyndns2</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>https://api.ipify.org/ </span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="va">server</span><span class="op">=</span>ddnss.de</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="va">login</span><span class="op">=&lt;</span>DDNSSLoginName<span class="op">&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a><span class="va">password</span><span class="op">=</span><span class="st">'&lt;Passwort&gt;'</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a><span class="op">&lt;</span>domainname<span class="op">&gt;</span>.ddnss.de</span></code></pre>
 </div>
 </div>
 <div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co">#NO-IP.com</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="va">protocol</span><span class="op">=</span>noip</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>http://ip1.dynupdate.no-ip.com/</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="va">login</span><span class="op">=&lt;</span>noip-username<span class="op">&gt;</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="va">password</span><span class="op">=</span>’<span class="op">&lt;</span>noip-passwort<span class="op">&gt;</span>’</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="op">&lt;</span>noip-Domainname<span class="op">&gt;</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="co">#NO-IP.com</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="va">protocol</span><span class="op">=</span>noip</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>http://ip1.dynupdate.no-ip.com/</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a><span class="va">login</span><span class="op">=&lt;</span>noip-username<span class="op">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a><span class="va">password</span><span class="op">=</span>’<span class="op">&lt;</span>noip-passwort<span class="op">&gt;</span>’</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a><span class="op">&lt;</span>noip-Domainname<span class="op">&gt;</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -3928,14 +3928,14 @@ Befehl)</p></li>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">apache</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="at">  </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="at">  </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">'80:80'</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="at">  </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ./website:/usr/local/apache2/htdocs</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a><span class="fu">apache</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a><span class="at">  </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a><span class="at">  </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">'80:80'</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a><span class="at">  </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1" aria-label="code-block-3-8"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ./website:/usr/local/apache2/htdocs</span></span></code></pre>
 </div>
 <ol start="4" style="list-style-type: decimal">
 <li><p>Volume-Verzeichnis für den Datenaustausch mit dem Container
@@ -3946,27 +3946,27 @@ z.B. wie folgt</p></li>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">HTML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode html" tabindex="0"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Apache-Test<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>        body {</span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>            <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>        }</span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>        h1 {</span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>            <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>        }</span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>        p {</span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>            <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>        }</span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Welcome to Apache-Test<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This is a simple paragraph to test the Apache server.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre>
+<pre class="sourceCode html" tabindex="0"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Apache-Test<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a>    <span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a>        body {</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a>            <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1" aria-label="code-block-4-8"></a>        }</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1" aria-label="code-block-4-9"></a>        h1 {</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1" aria-label="code-block-4-10"></a>            <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1" aria-label="code-block-4-11"></a>        }</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1" aria-label="code-block-4-12"></a>        p {</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1" aria-label="code-block-4-13"></a>            <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1" aria-label="code-block-4-14"></a>        }</span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1" aria-label="code-block-4-15"></a>    <span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1" aria-label="code-block-4-16"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1" aria-label="code-block-4-17"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1" aria-label="code-block-4-18"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Welcome to Apache-Test<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1" aria-label="code-block-4-19"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This is a simple paragraph to test the Apache server.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1" aria-label="code-block-4-20"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1" aria-label="code-block-4-21"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre>
 </div>
 <ol start="6" style="list-style-type: decimal">
 <li><p>Docker Container starten: <code>sudo docker compose up</code>
@@ -4081,34 +4081,34 @@ zweiter Container dem Docker Compose Projekt hinzugefügt wird:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="at">   </span><span class="fu">apache</span><span class="kw">:</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="at">      </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="at">      </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="at">      </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="at">         </span><span class="kw">-</span><span class="at"> </span><span class="st">"80:80"</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="at">         </span><span class="kw">-</span><span class="at"> </span><span class="st">"443:443"</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="at">      </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">      #Webinhalte für certbot challenge</span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/usr/local/apache2/htdocs</span></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">      #Beispiel-Internetseite</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./website/index.html:/usr/local/apache2/htdocs/index.html</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="at">      </span><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> webapp</span></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="at">   </span><span class="fu">certbot</span><span class="kw">:</span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache-certbot</span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> certbot/certbot:latest</span></span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/var/www/certbot:rw</span></span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf:/etc/letsencrypt:rw</span></span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/log:/var/log/letsencrypt:rw</span></span>
-<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> webapp</span></span>
-<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a></span>
-<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a><span class="at">  </span><span class="fu">webapp</span><span class="kw">:</span></span>
-<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> webapp</span></span>
-<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a><span class="at">    </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a><span class="at">   </span><span class="fu">apache</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a><span class="at">      </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a><span class="at">      </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a><span class="at">      </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a><span class="at">         </span><span class="kw">-</span><span class="at"> </span><span class="st">"80:80"</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a><span class="at">         </span><span class="kw">-</span><span class="at"> </span><span class="st">"443:443"</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a><span class="at">      </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a><span class="co">      #Webinhalte für certbot challenge</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/usr/local/apache2/htdocs</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1" aria-label="code-block-5-11"></a><span class="co">      #Beispiel-Internetseite</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1" aria-label="code-block-5-12"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./website/index.html:/usr/local/apache2/htdocs/index.html</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1" aria-label="code-block-5-13"></a><span class="at">      </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1" aria-label="code-block-5-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> webapp</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1" aria-label="code-block-5-15"></a><span class="at">   </span><span class="fu">certbot</span><span class="kw">:</span></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1" aria-label="code-block-5-16"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache-certbot</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1" aria-label="code-block-5-17"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> certbot/certbot:latest</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1" aria-label="code-block-5-18"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1" aria-label="code-block-5-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/var/www/certbot:rw</span></span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1" aria-label="code-block-5-20"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf:/etc/letsencrypt:rw</span></span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1" aria-label="code-block-5-21"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/log:/var/log/letsencrypt:rw</span></span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1" aria-label="code-block-5-22"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1" aria-label="code-block-5-23"></a><span class="at">      </span><span class="kw">-</span><span class="at"> webapp</span></span>
+<span id="cb5-24"><a href="#cb5-24" tabindex="-1" aria-label="code-block-5-24"></a></span>
+<span id="cb5-25"><a href="#cb5-25" tabindex="-1" aria-label="code-block-5-25"></a><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb5-26"><a href="#cb5-26" tabindex="-1" aria-label="code-block-5-26"></a><span class="at">  </span><span class="fu">webapp</span><span class="kw">:</span></span>
+<span id="cb5-27"><a href="#cb5-27" tabindex="-1" aria-label="code-block-5-27"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> webapp</span></span>
+<span id="cb5-28"><a href="#cb5-28" tabindex="-1" aria-label="code-block-5-28"></a><span class="at">    </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
 </div>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
@@ -4128,7 +4128,7 @@ einzelnen Parameter?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Im Unterschied zum ersten einfachen Beispiel, ist in diesem Projekt
 der certbot-Container als zweiter Dienst hinzugekommen. Außerdem hat der
@@ -4202,20 +4202,20 @@ einbinden:</li>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="at">  </span><span class="fu">apache</span><span class="kw">:</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">    #... wie gehabt</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">    #Webinhalte für certbot challenge</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/usr/local/apache2/htdocs:ro</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">    #Zertifikat und Key</span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf/live/&lt;ddns-domain&gt;/cert.pem:/usr/local/apache2/server.crt:ro</span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf/live/&lt;ddns-domain&gt;/privkey.pem:/usr/local/apache2/server.key:ro</span></span>
-<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">    #Beispiel-Internetseite</span></span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./website/indey.html:/usr/local/apache2/htdocs/index.html</span></span>
-<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">    #Konfiguration</span></span>
-<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./apache-conf/:/usr/local/apache2/conf</span></span>
-<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">    #...wie gehabt</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1" aria-label="code-block-7-2"></a><span class="at">  </span><span class="fu">apache</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1" aria-label="code-block-7-3"></a><span class="co">    #... wie gehabt</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1" aria-label="code-block-7-4"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1" aria-label="code-block-7-5"></a><span class="co">    #Webinhalte für certbot challenge</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1" aria-label="code-block-7-6"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/usr/local/apache2/htdocs:ro</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1" aria-label="code-block-7-7"></a><span class="co">    #Zertifikat und Key</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1" aria-label="code-block-7-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf/live/&lt;ddns-domain&gt;/cert.pem:/usr/local/apache2/server.crt:ro</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1" aria-label="code-block-7-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf/live/&lt;ddns-domain&gt;/privkey.pem:/usr/local/apache2/server.key:ro</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1" aria-label="code-block-7-10"></a><span class="co">    #Beispiel-Internetseite</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1" aria-label="code-block-7-11"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./website/indey.html:/usr/local/apache2/htdocs/index.html</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1" aria-label="code-block-7-12"></a><span class="co">    #Konfiguration</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1" aria-label="code-block-7-13"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./apache-conf/:/usr/local/apache2/conf</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1" aria-label="code-block-7-14"></a><span class="co">    #...wie gehabt</span></span></code></pre>
 </div>
 <ol start="5" style="list-style-type: decimal">
 <li>Apache-Konfiguration anpassen:
@@ -4269,7 +4269,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-09-proxy-docker-compose"><p>Content from <a href="09-proxy-docker-compose.html">Proxysrever mit docker compose</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2026-04-14 |
+<p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/09-proxy-docker-compose.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 135 Minuten</p>
@@ -4397,7 +4397,7 @@ wichtig?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Die Nummer in einer URL gibt den spezifischen Port an, über den der
 Client (z.B. ein Webbrowser) mit dem Webserver kommunizieren soll.
@@ -4457,7 +4457,7 @@ Proxy-Host?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Die IP-Adresse 127.0.0.1 bedeutet, dass sämtliche Anfragen an die
 konfigurierte Domain an die lokale Netzwerkkarte (also ohne den Server
@@ -4519,7 +4519,7 @@ compose.yaml-Datei des Apache-Projekts anpassen?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Da die Kommunikation für die Beispiel-Internetseite jetzt wieder per
 HTTP erfolgt, kann die Apache-Konfigurationsdatei wieder vereinfacht
@@ -4534,22 +4534,22 @@ ermöglichen, muss das Netzwerk angepasst werden.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="at">  </span><span class="fu">apache</span><span class="kw">:</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">'80:80'</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">    #Beispiel-Internetseite</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./website:/usr/local/apache2/htdocs</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> proxy-web</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="at">  </span><span class="fu">proxy</span><span class="kw">:</span></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> proxy-web</span></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="at">    </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="at">  </span><span class="fu">apache</span><span class="kw">:</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">'80:80'</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1" aria-label="code-block-2-7"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1" aria-label="code-block-2-8"></a><span class="co">    #Beispiel-Internetseite</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1" aria-label="code-block-2-9"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./website:/usr/local/apache2/htdocs</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1" aria-label="code-block-2-10"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1" aria-label="code-block-2-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> proxy-web</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1" aria-label="code-block-2-12"></a></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1" aria-label="code-block-2-13"></a><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1" aria-label="code-block-2-14"></a><span class="at">  </span><span class="fu">proxy</span><span class="kw">:</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1" aria-label="code-block-2-15"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> proxy-web</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1" aria-label="code-block-2-16"></a><span class="at">    </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
 </div>
 <p>Wenn beide Container (Apache und NGINX) im Selben Netzwerk
 eingebunden sind, kann die Weiterleitung über den Container-Namen
@@ -4583,7 +4583,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-10-nextcloud-aio"><p>Content from <a href="10-nextcloud-aio.html">Nextcloud mit Docker installieren</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2026-04-14 |
+<p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/10-nextcloud-aio.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 135 Minuten</p>
@@ -4766,30 +4766,30 @@ entsprechend den eigenen Bedürfnisse geändert werden:</li>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="at">  </span><span class="fu">nextcloud-aio-mastercontainer</span><span class="kw">:</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> ghcr.io/nextcloud-releases/all-in-one:latest </span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="at">    </span><span class="fu">init</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="at"> </span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="at">    </span><span class="fu">restart</span><span class="kw">:</span><span class="at"> always </span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> nextcloud-aio-mastercontainer </span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> nextcloud_aio_mastercontainer:/mnt/docker-aio-config </span></span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> /var/run/docker.sock:/var/run/docker.sock:ro </span></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"nextcloud-aio"</span><span class="kw">]</span></span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> 8080:8080</span></span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="at">      </span><span class="fu">APACHE_PORT</span><span class="kw">:</span><span class="at"> </span><span class="dv">11000</span><span class="at"> </span></span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="at">      </span><span class="fu">APACHE_IP_BINDING</span><span class="kw">:</span><span class="at">  </span><span class="fl">127.0.0.1</span><span class="at"> </span></span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="at">  </span><span class="fu">nextcloud_aio_mastercontainer</span><span class="kw">:</span></span>
-<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="at">   </span><span class="fu">name</span><span class="kw">:</span><span class="at"> nextcloud_aio_mastercontainer </span></span>
-<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="at">   </span><span class="fu">nextcloud-aio</span><span class="kw">:</span></span>
-<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a><span class="at">     </span><span class="fu">name</span><span class="kw">:</span><span class="at"> nextcloud-aio</span></span>
-<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a><span class="at">     </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="at">  </span><span class="fu">nextcloud-aio-mastercontainer</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> ghcr.io/nextcloud-releases/all-in-one:latest </span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="at">    </span><span class="fu">init</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="at"> </span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="at">    </span><span class="fu">restart</span><span class="kw">:</span><span class="at"> always </span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> nextcloud-aio-mastercontainer </span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1" aria-label="code-block-1-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> nextcloud_aio_mastercontainer:/mnt/docker-aio-config </span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1" aria-label="code-block-1-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> /var/run/docker.sock:/var/run/docker.sock:ro </span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1" aria-label="code-block-1-10"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"nextcloud-aio"</span><span class="kw">]</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1" aria-label="code-block-1-11"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1" aria-label="code-block-1-12"></a><span class="at">      </span><span class="kw">-</span><span class="at"> 8080:8080</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1" aria-label="code-block-1-13"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1" aria-label="code-block-1-14"></a><span class="at">      </span><span class="fu">APACHE_PORT</span><span class="kw">:</span><span class="at"> </span><span class="dv">11000</span><span class="at"> </span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1" aria-label="code-block-1-15"></a><span class="at">      </span><span class="fu">APACHE_IP_BINDING</span><span class="kw">:</span><span class="at">  </span><span class="fl">127.0.0.1</span><span class="at"> </span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1" aria-label="code-block-1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1" aria-label="code-block-1-17"></a><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1" aria-label="code-block-1-18"></a><span class="at">  </span><span class="fu">nextcloud_aio_mastercontainer</span><span class="kw">:</span></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1" aria-label="code-block-1-19"></a><span class="at">   </span><span class="fu">name</span><span class="kw">:</span><span class="at"> nextcloud_aio_mastercontainer </span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1" aria-label="code-block-1-20"></a></span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1" aria-label="code-block-1-21"></a><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1" aria-label="code-block-1-22"></a><span class="at">   </span><span class="fu">nextcloud-aio</span><span class="kw">:</span></span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1" aria-label="code-block-1-23"></a><span class="at">     </span><span class="fu">name</span><span class="kw">:</span><span class="at"> nextcloud-aio</span></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1" aria-label="code-block-1-24"></a><span class="at">     </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
 </div>
 <ol start="5" style="list-style-type: decimal">
 <li>die bei der Installation angezeigten <strong>Passwörter</strong> für
@@ -4824,7 +4824,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-11-nextcloud-aio-konfiuguration"><p>Content from <a href="11-nextcloud-aio-konfiuguration.html">Nextcloud AIO: Konfiguration</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2026-04-14 |
+<p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/11-nextcloud-aio-konfiuguration.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 135 Minuten</p>
@@ -4907,17 +4907,17 @@ Handbuch geschildert, die Filter-Datei zu erstellen):</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">CONF<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode conf" tabindex="0"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">[nextcloud]</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="dt">backend</span> <span class="op">=</span> <span class="dt">auto</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="dt">enabled</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="dt">port</span> <span class="op">=</span> <span class="dv">80</span><span class="er">,</span><span class="dt">443</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="dt">protocol</span> <span class="op">=</span> <span class="dt">tcp</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="dt">filter</span> <span class="op">=</span> <span class="dt">nextcloud</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="dt">maxretry</span> <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="dt">bantime</span> <span class="op">=</span> <span class="dv">86400</span></span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="dt">findtime</span> <span class="op">=</span> <span class="dv">43200</span></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="dt">logpath</span> <span class="op">=</span> <span class="er">/</span><span class="dt">var</span><span class="er">/</span><span class="dt">lib</span><span class="er">/</span><span class="dt">docker</span><span class="er">/</span><span class="dt">volumes</span><span class="er">/</span><span class="dt">nextcloud_aio_nextcloud</span><span class="er">/</span><span class="dt">_data</span><span class="er">/</span><span class="dt">data</span><span class="er">/</span><span class="dt">nextcloud.log</span></span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="dt">chain</span> <span class="op">=</span> <span class="dt">DOCKER-USER</span></span></code></pre>
+<pre class="sourceCode conf" tabindex="0"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="kw">[nextcloud]</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="dt">backend</span> <span class="op">=</span> <span class="dt">auto</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="dt">enabled</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="dt">port</span> <span class="op">=</span> <span class="dv">80</span><span class="er">,</span><span class="dt">443</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="dt">protocol</span> <span class="op">=</span> <span class="dt">tcp</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a><span class="dt">filter</span> <span class="op">=</span> <span class="dt">nextcloud</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a><span class="dt">maxretry</span> <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1" aria-label="code-block-1-8"></a><span class="dt">bantime</span> <span class="op">=</span> <span class="dv">86400</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1" aria-label="code-block-1-9"></a><span class="dt">findtime</span> <span class="op">=</span> <span class="dv">43200</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1" aria-label="code-block-1-10"></a><span class="dt">logpath</span> <span class="op">=</span> <span class="er">/</span><span class="dt">var</span><span class="er">/</span><span class="dt">lib</span><span class="er">/</span><span class="dt">docker</span><span class="er">/</span><span class="dt">volumes</span><span class="er">/</span><span class="dt">nextcloud_aio_nextcloud</span><span class="er">/</span><span class="dt">_data</span><span class="er">/</span><span class="dt">data</span><span class="er">/</span><span class="dt">nextcloud.log</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1" aria-label="code-block-1-11"></a><span class="dt">chain</span> <span class="op">=</span> <span class="dt">DOCKER-USER</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -5103,7 +5103,7 @@ speichern Sie die Sicherungen?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Das <a href="https://docs.nextcloud.com/server/stable/admin_manual/maintenance/backup.html" class="external-link">Handbuch</a>
 listet die grundlegenden Schritte auf, um den Nextcloud-Server zu
@@ -5191,7 +5191,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-12-joplin"><p>Content from <a href="12-joplin.html">Knowledge-und Notizmanagement mit Joplin</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2026-04-14 |
+<p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/12-joplin.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 135 Minuten</p>
@@ -5457,8 +5457,8 @@ wie folgt aussehen</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="at">services</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="at">  joplin</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="at">services</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="at">  joplin</span></span></code></pre>
 </div>
 <p>Ergänzt wird die Compose Datei durch eine <code>.env</code>-Datei für
 die Umgebungsvariablen. Auch dafür gibt es eine <a href="https://github.com/laurent22/joplin/blob/8d1d1be79eaea4dfdfadd0b23f28a48760840eae/.env-sample" class="external-link">Vorlage</a>
@@ -5538,7 +5538,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-13-mehr-docker"><p>Content from <a href="13-mehr-docker.html">Mehr Docker</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2026-04-14 |
+<p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/13-mehr-docker.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 135 Minuten</p>
@@ -5613,11 +5613,11 @@ aussehen:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">DOCKERFILE<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode dockerfile" tabindex="0"><code class="sourceCode dockerfile"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">FROM</span> ubuntu:latest</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">RUN</span> <span class="ex">apt-get</span> update <span class="kw">&amp;&amp;</span> <span class="ex">apt-get</span> install <span class="at">-y</span> python3</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">COPY</span> . /app</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="kw">WORKDIR</span> /app</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="kw">CMD</span> [<span class="st">"python3"</span>, <span class="st">"/app/app.py"</span>]</span></code></pre>
+<pre class="sourceCode dockerfile" tabindex="0"><code class="sourceCode dockerfile"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="kw">FROM</span> ubuntu:latest</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="kw">RUN</span> <span class="ex">apt-get</span> update <span class="kw">&amp;&amp;</span> <span class="ex">apt-get</span> install <span class="at">-y</span> python3</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="kw">COPY</span> . /app</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="kw">WORKDIR</span> /app</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="kw">CMD</span> [<span class="st">"python3"</span>, <span class="st">"/app/app.py"</span>]</span></code></pre>
 </div>
 <p>Dieses <code>Dockerfile</code> erstellt ein Image basierend auf dem
 neuesten Ubuntu-Image, installiert Python 3, kopiert die Dateien des
@@ -5634,14 +5634,14 @@ build-Befehl das <code>Dockerfile</code> genutzt.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="at">    </span><span class="fu">build</span><span class="kw">:</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="at">      </span><span class="fu">dockerfile</span><span class="kw">:</span><span class="at"> DOCKERFILE</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5000:5000"</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="at">  </span><span class="fu">redis</span><span class="kw">:</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"redis:alpine"</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a><span class="at">    </span><span class="fu">build</span><span class="kw">:</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a><span class="at">      </span><span class="fu">dockerfile</span><span class="kw">:</span><span class="at"> DOCKERFILE</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5000:5000"</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1" aria-label="code-block-2-7"></a><span class="at">  </span><span class="fu">redis</span><span class="kw">:</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1" aria-label="code-block-2-8"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"redis:alpine"</span></span></code></pre>
 </div>
 <p>In diesem Beispiel wird ein Webservice definiert, der das Dockerimage
 basierend auf dem dockerfile mit Namen <code>DOCKERFILE</code> baut und
@@ -5653,7 +5653,7 @@ zu werden).</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">docker</span> compose build</span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="ex">docker</span> compose build</span></code></pre>
 </div>
 <p>Ist der Build-Prozess erfolgreich abgeschlossen (dies kann je nach
 <code>DOCKERFILE</code> sehr lange dauern), kann das Compose-Projekt wie
@@ -5676,17 +5676,17 @@ entsprechend.</li>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="at">    </span><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="at">      </span><span class="fu">web</span><span class="kw">:</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="at">        </span><span class="fu">image</span><span class="kw">:</span><span class="at"> myapp:10</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="at">    </span><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a><span class="at">      </span><span class="fu">web</span><span class="kw">:</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a><span class="at">        </span><span class="fu">image</span><span class="kw">:</span><span class="at"> myapp:10</span></span></code></pre>
 </div>
 <p>Version 11:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="at">    </span><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="at">      </span><span class="fu">web</span><span class="kw">:</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="at">        </span><span class="fu">image</span><span class="kw">:</span><span class="at"> myapp:11</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="at">    </span><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a><span class="at">      </span><span class="fu">web</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a><span class="at">        </span><span class="fu">image</span><span class="kw">:</span><span class="at"> myapp:11</span></span></code></pre>
 </div>
 <p>Häufig wird auf die <code>latest</code> oder
 <code>stable</code>-Version verwiesen. Diese Angabe bewirkt, dass bei
@@ -5716,8 +5716,8 @@ löschen.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">docker</span> image ls</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="ex">docker</span> image rm <span class="op">&lt;</span>image_id<span class="op">&gt;</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a><span class="ex">docker</span> image ls</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1" aria-label="code-block-6-2"></a><span class="ex">docker</span> image rm <span class="op">&lt;</span>image_id<span class="op">&gt;</span></span></code></pre>
 </div>
 <p>Etwas schneller aber weniger Umsichtig können die alten Images mit
 dem Befehl <code>sudo docker image prune</code> gelöscht
@@ -5745,8 +5745,8 @@ gestartet:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">sudo</span> docker volume create portainer_data</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">sudo</span> docker run <span class="at">-d</span> <span class="at">-p</span> 8000:8000 <span class="at">-p</span> 9443:9443 <span class="at">--name</span> portainer <span class="at">--restart</span><span class="op">=</span>always <span class="at">-v</span> /var/run/docker.sock:/var/run/docker.sock <span class="at">-v</span> portainer_data:/data portainer/portainer-ce:lts</span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a><span class="fu">sudo</span> docker volume create portainer_data</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1" aria-label="code-block-7-2"></a><span class="fu">sudo</span> docker run <span class="at">-d</span> <span class="at">-p</span> 8000:8000 <span class="at">-p</span> 9443:9443 <span class="at">--name</span> portainer <span class="at">--restart</span><span class="op">=</span>always <span class="at">-v</span> /var/run/docker.sock:/var/run/docker.sock <span class="at">-v</span> portainer_data:/data portainer/portainer-ce:lts</span></code></pre>
 </div>
 <p>Nach der Installation kann Portainer über einen Webbrowser unter
 <code>http://&lt;Server-IP-oder-URL&gt;:9000</code> erreicht werden
@@ -5824,7 +5824,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Vorlage lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> von <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
+        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -5847,8 +5847,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/aio.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/aio.html",
   "dateCreated": "2025-08-18",
-  "dateModified": "2026-04-14",
-  "datePublished": "2026-04-14"
+  "dateModified": "2026-04-17",
+  "datePublished": "2026-04-17"
 }
 
   </script><script>

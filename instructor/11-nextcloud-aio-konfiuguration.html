@@ -305,7 +305,7 @@
       </button>
     </div><!--/div.accordion-header-->
 
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#anpassung-von-nextcloud-all-in-one-aio">Anpassung von Nextcloud All-in-One (AIO)</a></li>
 <li><a href="#backup">Backup</a></li>
@@ -391,7 +391,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Nextcloud AIO: Konfiguration</h1>
-        <p>Zuletzt aktualisiert am 2026-04-14 |
+        <p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/11-nextcloud-aio-konfiuguration.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -472,17 +472,17 @@ Handbuch geschildert, die Filter-Datei zu erstellen):</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">CONF<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode conf" tabindex="0"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">[nextcloud]</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="dt">backend</span> <span class="op">=</span> <span class="dt">auto</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="dt">enabled</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="dt">port</span> <span class="op">=</span> <span class="dv">80</span><span class="er">,</span><span class="dt">443</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="dt">protocol</span> <span class="op">=</span> <span class="dt">tcp</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="dt">filter</span> <span class="op">=</span> <span class="dt">nextcloud</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="dt">maxretry</span> <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="dt">bantime</span> <span class="op">=</span> <span class="dv">86400</span></span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="dt">findtime</span> <span class="op">=</span> <span class="dv">43200</span></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="dt">logpath</span> <span class="op">=</span> <span class="er">/</span><span class="dt">var</span><span class="er">/</span><span class="dt">lib</span><span class="er">/</span><span class="dt">docker</span><span class="er">/</span><span class="dt">volumes</span><span class="er">/</span><span class="dt">nextcloud_aio_nextcloud</span><span class="er">/</span><span class="dt">_data</span><span class="er">/</span><span class="dt">data</span><span class="er">/</span><span class="dt">nextcloud.log</span></span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="dt">chain</span> <span class="op">=</span> <span class="dt">DOCKER-USER</span></span></code></pre>
+<pre class="sourceCode conf" tabindex="0"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="kw">[nextcloud]</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="dt">backend</span> <span class="op">=</span> <span class="dt">auto</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="dt">enabled</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="dt">port</span> <span class="op">=</span> <span class="dv">80</span><span class="er">,</span><span class="dt">443</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="dt">protocol</span> <span class="op">=</span> <span class="dt">tcp</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a><span class="dt">filter</span> <span class="op">=</span> <span class="dt">nextcloud</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a><span class="dt">maxretry</span> <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1" aria-label="code-block-1-8"></a><span class="dt">bantime</span> <span class="op">=</span> <span class="dv">86400</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1" aria-label="code-block-1-9"></a><span class="dt">findtime</span> <span class="op">=</span> <span class="dv">43200</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1" aria-label="code-block-1-10"></a><span class="dt">logpath</span> <span class="op">=</span> <span class="er">/</span><span class="dt">var</span><span class="er">/</span><span class="dt">lib</span><span class="er">/</span><span class="dt">docker</span><span class="er">/</span><span class="dt">volumes</span><span class="er">/</span><span class="dt">nextcloud_aio_nextcloud</span><span class="er">/</span><span class="dt">_data</span><span class="er">/</span><span class="dt">data</span><span class="er">/</span><span class="dt">nextcloud.log</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1" aria-label="code-block-1-11"></a><span class="dt">chain</span> <span class="op">=</span> <span class="dt">DOCKER-USER</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -654,7 +654,7 @@ speichern Sie die Sicherungen?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Das <a href="https://docs.nextcloud.com/server/stable/admin_manual/maintenance/backup.html" class="external-link">Handbuch</a>
 listet die grundlegenden Schritte auf, um den Nextcloud-Server zu
@@ -774,7 +774,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Vorlage lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> von <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
+        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -796,8 +796,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/11-nextcloud-aio-konfiuguration.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/11-nextcloud-aio-konfiuguration.html",
   "dateCreated": "2025-08-18",
-  "dateModified": "2026-04-14",
-  "datePublished": "2026-04-14"
+  "dateModified": "2026-04-17",
+  "datePublished": "2026-04-17"
 }
 
   </script><script>

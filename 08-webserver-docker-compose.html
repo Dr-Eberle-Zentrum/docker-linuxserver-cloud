@@ -278,7 +278,7 @@
       </button>
     </div><!--/div.accordion-header-->
 
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#allgemeines-zu-webservern">Allgemeines zu Webservern</a></li>
 <li><a href="#externer-zugriff">Externer Zugriff</a></li>
@@ -392,7 +392,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Webserver mit Docker Compose</h1>
-        <p>Zuletzt aktualisiert am 2026-04-14 |
+        <p>Zuletzt aktualisiert am 2026-04-17 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/08-webserver-docker-compose.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -577,25 +577,25 @@ die Konfigurationsdatei unterschiedlich aus.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#für ddnss.de</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="va">protocol</span><span class="op">=</span>dyndns2</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>https://api.ipify.org/ </span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="va">server</span><span class="op">=</span>ddnss.de</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="va">login</span><span class="op">=&lt;</span>DDNSSLoginName<span class="op">&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="va">password</span><span class="op">=</span><span class="st">'&lt;Passwort&gt;'</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="op">&lt;</span>domainname<span class="op">&gt;</span>.ddnss.de</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="co">#für ddnss.de</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="va">protocol</span><span class="op">=</span>dyndns2</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>https://api.ipify.org/ </span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="va">server</span><span class="op">=</span>ddnss.de</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="va">login</span><span class="op">=&lt;</span>DDNSSLoginName<span class="op">&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a><span class="va">password</span><span class="op">=</span><span class="st">'&lt;Passwort&gt;'</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a><span class="op">&lt;</span>domainname<span class="op">&gt;</span>.ddnss.de</span></code></pre>
 </div>
 </div>
 <div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co">#NO-IP.com</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="va">protocol</span><span class="op">=</span>noip</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>http://ip1.dynupdate.no-ip.com/</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="va">login</span><span class="op">=&lt;</span>noip-username<span class="op">&gt;</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="va">password</span><span class="op">=</span>’<span class="op">&lt;</span>noip-passwort<span class="op">&gt;</span>’</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="op">&lt;</span>noip-Domainname<span class="op">&gt;</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="co">#NO-IP.com</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="va">protocol</span><span class="op">=</span>noip</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>http://ip1.dynupdate.no-ip.com/</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a><span class="va">login</span><span class="op">=&lt;</span>noip-username<span class="op">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a><span class="va">password</span><span class="op">=</span>’<span class="op">&lt;</span>noip-passwort<span class="op">&gt;</span>’</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a><span class="op">&lt;</span>noip-Domainname<span class="op">&gt;</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -622,14 +622,14 @@ Befehl)</p></li>
 </ol><div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">apache</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="at">  </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="at">  </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">'80:80'</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="at">  </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ./website:/usr/local/apache2/htdocs</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a><span class="fu">apache</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a><span class="at">  </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a><span class="at">  </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">'80:80'</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a><span class="at">  </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1" aria-label="code-block-3-8"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ./website:/usr/local/apache2/htdocs</span></span></code></pre>
 </div>
 <ol start="4" style="list-style-type: decimal"><li><p>Volume-Verzeichnis für den Datenaustausch mit dem Container
 erstellen: <code>mkdir website</code></p></li>
@@ -638,27 +638,27 @@ z.B. wie folgt</p></li>
 </ol><div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">HTML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode html" tabindex="0"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Apache-Test<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>        body {</span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>            <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>        }</span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>        h1 {</span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>            <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>        }</span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>        p {</span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>            <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>        }</span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Welcome to Apache-Test<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This is a simple paragraph to test the Apache server.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre>
+<pre class="sourceCode html" tabindex="0"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Apache-Test<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a>    <span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a>        body {</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a>            <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1" aria-label="code-block-4-8"></a>        }</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1" aria-label="code-block-4-9"></a>        h1 {</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1" aria-label="code-block-4-10"></a>            <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1" aria-label="code-block-4-11"></a>        }</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1" aria-label="code-block-4-12"></a>        p {</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1" aria-label="code-block-4-13"></a>            <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1" aria-label="code-block-4-14"></a>        }</span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1" aria-label="code-block-4-15"></a>    <span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1" aria-label="code-block-4-16"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1" aria-label="code-block-4-17"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1" aria-label="code-block-4-18"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Welcome to Apache-Test<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1" aria-label="code-block-4-19"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This is a simple paragraph to test the Apache server.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1" aria-label="code-block-4-20"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1" aria-label="code-block-4-21"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre>
 </div>
 <ol start="6" style="list-style-type: decimal"><li><p>Docker Container starten: <code>sudo docker compose up</code>
 oder im Hintergrund <code>sudo docker compose up -d</code></p></li>
@@ -765,34 +765,34 @@ zweiter Container dem Docker Compose Projekt hinzugefügt wird:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="at">   </span><span class="fu">apache</span><span class="kw">:</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="at">      </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="at">      </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="at">      </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="at">         </span><span class="kw">-</span><span class="at"> </span><span class="st">"80:80"</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="at">         </span><span class="kw">-</span><span class="at"> </span><span class="st">"443:443"</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="at">      </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">      #Webinhalte für certbot challenge</span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/usr/local/apache2/htdocs</span></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">      #Beispiel-Internetseite</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./website/index.html:/usr/local/apache2/htdocs/index.html</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="at">      </span><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> webapp</span></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="at">   </span><span class="fu">certbot</span><span class="kw">:</span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache-certbot</span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> certbot/certbot:latest</span></span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/var/www/certbot:rw</span></span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf:/etc/letsencrypt:rw</span></span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/log:/var/log/letsencrypt:rw</span></span>
-<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> webapp</span></span>
-<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a></span>
-<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a><span class="at">  </span><span class="fu">webapp</span><span class="kw">:</span></span>
-<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> webapp</span></span>
-<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a><span class="at">    </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a><span class="at">   </span><span class="fu">apache</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a><span class="at">      </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a><span class="at">      </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a><span class="at">      </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a><span class="at">         </span><span class="kw">-</span><span class="at"> </span><span class="st">"80:80"</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a><span class="at">         </span><span class="kw">-</span><span class="at"> </span><span class="st">"443:443"</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a><span class="at">      </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a><span class="co">      #Webinhalte für certbot challenge</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/usr/local/apache2/htdocs</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1" aria-label="code-block-5-11"></a><span class="co">      #Beispiel-Internetseite</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1" aria-label="code-block-5-12"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./website/index.html:/usr/local/apache2/htdocs/index.html</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1" aria-label="code-block-5-13"></a><span class="at">      </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1" aria-label="code-block-5-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> webapp</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1" aria-label="code-block-5-15"></a><span class="at">   </span><span class="fu">certbot</span><span class="kw">:</span></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1" aria-label="code-block-5-16"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache-certbot</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1" aria-label="code-block-5-17"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> certbot/certbot:latest</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1" aria-label="code-block-5-18"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1" aria-label="code-block-5-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/var/www/certbot:rw</span></span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1" aria-label="code-block-5-20"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf:/etc/letsencrypt:rw</span></span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1" aria-label="code-block-5-21"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/log:/var/log/letsencrypt:rw</span></span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1" aria-label="code-block-5-22"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1" aria-label="code-block-5-23"></a><span class="at">      </span><span class="kw">-</span><span class="at"> webapp</span></span>
+<span id="cb5-24"><a href="#cb5-24" tabindex="-1" aria-label="code-block-5-24"></a></span>
+<span id="cb5-25"><a href="#cb5-25" tabindex="-1" aria-label="code-block-5-25"></a><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb5-26"><a href="#cb5-26" tabindex="-1" aria-label="code-block-5-26"></a><span class="at">  </span><span class="fu">webapp</span><span class="kw">:</span></span>
+<span id="cb5-27"><a href="#cb5-27" tabindex="-1" aria-label="code-block-5-27"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> webapp</span></span>
+<span id="cb5-28"><a href="#cb5-28" tabindex="-1" aria-label="code-block-5-28"></a><span class="at">    </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
 </div>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
@@ -812,7 +812,7 @@ einzelnen Parameter?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Im Unterschied zum ersten einfachen Beispiel, ist in diesem Projekt
 der certbot-Container als zweiter Dienst hinzugekommen. Außerdem hat der
@@ -881,20 +881,20 @@ einbinden:</li>
 </ol><div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="at">  </span><span class="fu">apache</span><span class="kw">:</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">    #... wie gehabt</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">    #Webinhalte für certbot challenge</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/usr/local/apache2/htdocs:ro</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">    #Zertifikat und Key</span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf/live/&lt;ddns-domain&gt;/cert.pem:/usr/local/apache2/server.crt:ro</span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf/live/&lt;ddns-domain&gt;/privkey.pem:/usr/local/apache2/server.key:ro</span></span>
-<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">    #Beispiel-Internetseite</span></span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./website/indey.html:/usr/local/apache2/htdocs/index.html</span></span>
-<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">    #Konfiguration</span></span>
-<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./apache-conf/:/usr/local/apache2/conf</span></span>
-<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">    #...wie gehabt</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1" aria-label="code-block-7-2"></a><span class="at">  </span><span class="fu">apache</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1" aria-label="code-block-7-3"></a><span class="co">    #... wie gehabt</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1" aria-label="code-block-7-4"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1" aria-label="code-block-7-5"></a><span class="co">    #Webinhalte für certbot challenge</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1" aria-label="code-block-7-6"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/usr/local/apache2/htdocs:ro</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1" aria-label="code-block-7-7"></a><span class="co">    #Zertifikat und Key</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1" aria-label="code-block-7-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf/live/&lt;ddns-domain&gt;/cert.pem:/usr/local/apache2/server.crt:ro</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1" aria-label="code-block-7-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf/live/&lt;ddns-domain&gt;/privkey.pem:/usr/local/apache2/server.key:ro</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1" aria-label="code-block-7-10"></a><span class="co">    #Beispiel-Internetseite</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1" aria-label="code-block-7-11"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./website/indey.html:/usr/local/apache2/htdocs/index.html</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1" aria-label="code-block-7-12"></a><span class="co">    #Konfiguration</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1" aria-label="code-block-7-13"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./apache-conf/:/usr/local/apache2/conf</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1" aria-label="code-block-7-14"></a><span class="co">    #...wie gehabt</span></span></code></pre>
 </div>
 <ol start="5" style="list-style-type: decimal"><li>Apache-Konfiguration anpassen:
 <code>sudo nano apache-conf/httpd.conf</code>
@@ -978,7 +978,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Vorlage lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> von <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
+        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1000,8 +1000,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/08-webserver-docker-compose.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/08-webserver-docker-compose.html",
   "dateCreated": "2025-08-18",
-  "dateModified": "2026-04-14",
-  "datePublished": "2026-04-14"
+  "dateModified": "2026-04-17",
+  "datePublished": "2026-04-17"
 }
 
   </script><script>
