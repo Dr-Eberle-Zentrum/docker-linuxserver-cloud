@@ -35,14 +35,36 @@ Angepasster SSH-Befehl: `ssh -o ProxyCommand="openssl s_client -quiet -connect 1
 
 Siehe dazu auch [Lektion 3](03-remote-access.Rmd#besonderheiten-zur-ssh-anmeldung-im-kurssetup)
 
+### Systemsetup
+
+- **Zugriff über Proxmox Webconsole**:
+  - Zugang Uni-VPN (EduVPN): ✅
+  - URL: [Proxmox Web Console][proxmox]
+      ✅
+    
+  - Username: ****
+  
+  - Realm: PVE Proxmox Authentication Server  
+  
+  - Password: ******
+
+  + Wählen Sie in der linken Seitenleiste Ihren virtuellen Server aus
+
+  + Wählen Sie den Reiter "console" im vertikalen Menü
+
+- **Nach der Installation**: Zugriff per SSH:
+  - Wireguard-VPN für Zugang zum Computerpool-Netzwerk (siehe ILIAS):
+    - [Wirguardclient](https://www.wireguard.com/install/) installiert: ✅
+    - Konfigurationsdatei von ILIAS heruntergeladen und geöffnet: ✅
+    
+  - VPN testen:
+    - `ping 10.10.10.1`  
+    - `ping <IP-Adresse-eigener-Server>`
+    
+  - SSH-Verbindungen aufbauen:
+    - `ssh user@IP-Adresse`
+
 ### Zugriff auf die Virtualisierungsumgebung:
 
-+ Öffnen Sie die [Proxmox Web Console][proxmox]
-
-+ Melden Sie sich mit den kursspezifischen Anmeldedaten an
-
-+ Wählen Sie in der linken Seitenleiste Ihren virtuellen Server aus
-
-+ Wählen Sie den Reiter "console" im vertikalen Menü
 
 
