@@ -39,7 +39,7 @@ Bei einem Protokoll handelt es sich um eine Sammlung genau festgelegter technisc
 
 :::
 
-Das SSH-Protkoll nutzt mehrere etablierte Verfahren der Kryptographie und Netzwerkkommunikation zur Gewährleistung der sicheren Übertragung. Ähnlich einer [HTTPS-Verbindung](https://tiptopsecurity.com/how-does-https-work-rsa-encryption-explained/) werden beim Verbindungsaufbau zunächst die Kommunikationsstandards zwischen Client und Server ausgehandelt, dann werden *Session-Keys* zur Verschlüsselung ausgetauscht, welche jedoch nur für die aktuelle Verbindung Gültigkeit haben. Mit diesen Session-Keys wird die eigentliche Verbindung in Form einer symmetrischen Verschlüsselung aufgebaut (welche deutlich schneller ist, als die zuvor stattfindende asymmetrische Verschlüsselung, siehe dazu auch die Ressourcen von Studyflix zur [symmetrischen](https://studyflix.de/informatik/symmetrische-verschlusselung-1610) und [asymmetrischen](https://studyflix.de/informatik/asymmetrische-verschlusselung-1609) Verschlüsselung).
+Das SSH-Protkoll nutzt mehrere etablierte Verfahren der Kryptographie und Netzwerkkommunikation zur Gewährleistung der sicheren Übertragung. Ähnlich einer [HTTPS-Verbindung](https://www.elektronik-kompendium.de/sites/net/1811281.htm) werden beim Verbindungsaufbau zunächst die Kommunikationsstandards zwischen Client und Server ausgehandelt, dann werden *Session-Keys* zur Verschlüsselung ausgetauscht, welche jedoch nur für die aktuelle Verbindung Gültigkeit haben. Mit diesen Session-Keys wird die eigentliche Verbindung in Form einer symmetrischen Verschlüsselung aufgebaut (welche deutlich schneller ist, als die zuvor stattfindende asymmetrische Verschlüsselung, siehe dazu auch die Ressourcen von Studyflix zur [symmetrischen](https://studyflix.de/informatik/symmetrische-verschlusselung-1610) und [asymmetrischen](https://studyflix.de/informatik/asymmetrische-verschlusselung-1609) Verschlüsselung).
 
 Mehr zur Funktionsweise des SSH-Protkolls können Sie im Netz finden, z.B. bei [IP-Insider](https://www.ip-insider.de/was-ist-secure-shell-ssh-ssh-1-ssh-2-openssh-a-691217/).
 
@@ -52,7 +52,7 @@ Sie haben wie in [Sitzung 2](02_betriebssystem-und-linuxgrundlagen.Rmd) besproch
 :::solution
 1. Netzwerkverbindung: der Server muss im Netzwerk erreichbar sein. Dazu müssen entweder Server und Client im selben Netzwerk (z.B. demselben Heimnetzwerk) sein oder der Server muss im Internet erreichbar sein.
 
-2. Software: Auf dem Server muss die SSH-Server-Software installiert sein (das **Paket openssh-server**) und auf dem Client ein SSH-Client-Programm (das  OpenSSH-Client-Programm für die Kommandozeile ist i.d.R. auf allen PCs installiert. Für Windows kann auch das graphische Programm [Putty](https://putty.software/) installiert werden).
+2. Software: Auf dem Server muss die SSH-Server-Software installiert sein (das **Paket openssh-server**) und auf dem Client ein SSH-Client-Programm (das  OpenSSH-Client-Programm für die Kommandozeile ist i.d.R. auf allen PCs installiert. Für Windows kann auch das graphische Programm [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/) installiert werden).
 
 3. Berechtigungen: die Anmeldung am entfernten Server ist nur möglich, wenn Sie die Berechtigungen dazu haben. Sie benötigen also einen Account unter Ubuntu und dessen Passwort.
 
@@ -73,7 +73,7 @@ Wenn die Voraussetzungen stimmen (siehe [Vorraussetzungen für die SSH-Verbindun
 
 - So bauen Sie eine einfache SSH-Verbindung auf: **`ssh <user>@<server>`**
 
-  - dabei ggf. die [besonderen Bedingungen im Kurssetup beachten](#besonderheiten-zur-ssh-anmeldung-im-kurssetup)
+  - dabei ggf. die [besonderen Bedingungen im Kurssetup beachten](../learners/setup.md#systemsetup)
 
 :::
 
@@ -95,7 +95,7 @@ Aufgrund der komplexen kryptographischen Struktur der Schlüssel sind diese deut
 
 Für eine sichere SSH-Verbindung empfiehlt es sich, auf Passwörter zu verzichten und sich stattdessen mit einem Schlüsselpaar zu authentifizieren.
 
-Ist ein Schlüsselpaar erzeugt, erfolgt die Verbindung wie folgt: `ssh <user>@<server> -i <Pfad-zum-privaten-schlüssel>`. Mit dem Befehlsparameter *-i* wird der Pfad zum privaten Schlüssel am Client angegeben (Achtung: für die Kursumgebung die [besonderen Bedingungen im Kurssetup](#besonderheiten-zur-ssh-anmeldung-im-kurssetup) beachten).
+Ist ein Schlüsselpaar erzeugt, erfolgt die Verbindung wie folgt: `ssh <user>@<server> -i <Pfad-zum-privaten-schlüssel>`. Mit dem Befehlsparameter *-i* wird der Pfad zum privaten Schlüssel am Client angegeben (Achtung: für die Kursumgebung die [besonderen Bedingungen im Kurssetup](../learners/setup.md#systemsetup) beachten).
 
 Mehr zur Schlüsselauthenfikation finden Sie z.B. bei [ManageEngine](https://www.manageengine.com/key-manager/information-center/what-is-ssh-key-management.html) (hier v.a. die ersten drei Absätze).
 
@@ -148,7 +148,7 @@ SSH-Verbindung verlassen: `exit`
 
 SSH-Verbindung mit privatem Schlüssel testen: `ssh <username>@<server> -i .ssh\<privater-schlüssel>`
 
-Achtung: sowohl der `scp`- als auch der `ssh`-Befehl müssen an die [besonderen Bedingungen im Kurssetup](#besonderheiten-zur-ssh-anmeldung-im-kurssetup) angepasst werden.
+Achtung: sowohl der `scp`- als auch der `ssh`-Befehl müssen an die [besonderen Bedingungen im Kurssetup](../learners/setup.md#systemsetup) angepasst werden.
 
 ### Mac
 
@@ -156,7 +156,7 @@ Mit macOS kann das Programm *ssh-copy-id* genutzt werden: `ssh-copy-id -i <öffe
 
 SSH-Verbindung mit privatem Schlüssel testen: `ssh <username>@<server> -i .ssh/<privater-schlüssel>`
 
-Achtung: `ssh-copy-id`-Befehl muss an die [besonderen Bedingungen im Kurssetup](#besonderheiten-zur-ssh-anmeldung-im-kurssetup) angepasst werden.
+Achtung: `ssh-copy-id`-Befehl muss an die [besonderen Bedingungen im Kurssetup](../learners/setup.md#systemsetup) angepasst werden.
 
 ### Linux
 
@@ -164,7 +164,7 @@ Mit Linux kann das Programm *ssh-copy-id* genutzt werden: `ssh-copy-id -i <öffe
 
 SSH-Verbindung mit privatem Schlüssel testen: `ssh <username>@<server> -i .ssh/<privater-schlüssel>`
 
-Achtung: `ssh-copy-id`-Befehl muss an die [besonderen Bedingungen im Kurssetup](#besonderheiten-zur-ssh-anmeldung-im-kurssetup) angepasst werden.
+Achtung: `ssh-copy-id`-Befehl muss an die [besonderen Bedingungen im Kurssetup](../learners/setup.md#systemsetup) angepasst werden.
 
 :::
 
@@ -199,7 +199,7 @@ Nach Änderungen an der Konfiguration eines Programms muss dieses in der Regel *
 
 Weitere Anpassungen des SSH-Servers sind je nach eigenem Sicherheitsbedürfnis möglich. Z.B. finden sich bei [cyberciti.biz](https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html) einige weitere Möglichkeiten.
 
-Möchte man sich nun per SSH anmelden, müssen die vorgenommenen Änderungen berücksichtigt werden. V.a. muss die geänderte Portnummer angegeben werden: `ssh -p <Portnummer> -i <Pfad-zum-privaten-Schlüssel> <user>@<server>` (Achtung: für die Kursumgebung die [besonderen Bedingungen im Kurssetup](#besonderheiten-zur-ssh-anmeldung-im-kurssetup) beachten).
+Möchte man sich nun per SSH anmelden, müssen die vorgenommenen Änderungen berücksichtigt werden. V.a. muss die geänderte Portnummer angegeben werden: `ssh -p <Portnummer> -i <Pfad-zum-privaten-Schlüssel> <user>@<server>` (Achtung: für die Kursumgebung die [besonderen Bedingungen im Kurssetup](../learners/setup.md#systemsetup) beachten).
 
 :::callout
 ### Programme mit systemd Steuern
@@ -240,14 +240,6 @@ Tip: mit Angabe des Parameters -v erhält man beim Verbingungsversuch mehr Infor
 :::
 
 ::::::
-
-## Besonderheiten zur SSH Anmeldung im Kurssetup
-
-Da die virtuellen Server nicht im Uninetzwerk erreichbar sind, sondern nur eine "virtuelle" IP-Adresse innerhalb der Proxmox-Plattform erhalten haben, sind die Server nicht direkt per SSH erreichbar.
-
-Um dennoch per SSH auf die Server zuzugreifen, wurde auf einem Proxy-Server, der einerseits eine IP-Adresse im Uni-Netzwerk hat und andererseits auch ein Adresse innerhalb der Proxmox-Plattform, eine Weiterleitung eingerichtet.
-
-Deshalb muss für den SSH-Zugriff die Verbindung zum Proxyserver (IP-Adresse: 134.2.17.196) aufgebaut werden und dieser leitet die Anfrage dann intern an die richtige Adresse weiter. Dazu muss der SSH-Befehl wie folgt angepasst werden: `ssh -o ProxyCommand="openssl s_client -quiet -connect 134.2.17.196:15101 -servername <name>-ssh" <username>@<name>-ssh -i <Pfad-zum-SSH-Key` (Dabei natürlich die Werte in `< >` jeweils anpassen).
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
