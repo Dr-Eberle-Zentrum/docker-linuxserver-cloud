@@ -29,12 +29,6 @@ Benötige Daten werden über das ILIAS-Portal zur Verfügung gestellt
 
 ## Software Setup
 
-### SSH-Zugriff
-
-Angepasster SSH-Befehl: `ssh -o ProxyCommand="openssl s_client -quiet -connect 134.2.17.196:15101 -servername <name>-ssh" <username>@<name>-ssh -i <Pfad-zum-SSH-Key` (Dabei natürlich die Werte in `< >` jeweils anpassen).
-
-Siehe dazu auch [Lektion 3](03-remote-access.Rmd#besonderheiten-zur-ssh-anmeldung-im-kurssetup)
-
 ### Systemsetup
 
 - **Zugriff über Proxmox Webconsole**:

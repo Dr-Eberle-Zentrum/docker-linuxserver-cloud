@@ -19,5 +19,6 @@
 "episodes/13-mehr-docker.Rmd" "37eb13c18a9f5b90ec7ab2156f886746" "site/built/13-mehr-docker.md" "2026-04-24"
 "instructors/instructor-notes.md" "cae72b6712578d74a49fea7513099f8c" "site/built/instructor-notes.md" "2026-04-24"
 "learners/reference.md" "1c7cc4e229304d9806a13f69ca1b8ba4" "site/built/reference.md" "2026-04-24"
-"learners/setup.md" "57acfca412ce97014f90ef67f33ab6fc" "site/built/setup.md" "2026-04-24"
+"learners/setup.md" "119f425b771453fff24f27714af6e146" "site/built/setup.md" "2026-04-24"
 "profiles/learner-profiles.md" "60b93493cf1da06dfd63255d73854461" "site/built/learner-profiles.md" "2026-04-24"
+"renv/profiles/lesson-requirements/renv.lock" "7cc21fde5ff1be1e6e7d65f80bea2b07" "site/built/renv.lock" "2026-04-24"
