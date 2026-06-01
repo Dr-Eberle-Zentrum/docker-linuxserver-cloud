@@ -64,7 +64,7 @@ Um der Konfigurationsdatei Informationen und Erklärungen hinzuzufügen, erlaubt
 
 Wichtige Keys in Docker Compose sind:
 
-- `services`: Top-Level-Map, die eine pro zu startendem Service eine weitere Map enthält. Ein Service entspricht dabei einem Container.
+- `services`: Top-Level-Map, die pro zu startendem Service eine weitere Map enthält. Ein Service entspricht dabei einem Container.
 -  Die Maps pro Service haben dann weitere Parameter, teils als weitere Maps, teils als Liste. Wichtig sind dabei:
   - `image` für die Angabe des Dockerimages
   - `dockerfile` für die Angabe eines manuell erstellten Dockerfiles (mehr dazu später)
@@ -72,7 +72,7 @@ Wichtige Keys in Docker Compose sind:
   - `networks` für die Angabe des Netzwerks, in welchem der Container sich befinden soll
   - `environment` um Umgebungsvariablen zu definieren 
   - `volumes` um Dateien/Ordner des Hosts in den Container zu binden
-- `networks`: Findet sich der Key `networks` auf obererster Ebene, dient er der Erstellung eines Docker-Netzwerks oder der Verbindung zu einem zuvor außerhalb von Compose erstellten Docker-Netzwerks.
+- `networks`: Findet sich der Key `networks` auf oberster Ebene, dient er der Erstellung eines Docker-Netzwerks oder der Verbindung zu einem zuvor außerhalb von Compose erstellten Docker-Netzwerks.
 
 Ein Beispiel für eine `compose.yaml`-Datei könnte wie folgt aussehen:
 
@@ -102,11 +102,11 @@ Weitere Informationen zur YAML-Syntax finden sich z.B: bei [Red Hat](https://www
 
 ### Umgebungsvariablen
 
-Docker ermöglicht es, einem Container beim Start vordefinierte Werte für bestimmte Einstellungsparameter mitzugeben, z.B. Verbindungsinformationen für eine Datenbank. Diese Umgebungsvariablen können entweder in der compose.yaml-Datei als Liste innerhalb der Map `environment` genannt werden oder in einer eigenen Konfigurationsdatei auflistet werden. Standardmäßig sucht Docker Compose nach der Datei mit dem Nachem `.env`. Man kann diese aber auch anders bennenen und in der Compose-Datei darauf verweisen. Die Variablen können dann an mehreren Stellen der Compose-Datei als Platzhalter verwendet werden.
+Docker ermöglicht es, einem Container beim Start vordefinierte Werte für bestimmte Einstellungsparameter mitzugeben, z.B. Verbindungsinformationen für eine Datenbank. Diese Umgebungsvariablen können entweder in der compose.yaml-Datei als Liste innerhalb der Map `environment` genannt werden oder in einer eigenen Konfigurationsdatei aufgelistet werden. Standardmäßig sucht Docker Compose nach der Datei mit dem Namen `.env`. Man kann diese aber auch anders benenne und in der Compose-Datei darauf verweisen. Die Variablen können dann an mehreren Stellen der Compose-Datei als Platzhalter verwendet werden.
 
 #### Compose.yaml mit environment-Map
 
-Hier ein Beispiel für eine `compose.yaml`-Datei für einen Webservice, welcher sich mit einer Datenbank verbindet. Dei Verbindungsinformationen kommen aus einem environment Eintrag, müssen jedoch für beide Services erklärt werden.
+Hier ein Beispiel für eine `compose.yaml`-Datei für einen Webservice, welcher sich mit einer Datenbank verbindet. Die Verbindungsinformationen kommen aus einem environment Eintrag, müssen jedoch für beide Services erklärt werden.
 
 ```yaml
 version: '3'
@@ -137,7 +137,7 @@ Der `web`-Dienst hat einen `environment`-Eintrag, der die `DATABASE_USER`, `DATA
 
 Der `db`-Dienst hat auch einen `environment`-Eintrag, der die `MYSQL_USER`, `MYSQL_PASSWORD`, `MYSQL_DATABASE` und `MYSQL_ROOT_PASSWORD`-Variablen setzt. Diese Variablen werden verwendet, um den Benutzernamen, das Passwort, den Datenbanknamen und das Root-Passwort für die MariaDB-Datenbank zu konfigurieren.
 
-Der `web`-Dienst hat auch einen `depends_on`-Eintrag, der angibt, dass er vom `db`-Dienst abhängig ist. Das bedeutet, dass der `db`-Dienst gestartet wird, bevor der `web`-Dienst gestartet wird.
+Der `web`-Dienst hat auch einen `depends_on`-Eintrag, der angibt, dass er vom `db`-Dienst abhängig ist. Das bedeutet, dass der `db`-Dienst vor dem `web`-Dienst gestartet wird.
 
 #### Compose.yaml mit externer .env-Datei für Variablen
 
@@ -186,9 +186,9 @@ Die grundlegenden docker-compose-Befehle sind:
 - `docker compose stop`: Beendet alle Dienste.
 - `docker compose up -d`: startet alle Container im Hintergrund
 - `docker compose ps`: zeigt den Status der Dienste an
-- `docker compose exec`: ermöglicht es, einen Befehl in einem Docker-Container auszuführen. Zum Beispiel: `docker-compose exec <container-name> bash`.
+- `docker compose exec`: ermöglicht es, einen Befehl in einem Docker-Container auszuführen. Zum Beispiel: `docker compose exec <container-name> bash`.
 
-Allen Befehlen kann auch ein expliziter Container-Name mitgegeben, um die Aktion nur auf diesen Container anzuwenden, z.B. `docker compose restart nginx`
+Allen Befehlen kann auch ein expliziter Container-Name mitgegeben werden, um die Aktion nur auf diesen Container anzuwenden, z.B. `docker compose restart nginx`
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
@@ -196,7 +196,7 @@ Allen Befehlen kann auch ein expliziter Container-Name mitgegeben, um die Aktion
 
 - Docker Compose benötigt die compose.yaml-Konfigurationsdatei
 
-- Diese compose.yaml-Datei verwendet den YAML-Syntax
+- Diese compose.yaml-Datei verwendet die YAML-Syntax
 
 - die Steuerung erfolgt mit dem Befehl `docker compose`
 ::::::::::::::::::::::::::::::::::::::::::::::::
