@@ -390,7 +390,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Docker compose</h1>
-        <p>Zuletzt aktualisiert am 2026-05-26 |
+        <p>Zuletzt aktualisiert am 2026-06-01 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/07-docker-compose.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -511,8 +511,8 @@ hinzuzufügen, erlaubt die YAML-Syntax Kommentare: alle Zeilen, die mit
 <code>#</code> beginnen werden als Kommentar betrachet.</p>
 <p>Wichtige Keys in Docker Compose sind:</p>
 <ul><li>
-<code>services</code>: Top-Level-Map, die eine pro zu startendem
-Service eine weitere Map enthält. Ein Service entspricht dabei einem
+<code>services</code>: Top-Level-Map, die pro zu startendem Service
+eine weitere Map enthält. Ein Service entspricht dabei einem
 Container.</li>
 <li>Die Maps pro Service haben dann weitere Parameter, teils als weitere
 Maps, teils als Liste. Wichtig sind dabei:</li>
@@ -533,8 +533,8 @@ Container sich befinden soll</li>
 binden</li>
 <li>
 <code>networks</code>: Findet sich der Key <code>networks</code> auf
-obererster Ebene, dient er der Erstellung eines Docker-Netzwerks oder
-der Verbindung zu einem zuvor außerhalb von Compose erstellten
+oberster Ebene, dient er der Erstellung eines Docker-Netzwerks oder der
+Verbindung zu einem zuvor außerhalb von Compose erstellten
 Docker-Netzwerks.</li>
 </ul><p>Ein Beispiel für eine <code>compose.yaml</code>-Datei könnte wie
 folgt aussehen:</p>
@@ -583,15 +583,15 @@ für bestimmte Einstellungsparameter mitzugeben, z.B.
 Verbindungsinformationen für eine Datenbank. Diese Umgebungsvariablen
 können entweder in der compose.yaml-Datei als Liste innerhalb der Map
 <code>environment</code> genannt werden oder in einer eigenen
-Konfigurationsdatei auflistet werden. Standardmäßig sucht Docker Compose
-nach der Datei mit dem Nachem <code>.env</code>. Man kann diese aber
-auch anders bennenen und in der Compose-Datei darauf verweisen. Die
+Konfigurationsdatei aufgelistet werden. Standardmäßig sucht Docker
+Compose nach der Datei mit dem Namen <code>.env</code>. Man kann diese
+aber auch anders benenne und in der Compose-Datei darauf verweisen. Die
 Variablen können dann an mehreren Stellen der Compose-Datei als
 Platzhalter verwendet werden.</p>
 <div class="section level4">
 <h4 id="compose-yaml-mit-environment-map">Compose.yaml mit environment-Map<a class="anchor" aria-label="anchor" href="#compose-yaml-mit-environment-map"></a></h4>
 <p>Hier ein Beispiel für eine <code>compose.yaml</code>-Datei für einen
-Webservice, welcher sich mit einer Datenbank verbindet. Dei
+Webservice, welcher sich mit einer Datenbank verbindet. Die
 Verbindungsinformationen kommen aus einem environment Eintrag, müssen
 jedoch für beide Services erklärt werden.</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -637,8 +637,8 @@ das Root-Passwort für die MariaDB-Datenbank zu konfigurieren.</p>
 <p>Der <code>web</code>-Dienst hat auch einen
 <code>depends_on</code>-Eintrag, der angibt, dass er vom
 <code>db</code>-Dienst abhängig ist. Das bedeutet, dass der
-<code>db</code>-Dienst gestartet wird, bevor der <code>web</code>-Dienst
-gestartet wird.</p>
+<code>db</code>-Dienst vor dem <code>web</code>-Dienst gestartet
+wird.</p>
 </div>
 <div class="section level4">
 <h4 id="compose-yaml-mit-externer--env-datei-für-variablen">Compose.yaml mit externer .env-Datei für Variablen<a class="anchor" aria-label="anchor" href="#compose-yaml-mit-externer--env-datei-f%C3%BCr-variablen"></a></h4>
@@ -709,9 +709,9 @@ Hintergrund</li>
 <li>
 <code>docker compose exec</code>: ermöglicht es, einen Befehl in
 einem Docker-Container auszuführen. Zum Beispiel:
-<code>docker-compose exec &lt;container-name&gt; bash</code>.</li>
-</ul><p>Allen Befehlen kann auch ein expliziter Container-Name mitgegeben, um
-die Aktion nur auf diesen Container anzuwenden, z.B.
+<code>docker compose exec &lt;container-name&gt; bash</code>.</li>
+</ul><p>Allen Befehlen kann auch ein expliziter Container-Name mitgegeben
+werden, um die Aktion nur auf diesen Container anzuwenden, z.B.
 <code>docker compose restart nginx</code></p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
@@ -724,7 +724,7 @@ die Aktion nur auf diesen Container anzuwenden, z.B.
 werden</p></li>
 <li><p>Docker Compose benötigt die
 compose.yaml-Konfigurationsdatei</p></li>
-<li><p>Diese compose.yaml-Datei verwendet den YAML-Syntax</p></li>
+<li><p>Diese compose.yaml-Datei verwendet die YAML-Syntax</p></li>
 <li><p>die Steuerung erfolgt mit dem Befehl
 <code>docker compose</code></p></li>
 </ul></div>
@@ -765,7 +765,7 @@ any links that you are not going to use.
         | <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/blob/main/CONTRIBUTING.md" class="external-link">Beitragen</a>
         | <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/" class="external-link">Quelle</a></p>
         <p>
-        <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/blob/main/" class="external-link">Zitieren</a>
+        <a href="citation.html">Zitieren</a>
         | <a href="mailto:david.kirschenheuter@uni-tuebingen.de">Kontakt</a> | <a href="https://carpentries.org/about/" class="external-link">Über</a></p>
 		</div>
 		<div class="col-md-6">
@@ -773,7 +773,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Vorlage lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> von <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/0.20.2" class="external-link">sandpaper (0.20.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
+        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -795,8 +795,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/07-docker-compose.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/07-docker-compose.html",
   "dateCreated": "2025-08-18",
-  "dateModified": "2026-05-26",
-  "datePublished": "2026-05-26"
+  "dateModified": "2026-06-01",
+  "datePublished": "2026-06-01"
 }
 
   </script><script>
