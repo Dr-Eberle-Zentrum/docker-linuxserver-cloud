@@ -65,7 +65,7 @@ Ruft ein Computer die Adresse *server.ddns-anbieter.de* auf, wird im DNS des DDN
 
 Es gibt verschiedene Anbieter für DDNS-Dienste. Gut geeignet sind z.B. [No-IP](https://noip.com) oder [DDNSS](https://www.ddnss.de/).
 
-DDNS wird eigentlich primär verwendet, um an privaten Internetanschlüssen, die häufig eine sich änderende IP-Adresse haben, immer über die gleiche Domain erreichbar zu sein. Im Fall des Kurses ist eine statische öffentliche IP-Adresse vorhanden und  es wäre sauberer eine ordentliche Domain zu kaufen (oder im Rechenzentrum der Universität zu beantragen). Für die Testzwecke dieses Kurses genügt aber eine DDNS-Domain. Zeitgleich kann die damit erlernte Technik auch gut für Zwecke des Selfhostings im heimischen Wohnzimmer oder kleinen Büros ohne statische IP-Adresse angewendet werden.
+DDNS wird eigentlich primär verwendet, um an privaten Internetanschlüssen, die häufig eine sich ändernde IP-Adresse haben, immer über die gleiche Domain erreichbar zu sein. Im Fall des Kurses ist eine statische öffentliche IP-Adresse vorhanden und  es wäre sauberer eine vollwertige Domain zu kaufen (oder im Rechenzentrum der Universität zu beantragen). Für die Testzwecke dieses Kurses genügt aber eine DDNS-Domain. Zeitgleich kann die damit erlernte Technik auch gut für Zwecke des Selfhostings im heimischen Wohnzimmer oder kleinen Büros ohne statische IP-Adresse angewendet werden.
 
 ### Umsetzung DDNS unter Ubuntu
 
@@ -77,15 +77,21 @@ Für die Implementierung des DDNS-Verfahrens wird wie folgt vorgegangen:
 
 - Beim gewählten Anbieter muss ein Domainname reserviert werden (A-Record für IPv4 oder AAAA-Record für IPv6)
 
-- ddclient auf dem Server installieren und konfigurieren: `sudo apt-get install ddclient`
+- Ist eine statische öffentliche IP-Adresse vorhanden, wird diese beim DDNS-Anbieter eingetragen.
 
-    - Im Anschließenden Dialog wird im Falle von No-IP *no-ip* gewählt, ansonsten *anderer*
+  - die eigene öffentliche IP kann z.B. wie folgt heraus gefunden werden: `curl https://api.ipify.org/`
+
+- Ist keine statische IP-Adresse vorhanden (z.B. in einem Selfhosting-Setup im heimischen Wohnzimmer), wird wie folgt vorgegangen:
+
+    - ddclient auf dem Server installieren und konfigurieren: `sudo apt-get install ddclient`
+
+        - Im Anschließenden Dialog wird im Falle von No-IP *no-ip* gewählt, ansonsten *anderer*
     
-    - als Benutzername und Passwort werden die Zugangsdaten des DDNS-Anbieters eingetragen
+        - als Benutzername und Passwort werden die Zugangsdaten des DDNS-Anbieters eingetragen
     
-    - als *IP-Adressen-Ermittlungsmethode* wird *Web-basierter IP-Ermittlungsdienst* gewählt
+        - als *IP-Adressen-Ermittlungsmethode* wird *Web-basierter IP-Ermittlungsdienst* gewählt
     
-    - der zu aktualisierende Rechner ist der beim DDNS-Anbieter reservierte Domainnamen
+        - der zu aktualisierende Rechner ist der beim DDNS-Anbieter reservierte Domainnamen
     
 ![DDClient konfigurieren 1: Anbieter auswählen](fig/08_ddclient01.png){alt='Konfigurationsdialog von DDClient. Es stehen mehrere DDNS-Anbieter zur Auswahl. Hervorgehoben ist no-ip.com'}    
 
@@ -135,41 +141,41 @@ Damit auf dem eigenen Server auf Anfragen aus dem Internet auch reagiert wird, m
 3. Dort die Compose-Datei erstellen (`nano compose.yaml`)
 
   ```yaml
-  services:
-  apache:
-    image: httpd:latest
-    container_name: apache
-    ports:
-    - '80:80'
-    volumes:
-    - ./website:/usr/local/apache2/htdocs
+services:
+   apache:
+      image: httpd:latest
+      container_name: apache
+      ports:
+         - '80:80'
+      volumes:
+         - ./website:/usr/local/apache2/htdocs
   ```
 4. Volume-Verzeichnis für den Datenaustausch mit dem Container erstellen: `mkdir website`
 
 5. Website-Beispiel erstellen: `nano website/index.html`, z.B. wie folgt
 
   ```html
-  <!DOCTYPE html>
-  <html>
-  <head>
-      <title>Apache-Test</title>
-      <style>
-          body {
-              font-family: Arial, sans-serif;
-          }
-          h1 {
-              color: blue;
-          }
-          p {
-              font-size: 18px;
-          }
-      </style>
-  </head>
-  <body>
-      <h1>Welcome to Apache-Test</h1>
-      <p>This is a simple paragraph to test the Apache server.</p>
-  </body>
-  </html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apache-Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: blue;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Apache-Test</h1>
+    <p>This is a simple paragraph to test the Apache server.</p>
+</body>
+</html>
   ```
 6. Docker Container starten: `sudo docker compose up` oder im Hintergrund `sudo docker compose up -d`
 
@@ -210,7 +216,7 @@ Um ein solches Zertifikat zu erhalten, muss man gegenüber Letsencrypt nachweise
 #### Zertifikat erhalten:
 In Docker kann das Hilfsprogramm für den Erhalt des Zertifikats in das Docker Compose Projekt integriert werden. Hierzu bestehen, wie eine Internetrecherche schnell aufzeigen wird, verschiedene Möglichkeiten.
 
-Im Folgenden eine Möglichkeit, in welcher das Program certbot als zweiter Container dem Docker Compose Projekt hinzugefügt wird:
+Im Folgenden eine Möglichkeit, in welcher das Programm certbot als zweiter Container dem Docker Compose Projekt hinzugefügt wird:
 
 ```YAML
 services:
@@ -223,8 +229,8 @@ services:
       volumes:
       #Webinhalte für certbot challenge
       - ./certbot/www:/usr/local/apache2/htdocs
-      #Beispiel-Internetseite
-      - ./website/index.html:/usr/local/apache2/htdocs/index.html
+      #Beispiel-Internetseite (deaktiviert für die Dauer der Zetifikatsausstellung)
+      #- ./website/index.html:/usr/local/apache2/htdocs/index.html
       networks:
       - webapp
    certbot:
@@ -263,7 +269,7 @@ Um das Zertifikat für die Sicherung des eigenen Webservers zu nutzen, müssen e
 
 1. Apache-Konfigurationsdateien aus dem Container zum Host kopieren (bei laufendem Container): `sudo docker cp apache:/usr/local/apache2/conf apache-conf/`
 
-2. Wurde das Zertifikat erhalten muss ggf. in der **Firewall** Port 80 geschlossen und Port 443 geöffnet werden. Im Falle von Docker-Container, wird die UFW-Firewall standardmäßig umgangen, weshalb die Ports nicht explizit geöffnet werden müssen.
+2. Wurde das Zertifikat erhalten muss ggf. in der **Firewall** Port 80 geschlossen und Port 443 geöffnet werden. Im Falle von Docker-Containern, wird die UFW-Firewall standardmäßig umgangen, weshalb die Ports nicht explizit geöffnet werden müssen.
 
 3. Konfigurationsdatei für die Test-Webseite erstellen: `sudo nano apache-conf/webseite.conf`
 
@@ -310,8 +316,8 @@ services:
     #Zertifikat und Key
       - ./certbot/conf/live/<ddns-domain>/cert.pem:/usr/local/apache2/server.crt:ro
       - ./certbot/conf/live/<ddns-domain>/privkey.pem:/usr/local/apache2/server.key:ro
-    #Beispiel-Internetseite
-    - ./website/indey.html:/usr/local/apache2/htdocs/index.html
+    #Beispiel-Internetseite (aktivert nachdem, das Zertifikat ausgestellt wurde)
+    - ./website/index.html:/usr/local/apache2/htdocs/index.html
     #Konfiguration
       - ./apache-conf/:/usr/local/apache2/conf
     #...wie gehabt
