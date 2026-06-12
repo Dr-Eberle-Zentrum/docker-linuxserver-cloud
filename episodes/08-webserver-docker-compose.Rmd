@@ -271,7 +271,7 @@ Um das Zertifikat für die Sicherung des eigenen Webservers zu nutzen, müssen e
 
 2. Wurde das Zertifikat erhalten muss ggf. in der **Firewall** Port 80 geschlossen und Port 443 geöffnet werden. Im Falle von Docker-Containern, wird die UFW-Firewall standardmäßig umgangen, weshalb die Ports nicht explizit geöffnet werden müssen.
 
-3. Konfigurationsdatei für die Test-Webseite erstellen: `sudo nano apache-conf/webseite.conf`
+3. Konfigurationsdatei für die Test-Webseite erstellen: `sudo nano apache-conf/website.conf`
 
 ```apacheconf
 <VirtualHost *:80>
@@ -311,8 +311,8 @@ services:
   apache:
     #... wie gehabt
     volumes:
-    #Webinhalte für certbot challenge
-      - ./certbot/www:/usr/local/apache2/htdocs:ro
+    #Webinhalte für certbot challenge (deaktivieren nach der Zertifikatsausstellung)
+    #  - ./certbot/www:/usr/local/apache2/htdocs:ro
     #Zertifikat und Key
       - ./certbot/conf/live/<ddns-domain>/cert.pem:/usr/local/apache2/server.crt:ro
       - ./certbot/conf/live/<ddns-domain>/privkey.pem:/usr/local/apache2/server.key:ro
@@ -336,7 +336,7 @@ LoadModule rewrite_module modules/mod_rewrite.so
 LoadModule socache_shmcb_module modules/mod_socache_shmcb.so
 #...
 #Neue Zeile ergänzen
-Include conf/webseite.conf
+Include conf/website.conf
 ```
 
 5. Das gesamte Compose-Projekt stoppen und wieder starten: `sudo docker compose down && sudo docker compose up -d`
