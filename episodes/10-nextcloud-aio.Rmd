@@ -56,7 +56,7 @@ In dieser Lektion wird gezeigt, wie das Nextloud All-in-One-Dockerimage installi
 
 ### Nextcloud All-in-One
 
-Vor der Installation sollten Sie sich die Informationen im [Github-Repository](https://github.com/nextcloud/all-in-one) durchlesen. Allgemein zur Installation, Konfiguration und Nutzung von Nextcloud ist das [Handbuch][nextlcoud-doc] die erste Anlaufstelle.
+Vor der Installation sollten Sie sich die Informationen im [Github-Repository](https://github.com/nextcloud/all-in-one) durchlesen. Allgemein zur Installation, Konfiguration und Nutzung von Nextcloud ist das [Handbuch][nextcoud-doc] die erste Anlaufstelle.
 
 Wie bei jedem Docker Compose Projekt wird wieder ein Arbeitsverzeichnis vorbereitet. 
 
