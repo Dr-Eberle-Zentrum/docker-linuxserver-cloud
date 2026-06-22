@@ -64,7 +64,7 @@ Anschließend muss der NGINX-Proxy-Manager eingerichtet werden (Proxy Host mit T
 
 Für die compose.yaml-Datei existiert eine [Vorlage](https://github.com/nextcloud/all-in-one/blob/216d238625564ed0051b65cced08a90b66e3d1b5/compose.yaml). Diese muss jedoch noch stark angepasst werden. In diesem [Thread](https://github.com/nextcloud/all-in-one/discussions/588) auf Github gibt es einige aus der Community berichtete Beispiele (Tip: die Seite nach "NGINX Proxy Manager" durchsuchen).
 
-Hat man eine compose.yaml-Datei erstellt müssen, müssen ggf. lokale Ordner und Dateien für die Docker Volumes erstellt werden. Anschließen kann das Projekt mit `sudo docker compose up` gestartet werden. Hier empfiehlt sich tatsächlich das Starten im Vordergrund, da bei diesem großen Projekt vermutlich zunächst noch Fehler aufkommen, die so direkt gesehen werden.
+Hat man eine compose.yaml-Datei erstellt, müssen ggf. lokale Ordner und Dateien für die Docker Volumes erstellt werden. Anschließen kann das Projekt mit `sudo docker compose up` gestartet werden. Hier empfiehlt sich tatsächlich das Starten im Vordergrund, da bei diesem großen Projekt vermutlich zunächst noch Fehler aufkommen, die so direkt gesehen werden.
 
 :::challenge
 
@@ -110,7 +110,9 @@ services:
       - 8080:8080
     environment: 
       APACHE_PORT: 11000 
-      APACHE_IP_BINDING:  127.0.0.1 
+      APACHE_IP_BINDING:  127.0.0.1
+      #Wenn die Domainvalidierung fehlschlägt:
+      SKIP_DOMAIN_VALIDATION: true
 
 volumes:
   nextcloud_aio_mastercontainer:
