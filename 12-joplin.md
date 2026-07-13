@@ -116,10 +116,52 @@ Im Github-Repository findet sich ein Beispiel für eine [compose.yaml-Datei](htt
 Eine auch für kleinere Umgebungen geeignete compose.yaml-Datei kann wie folgt aussehen
 
 ```YAML
-services
-  joplin
+services:
+    db:
+        image: postgres:16
+        volumes:
+            - ./data/postgres:/var/lib/postgresql/data
+        networks:
+            - app-network
+        ports:
+            - "5432:5432"
+        restart: unless-stopped
+        environment:
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+            - POSTGRES_USER=${POSTGRES_USER}
+            - POSTGRES_DB=${POSTGRES_DATABASE}
+    app:
+        image: joplin/server:latest
+        depends_on:
+            - db
+        ports:
+            - "22300:22300"
+        networks:
+            - app-network
+            - shared-network
+        restart: unless-stopped
+        environment:
+            - APP_PORT=22300
+            - APP_BASE_URL=${APP_BASE_URL}
+            - DB_CLIENT=pg
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+            - POSTGRES_DATABASE=${POSTGRES_DATABASE}
+            - POSTGRES_USER=${POSTGRES_USER}
+            - POSTGRES_PORT=${POSTGRES_PORT}
+            - POSTGRES_HOST=db
+networks:
+    app-network:
+      name: app-network
+      driver: bridge
+      external: true
+    #transcribe-network:
+    shared-network:
+       name: shared-network
+       driver: bridge
+       external: true
 
 ```
+
 Ergänzt wird die Compose Datei durch eine `.env`-Datei für die Umgebungsvariablen. Auch dafür gibt es eine [Vorlage](https://github.com/laurent22/joplin/blob/8d1d1be79eaea4dfdfadd0b23f28a48760840eae/.env-sample) die wie folgt vereinfacht werden kann:
 
 ```
