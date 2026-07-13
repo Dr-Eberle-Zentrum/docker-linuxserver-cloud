@@ -318,8 +318,6 @@
       <div class="accordion-body">
         <ul><li><a href="#m%C3%B6glichkeiten-des-self--und-onpremise-hostings">Möglichkeiten des Self- und OnPremise-Hostings</a></li>
 <li><a href="#grenzen-des-self--und-onpremise-hostings">Grenzen des Self- und OnPremise-Hostings</a></li>
-<li><a href="#m%C3%B6glichkeiten-des-self--und-onpremise-hostings-1">Möglichkeiten des Self- und OnPremise-Hostings</a></li>
-<li><a href="#grenzen-des-self--und-onpremise-hostings-1">Grenzen des Self- und OnPremise-Hostings</a></li>
 <li><a href="#joplin-knowledge-management-mit-dem-eigenen-server">Joplin: Knowledge-Management mit dem eigenen Server</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -394,7 +392,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Knowledge-und Notizmanagement mit Joplin</h1>
-        <p>Zuletzt aktualisiert am 2026-07-07 |
+        <p>Zuletzt aktualisiert am 2026-07-13 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/12-joplin.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -435,38 +433,6 @@ OnPremise-Hostings</p></li>
 </div>
 </div>
 <section><h2 class="section-heading" id="möglichkeiten-des-self--und-onpremise-hostings">Möglichkeiten des Self- und OnPremise-Hostings<a class="anchor" aria-label="anchor" href="#m%C3%B6glichkeiten-des-self--und-onpremise-hostings"></a></h2>
-<hr class="half-width"><ul><li>
-<p>sehr viel, v.a. Open Source Software</p>
-<ul><li><p>Siehe Awsome Selfhosted Github-Repo (Link)</p></li>
-<li><p>v.a. Client-Server-Anwendungen</p></li>
-</ul></li>
-<li>
-<p>Beispiele, jeweils mit Links und kurzer Beschreibung</p>
-<ul><li><p>Medienstreaming: Jellyfin</p></li>
-<li><p>Filetransfer: gokapi</p></li>
-<li><p>Git: gitea</p></li>
-<li><p>Smart Home: homeassistant</p></li>
-<li><p>Hypervizor/Cloud Computing: proxmox</p></li>
-<li><p>Backup: Bacula/Baculum</p></li>
-<li><p>Syncthing</p></li>
-<li><p>Kalender und Kontakt: Radicale</p></li>
-<li><p>Chat und (Video)Telefonie: Matrix, Jitsi, Bigbluebutton</p></li>
-</ul></li>
-</ul></section><section><h2 class="section-heading" id="grenzen-des-self--und-onpremise-hostings">Grenzen des Self- und OnPremise-Hostings<a class="anchor" aria-label="anchor" href="#grenzen-des-self--und-onpremise-hostings"></a></h2>
-<hr class="half-width"><ul><li><p>Lizenzrechtliche Einschränkungen: z.B. Nur beim Anbieter,
-bestimmte Limits wie Useranzahl oder CPU-Ressourcen</p></li>
-<li><p>Hardwareeinschränkungen: je höher die Anforderung, desto mehr
-Hardware nötig, z.B. für KI-Anwendungen Grafikleistung</p></li>
-<li><p>Bandbreite: Bandbreite im LAN und Bandbreite des
-Netzanschlusses</p></li>
-<li><p>Serverraum: Energiebedarf, Kühlung, Platzbedarf</p></li>
-<li><p>Know-How: was kann man selbst oder ist bereit zu erlernen, was
-lagert man besser aus</p></li>
-<li><p>Verfügbarkeit/Verlässlichkeit: kritische Infrastruktur muss immer
-laufen. Wie gut geschützt vor Ausfällen durch Softwareprobleme,
-Hardwareausfalls, Stromausfall, Einbruch, Wasserschaden,
-Blitzschlag</p></li>
-</ul></section><section><h2 class="section-heading" id="möglichkeiten-des-self--und-onpremise-hostings-1">Möglichkeiten des Self- und OnPremise-Hostings<a class="anchor" aria-label="anchor" href="#m%C3%B6glichkeiten-des-self--und-onpremise-hostings-1"></a></h2>
 <hr class="half-width"><p>Self-Hosting im Privatbereich oder On-Premise-Hosting im
 Enterprisebereich bieten eine breite Palette an Möglichkeiten,
 insbesondere mit Open-Source-Software. Das <a href="https://github.com/awesome-selfhosted/awesome-selfhosted" class="external-link">Awesome
@@ -517,7 +483,7 @@ zahlreiche Funktionen zur Integration in Unternehmen. Jitsi zielt eher
 auf den Privatbereichh oder kleinere Firmen. Bigbluebutton ist eine
 Videokonferenzlösung für den Bildungsbereich (Schule, Hochschulen,
 Kurse).</p></li>
-</ol></section><section><h2 class="section-heading" id="grenzen-des-self--und-onpremise-hostings-1">Grenzen des Self- und OnPremise-Hostings<a class="anchor" aria-label="anchor" href="#grenzen-des-self--und-onpremise-hostings-1"></a></h2>
+</ol></section><section><h2 class="section-heading" id="grenzen-des-self--und-onpremise-hostings">Grenzen des Self- und OnPremise-Hostings<a class="anchor" aria-label="anchor" href="#grenzen-des-self--und-onpremise-hostings"></a></h2>
 <hr class="half-width"><p>Allerdings hat Self-Hosting bzw. On-Premise-Hosting auch Grenzen:</p>
 <ol style="list-style-type: decimal"><li>Rechtliche Einschränkungen: Einige Software kann nur vom Anbieter
 verwendet werden oder unterliegt bestimmten Einschränkungen wie der
@@ -650,14 +616,15 @@ werden (siehe <a href="https://hub.docker.com/r/joplin/server" class="external-l
 wird aber eine Datenbank als Speicher empfohlen.</p>
 <p>Damit der Joplinserver erreicht werden kann, muss eine Domain
 vorhanden sein und im NGINX-Proxy-Manager hinterlegt sein.</p>
-<p>Die Konfiguration des Proxy-Hosts sieht wie folgt aus:</p>
+<!--Die Konfiguration des Proxy-Hosts sieht wie folgt aus:
+
 <!-- Abbildungen aus NPM ergänzen -->
 <p>Die Clientanwendung für die Endgeräte kann auf der <a href="https://joplinapp.org/" class="external-link">Homepage von Joplin</a> heruntergeladen
 und installiert werden.</p>
 </div>
 <div class="section level3">
 <h3 id="konfiguration">Konfiguration<a class="anchor" aria-label="anchor" href="#konfiguration"></a></h3>
-<ul><li>Nach der Installation der Clientanwendgung muss in den Einstellungen
+<ul><li>Nach der Installation der Clientanwendung muss in den Einstellungen
 die Verbindung zum eigenen Joplinserver eingetragen werden. Dazu im Menü
 unter Werkzeuge den Punkt Optionen öffnen und als Synchronisationsziel
 <code>Jopin Server (Beta)</code> auswählen. Anschließend kann die URL
@@ -667,7 +634,7 @@ Anschließend kann die Verbindung getestet werden.</li>
 </figure><ul><li>Um Datenverlust zu vermeiden empfiehlt es sich, die Notizen am
 Endgerät zu sichern. Dazu kann unter dem Punkt ein Zielverzeichnis
 gewählt werden und die genaue Ausführung eingerichtet werden. Werden die
-Notizen auf einem unverschlüsseltem Medium gepspeichert, empfiehtl sich
+Notizen auf einem unverschlüsseltem Medium gespeichert, empfiehlt sich
 das Setzen eines Passwortes, um zu verhindern, dass die Notizen von
 Dritten eingesehen werden können.</li>
 </ul><figure><img src="../fig/12_joplin_02.png" alt="Backupkonfiguration unter Joplin. Zielverzeichnis ist ein lokaler Pfad." class="figure mx-auto d-block"><div class="figcaption">Joplin: Konfiguration der lokalen
@@ -758,8 +725,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/12-joplin.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/instructor/12-joplin.html",
   "dateCreated": "2025-08-18",
-  "dateModified": "2026-07-07",
-  "datePublished": "2026-07-07"
+  "dateModified": "2026-07-13",
+  "datePublished": "2026-07-13"
 }
 
   </script><script>
