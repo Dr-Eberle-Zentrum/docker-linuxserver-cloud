@@ -26,48 +26,6 @@ exercises: 90
 
 ## Möglichkeiten des Self- und OnPremise-Hostings
 
-+ sehr viel, v.a. Open Source Software
-  
-  + Siehe Awsome Selfhosted Github-Repo (Link)
-  
-  + v.a. Client-Server-Anwendungen
-  
-+ Beispiele, jeweils mit Links und kurzer Beschreibung
-
-  + Medienstreaming: Jellyfin
-  
-  + Filetransfer: gokapi
-  
-  + Git: gitea
-  
-  + Smart Home: homeassistant
-  
-  + Hypervizor/Cloud Computing: proxmox
-  
-  + Backup: Bacula/Baculum
-  
-  + Syncthing
-  
-  + Kalender und Kontakt: Radicale
-  
-  + Chat und (Video)Telefonie: Matrix, Jitsi, Bigbluebutton
-
-## Grenzen des Self- und OnPremise-Hostings
-
-+ Lizenzrechtliche Einschränkungen: z.B. Nur beim Anbieter, bestimmte Limits wie Useranzahl oder CPU-Ressourcen
-
-+ Hardwareeinschränkungen: je höher die Anforderung, desto mehr Hardware nötig, z.B. für KI-Anwendungen Grafikleistung
-
-+ Bandbreite: Bandbreite im LAN und Bandbreite des Netzanschlusses
-
-+ Serverraum: Energiebedarf, Kühlung, Platzbedarf
-
-+ Know-How: was kann man selbst oder ist bereit zu erlernen, was lagert man besser aus
-
-+ Verfügbarkeit/Verlässlichkeit: kritische Infrastruktur muss immer laufen. Wie gut geschützt vor Ausfällen durch Softwareprobleme, Hardwareausfalls, Stromausfall, Einbruch, Wasserschaden, Blitzschlag
-
-## Möglichkeiten des Self- und OnPremise-Hostings
-
 Self-Hosting im Privatbereich oder On-Premise-Hosting im Enterprisebereich bieten eine breite Palette an Möglichkeiten, insbesondere mit Open-Source-Software. Das [Awesome Selfhosted GitHub-Repository](https://github.com/awesome-selfhosted/awesome-selfhosted) bietet eine umfassende Liste von Beispielen. Das Self- OnPremisehosting ist v.a. dann Interessant, wenn es um Client-Server-Anwendungen geht. Peer-to-Peer-Anwendungen müssen i.d.R. nicht gehostet werden, sondern laufen nur auf den Endgeräten.
 
 Einige Beispiele für selbst betriebene Software:
@@ -180,7 +138,7 @@ Wichtig sind dabei die APP_BASE_URL und die POSTGRES_ Parameter. Statt einer Dat
 
 Damit der Joplinserver erreicht werden kann, muss eine Domain vorhanden sein und im NGINX-Proxy-Manager hinterlegt sein.
 
-Die Konfiguration des Proxy-Hosts sieht wie folgt aus:
+<!--Die Konfiguration des Proxy-Hosts sieht wie folgt aus:
 
 <!-- Abbildungen aus NPM ergänzen -->
 
@@ -188,11 +146,11 @@ Die Clientanwendung für die Endgeräte kann auf der [Homepage von Joplin](https
 
 ### Konfiguration
 
-+ Nach der Installation der Clientanwendgung muss in den Einstellungen die Verbindung zum eigenen Joplinserver eingetragen werden. Dazu im Menü unter Werkzeuge den Punkt Optionen öffnen und als Synchronisationsziel `Jopin Server (Beta)` auswählen. Anschließend kann die URL zum eigenen Server, der Nutzername und das Passwort eingetragen werden. Anschließend kann die Verbindung getestet werden.
++ Nach der Installation der Clientanwendung muss in den Einstellungen die Verbindung zum eigenen Joplinserver eingetragen werden. Dazu im Menü unter Werkzeuge den Punkt Optionen öffnen und als Synchronisationsziel `Jopin Server (Beta)` auswählen. Anschließend kann die URL zum eigenen Server, der Nutzername und das Passwort eingetragen werden. Anschließend kann die Verbindung getestet werden.
 
 ![Joplin: Konfiguration der Serververbindung](fig/12_joplin_01.png){alt='Konfigurationsmenü von Joplin. Zu sehen sind die Einstellungen für die Synchronistaion'}
 
-+ Um Datenverlust zu vermeiden empfiehlt es sich, die Notizen am Endgerät zu sichern. Dazu kann unter dem Punkt ein Zielverzeichnis gewählt werden und die genaue Ausführung eingerichtet werden. Werden die Notizen auf einem unverschlüsseltem Medium gepspeichert, empfiehtl sich das Setzen eines Passwortes, um zu verhindern, dass die Notizen von Dritten eingesehen werden können.
++ Um Datenverlust zu vermeiden empfiehlt es sich, die Notizen am Endgerät zu sichern. Dazu kann unter dem Punkt ein Zielverzeichnis gewählt werden und die genaue Ausführung eingerichtet werden. Werden die Notizen auf einem unverschlüsseltem Medium gespeichert, empfiehlt sich das Setzen eines Passwortes, um zu verhindern, dass die Notizen von Dritten eingesehen werden können.
 
 ![Joplin: Konfiguration der lokalen Datensicherung](fig/12_joplin_02.png){alt='Backupkonfiguration unter Joplin. Zielverzeichnis ist ein lokaler Pfad.'}
 
