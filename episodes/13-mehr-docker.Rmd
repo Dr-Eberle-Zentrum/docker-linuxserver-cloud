@@ -141,7 +141,7 @@ Neben Docker gibt es mehrere alternative Technologien, die ähnliche Funktionen 
 
 1. **Docker Swarm**: Docker Swarm ist eine native Clustering- und Orchestrierungslösung für Docker. Sie ermöglicht es, mehrere Docker-Hosts zu einem Cluster zusammenzufassen und Anwendungen darauf zu verteilen. Docker Swarm ist einfach zu verwenden und in Docker integriert.
 
-2. **Podman**: Podman ist eine daemonlose Alternative zu Docker, die kompatibel mit Docker-Images und -Containern ist. Podman bietet eine ähnliche Befehlszeilensyntax wie Docker, arbeitet jedoch ohne einen zentralen Daemon, was die Sicherheit und Isolierung verbessert. So benötigt Podman standardmäßig keine Root-Rechte zum starten der der Container.
+2. **Podman**: Podman ist eine daemonlose Alternative zu Docker, die kompatibel mit Docker-Images und -Containern ist. Podman bietet eine ähnliche Befehlszeilensyntax wie Docker, arbeitet jedoch ohne einen zentralen Daemon, was die Sicherheit und Isolierung verbessert. So benötigt Podman standardmäßig keine Root-Rechte zum starten der Container.
 
 3. **Kubernetes**: Kubernetes ist eine leistungsstarke Orchestrierungsplattform für Container, die eine umfassende Verwaltung und Skalierung von Containeranwendungen ermöglicht. Kubernetes ist komplexer als Docker Swarm, bietet jedoch mehr Funktionen und Flexibilität für große und komplexe Anwendungen.
 
