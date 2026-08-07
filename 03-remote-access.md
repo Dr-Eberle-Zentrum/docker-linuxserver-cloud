@@ -174,13 +174,13 @@ Achtung: `ssh-copy-id`-Befehl muss an die [besonderen Bedingungen im Kurssetup](
 
 ## Konfiguration des SSH-Servers
 
-Um die Sicherheit des SSH-Servers weiter zu erhöhen, sollten einige Einstellungen am Server vorgenommen werden. Dies kann nach erfolgreicher SSH-Verbindung getan werden. Die Konfigurationsdatei für den SSH-Server findet sich unter `/etc/ssh/sshd_config` und kann mit dem *nano*-Editor bearbeitet werden.
+Um die Sicherheit des SSH-Servers weiter zu erhöhen, müssen einige Einstellungen am Server vorgenommen werden. Dies kann nach erfolgreicher SSH-Verbindung getan werden. Die zentrale Konfigurationsdatei für den SSH-Server findet sich unter `/etc/ssh/sshd_config`. Diese wird allerdings bei jedem Update der SSH-Serversoftware überschrieben. Deshalb können individuelle Anpassungen in Dateien im Unterverzeichnis `sshd_config.d` gespeichert werden, z.B. `/etc/ssh/sshd_config.d/99-secure-ssh2026.config` Diese Datei kann mit dem *nano*-Editor bearbeitet werden.
 
 Folgende Änderungen sollen an der Konfigurationsdatei vorgenommen werden:
 
-- Nur spezifischen Usern eine SSH-Verbindung erlauben (neue Zeile am Ende ergänzen): `AllowUsers <username>`
+- Nur spezifischen Usern eine SSH-Verbindung erlauben: `AllowUsers <username>`
 
-- Anmeldung mit Passwort verbieten und nur per Schlüssel erlauben (vorhandene Zeilen ändern):
+- Anmeldung mit Passwort verbieten und nur per Schlüssel erlauben:
 
 ```
 PasswordAuthentication no
@@ -189,7 +189,7 @@ KbdInteractiveAuthentication no
 UsePAM no
 ```
 
-- Standardport ändern: `#Port 22` ändern zu `Port <eine Nummer größer 1024>`, siehe dazu auch die [Liste der Well-Know-Ports](https://de.wikipedia.org/wiki/Liste_der_Portnummern)
+- Standardport ändern: `Port <eine Nummer größer 1024>`, siehe dazu auch die [Liste der Well-Know-Ports](https://de.wikipedia.org/wiki/Liste_der_Portnummern)
 
 - Root-User-Anmeldungen verbieten: `PermitRootLogin no`
 
@@ -200,6 +200,8 @@ UsePAM no
 - Abmeldung bei Inaktivität: `ClientAliveInterval 300` und `ClientAliveCountMax 0`
 
 Nach Änderungen an der Konfiguration eines Programms muss dieses in der Regel **neu gestartet** werden, um die neue Konfiguration zu übernehmen. Dies geschieht für den SSH-Server mit den Befehlen `sudo systemctl daemon-reload` und `sudo systemctl restart ssh.service` (siehe dazu auch das [Callout zu systemd](#programme-mit-systemd-steuern))
+
+Der SSH-Server wird nun zunächst die Standardeinstellungen der zentralen Konfigurationsdatei unter `/etc/ssh/sshd_config` lesen und anwenden und diese dann mit den angepassten Werten aus Dateien im Verzeichnis `/etc/ssh/sshd_config.d` überschreiben. Diese Dateien benötigen dabei die Dateiendung .config und werden in alphabetischer Reihenfolge verarbeitet.
 
 Weitere Anpassungen des SSH-Servers sind je nach eigenem Sicherheitsbedürfnis möglich. Z.B. finden sich bei [cyberciti.biz](https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html) einige weitere Möglichkeiten.
 
