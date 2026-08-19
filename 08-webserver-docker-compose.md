@@ -54,7 +54,9 @@ Für diesen Kurs ist der Hypervisor, auf welchem die virtuellen Server laufen, �
 
 Allerdings müssen Sie eine Domain für Ihren Server konfigurieren. Hierzu kann kostenpflichtig eine vollwertige Domain erworben werden (`domain.de`) oder man nutzt kostenlose DDNS-Dienste (DDNS=Dynamic Domain Name System). 
 
-DDNS funktioniert unter Zuhilfenahme eines externen Dienstleisters. Bei diesem wird eine Subdomain beantragt, z.B. *server.ddns-anbieter.de*. Auf dem eigenen Server kann das Programm **DDClient** installiert werden. Dieses kontaktiert regelmäßig eine Internetseite und erhält von dieser die eigene öffentliche IP-Adresse als Echo zurück. Dadurch erfährt DDClient, unter welcher IP-Adresse der Server erreichbar ist und schickt diese an den DDNS-Anbieter, bei welchem die eigene Domain beantragt wurde. Dieser Anbieter wiederum trägt die IP-Adresse in seinem DNS ein und macht dadurch die IP-Adresse zur Domain öffentlich bekannt.
+DDNS funktioniert unter Zuhilfenahme eines externen Dienstleisters. Bei diesem wird eine Subdomain beantragt, z.B. *server.ddns-anbieter.de*. Es gibt verschiedene Anbieter für DDNS-Dienste. Gut geeignet sind z.B. [No-IP](https://noip.com) oder [DDNSS](https://www.ddnss.de/).
+
+DDNS wird eigentlich primär verwendet, um an privaten Internetanschlüssen, die häufig eine sich ändernde IP-Adresse haben, immer über die gleiche Domain erreichbar zu sein. Im Fall des Kurses ist eine statische öffentliche IP-Adresse vorhanden und es wäre sauberer eine vollwertige Domain zu kaufen (oder im Rechenzentrum der Universität zu beantragen). Für die Testzwecke dieses Kurses genügt aber eine DDNS-Domain. Zeitgleich kann die damit erlernte Technik auch gut für Zwecke des Selfhostings im heimischen Wohnzimmer oder in einem kleinen Büro ohne statische IP-Adresse angewendet werden. Hierfür muss dann nur regelmäßig die aktuelle öffentliche IP-Adresse des Internetanschlusses an den DDNS-Anbieter übermittelt werden, z.B. mit dem Programm **DDClient**
 
 :::callout
 ### DNS
@@ -62,10 +64,6 @@ DDNS funktioniert unter Zuhilfenahme eines externen Dienstleisters. Bei diesem w
 :::
 
 Ruft ein Computer die Adresse *server.ddns-anbieter.de* auf, wird im DNS des DDNS-Anbieters die öffentliche IP-Adresse des Servers (in unserem Fall die Adresse des zentralen Proxy-Servers) ausgelesen und übermittelt. Dadurch wird die Anfrage an die richtige IP-Adresse geschickt.
-
-Es gibt verschiedene Anbieter für DDNS-Dienste. Gut geeignet sind z.B. [No-IP](https://noip.com) oder [DDNSS](https://www.ddnss.de/).
-
-DDNS wird eigentlich primär verwendet, um an privaten Internetanschlüssen, die häufig eine sich ändernde IP-Adresse haben, immer über die gleiche Domain erreichbar zu sein. Im Fall des Kurses ist eine statische öffentliche IP-Adresse vorhanden und  es wäre sauberer eine vollwertige Domain zu kaufen (oder im Rechenzentrum der Universität zu beantragen). Für die Testzwecke dieses Kurses genügt aber eine DDNS-Domain. Zeitgleich kann die damit erlernte Technik auch gut für Zwecke des Selfhostings im heimischen Wohnzimmer oder kleinen Büros ohne statische IP-Adresse angewendet werden.
 
 ### Umsetzung DDNS unter Ubuntu
 
@@ -81,52 +79,8 @@ Für die Implementierung des DDNS-Verfahrens wird wie folgt vorgegangen:
 
   - die eigene öffentliche IP kann z.B. wie folgt heraus gefunden werden: `curl https://api.ipify.org/`
 
-- Ist keine statische IP-Adresse vorhanden (z.B. in einem Selfhosting-Setup im heimischen Wohnzimmer), wird wie folgt vorgegangen:
-
-    - ddclient auf dem Server installieren und konfigurieren: `sudo apt-get install ddclient`
-
-        - Im Anschließenden Dialog wird im Falle von No-IP *no-ip* gewählt, ansonsten *anderer*
-    
-        - als Benutzername und Passwort werden die Zugangsdaten des DDNS-Anbieters eingetragen
-    
-        - als *IP-Adressen-Ermittlungsmethode* wird *Web-basierter IP-Ermittlungsdienst* gewählt
-    
-        - der zu aktualisierende Rechner ist der beim DDNS-Anbieter reservierte Domainnamen
-    
-![DDClient konfigurieren 1: Anbieter auswählen](fig/08_ddclient01.png){alt='Konfigurationsdialog von DDClient. Es stehen mehrere DDNS-Anbieter zur Auswahl. Hervorgehoben ist no-ip.com'}    
-
-![DDClient konfigurieren 2: Ermittlungsmehode](fig/08_ddclient02.png){alt='Konfigurationsdialog von DDClient: festlegen der IP-Ermittlungsmethode, hervorgehoben ist die Option web-basierter IP-Ermittlungsdienst'}
-
-![DDClient konfigurieren 3: Domainname](fig/08_ddclient03.png){alt='Konfigurationsdialog von DDClient: eingabe des Domainnamens, als Platzhalter ist server.ddns-anbieter.de zu sehen'}    
-
-Nach der Installation sollte die **Konfigurationsdatei** überprüft und ggf. angepasst werden: `sudo nano /etc/ddclient.conf`. Je nach DDNS-Anbieter sieht die Konfigurationsdatei unterschiedlich aus.
-
-:::tab
-### DDNSS.de
-
-```bash
-#für ddnss.de
-protocol=dyndns2
-use=web, web=https://api.ipify.org/ 
-server=ddnss.de
-login=<DDNSSLoginName>
-password='<Passwort>'
-<domainname>.ddnss.de
-```
-
-### NO-IP:
-
-```bash
-#NO-IP.com
-protocol=noip
-use=web, web=http://ip1.dynupdate.no-ip.com/
-login=<noip-username>
-password=’<noip-passwort>’
-<noip-Domainname>
-```
-:::
-
-Wird die Konfigurationsdatei manuell geändert, muss ddclient neu gestartet werden: `sudo systemctl restart ddclient.service`
+- Ist keine statische IP-Adresse vorhanden (z.B. in einem Selfhosting-Setup im heimischen Wohnzimmer) kann wie im Kurs [
+Sys1: Die eigene Nextcloud mit dem Raspberry Pi: Self-hosted Data Management](https://dr-eberle-zentrum.github.io/self-hosted-datamanagement/08-installationsvorbereitung-2.html#umsetzung-ddns-am-raspberry-pi) geschildert vorgegangen werden.
 
 ## Webserver mit Docker
 
