@@ -24,9 +24,9 @@ exercises: 90
 
 ## `docker run` versus `docker compose`
 
-In [Lektion 6: Docker Grundlagen](06-docker-basics.Rmd) wurde gezeigt, wie mit dem `docker run`-Befehl einzelne Container erstellt werden können. Allerdings kann der Befehl recht  komplex werden, wenn Portmappings, Volumes, Umgebungsvariablen und Netzwerk hinzukommen. Um die langen Befehle nicht immer von neuem zu tippen, können sie in eine Konfigurationsdatei (`compose.yaml` oder `docker-compose.yaml`) geschrieben werden. Diese wiederum kann mit dem `docker compose`-Befehl gelesen und ausgeführt werden. Um Docker Compose nutzen zu können, muss dies installiert werden. Folgt man der offiziellen Installationsanleitung für die Docker Engine (siehe [Lektion 6](06-docker-basics.Rmd#installation)), ist docker compose bereits installiert. Dies kann z.B. mit `docker compose -v` überprüft werden.
+In [Lektion 6: Docker Grundlagen](06-docker-basics.Rmd) wurde gezeigt, wie mit dem `docker run`-Befehl einzelne Container erstellt werden können. Allerdings kann der Befehl recht  komplex werden, wenn Portmappings, Volumes, Umgebungsvariablen und Netzwerke hinzukommen. Um die langen Befehle nicht immer von neuem zu tippen, können sie in eine Konfigurationsdatei (`compose.yaml` oder `docker-compose.yaml`) geschrieben werden. Diese wiederum kann mit dem `docker compose`-Befehl gelesen und ausgeführt werden. Um Docker Compose nutzen zu können, muss dies installiert werden. Folgt man der offiziellen Installationsanleitung für die Docker Engine (siehe [Lektion 6](06-docker-basics.Rmd#installation)), ist docker compose bereits installiert. Dies kann z.B. mit `docker compose -v` überprüft werden.
 
-Allerdings müssen die Befehle in einer bestimmten Syntax, der YAML-Syntax geschrieben werden.
+Damit die Konfigurationsdatei *von docker compose* richtig interpretiert wird, müssen die Befehle in einer definierten Syntax, der YAML-Syntax geschrieben werden.
 
 ### Vorteile:
 
@@ -175,9 +175,9 @@ services:
 
 ### Compose Projekte steuern
 
-Mit dem `docker compose`-Befehl können die in der compose.yaml-Datei definierten Services gesteuert werden.
+Ist die `compose.yml`-Datei fertig geschrieben, kann sie mit dem `docker compose`-Befehl eingelesen werden und somit die in der Datei definierten Services gesteuert werden. Standardmäßig sucht `docker compose` im aktuellen Arbeitsverzeichnis nach Dateien mit den Namen `compose.yml`, `docker-compose.yml` und nutzt diese. Liegt die Datei in einem anderen Verzeichnis, muss sie mit dem Parameter `-f` angegeben werden, z.B. wie folgt: `docker compose -f /home/linus/compose.yml up -d`
 
-Die grundlegenden docker-compose-Befehle sind:
+Einige grundlegende `docker compose`-Befehle sind:
 
 - `docker compose up`: Startet alle in der `docker-compose.yml`-Datei definierten Dienste im Vordergrund
 - `docker compose down`: Beendet alle Dienste und entfernt alle Container.
@@ -188,7 +188,7 @@ Die grundlegenden docker-compose-Befehle sind:
 - `docker compose ps`: zeigt den Status der Dienste an
 - `docker compose exec`: ermöglicht es, einen Befehl in einem Docker-Container auszuführen. Zum Beispiel: `docker compose exec <container-name> bash`.
 
-Allen Befehlen kann auch ein expliziter Container-Name mitgegeben werden, um die Aktion nur auf diesen Container anzuwenden, z.B. `docker compose restart nginx`
+Alle Befehle beziehen sich dabei auf alle in der der Konfigurationsdatei definierten Services, bzw. Container. Wird den Befehlen ein Container-Name mitgegeben, wird die Aktion nur auf diesen Container angewendet, z.B. `docker compose restart nginx`
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
