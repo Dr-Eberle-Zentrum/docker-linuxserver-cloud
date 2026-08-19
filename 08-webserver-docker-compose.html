@@ -392,7 +392,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Webserver mit Docker Compose</h1>
-        <p>Zuletzt aktualisiert am 2026-08-18 |
+        <p>Zuletzt aktualisiert am 2026-08-19 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/08-webserver-docker-compose.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -490,14 +490,20 @@ Hierzu kann kostenpflichtig eine vollwertige Domain erworben werden
 (DDNS=Dynamic Domain Name System).</p>
 <p>DDNS funktioniert unter Zuhilfenahme eines externen Dienstleisters.
 Bei diesem wird eine Subdomain beantragt, z.B.
-<em>server.ddns-anbieter.de</em>. Auf dem eigenen Server kann das
-Programm <strong>DDClient</strong> installiert werden. Dieses
-kontaktiert regelmäßig eine Internetseite und erhält von dieser die
-eigene öffentliche IP-Adresse als Echo zurück. Dadurch erfährt DDClient,
-unter welcher IP-Adresse der Server erreichbar ist und schickt diese an
-den DDNS-Anbieter, bei welchem die eigene Domain beantragt wurde. Dieser
-Anbieter wiederum trägt die IP-Adresse in seinem DNS ein und macht
-dadurch die IP-Adresse zur Domain öffentlich bekannt.</p>
+<em>server.ddns-anbieter.de</em>. Es gibt verschiedene Anbieter für
+DDNS-Dienste. Gut geeignet sind z.B. <a href="https://noip.com" class="external-link">No-IP</a> oder <a href="https://www.ddnss.de/" class="external-link">DDNSS</a>.</p>
+<p>DDNS wird eigentlich primär verwendet, um an privaten
+Internetanschlüssen, die häufig eine sich ändernde IP-Adresse haben,
+immer über die gleiche Domain erreichbar zu sein. Im Fall des Kurses ist
+eine statische öffentliche IP-Adresse vorhanden und es wäre sauberer
+eine vollwertige Domain zu kaufen (oder im Rechenzentrum der Universität
+zu beantragen). Für die Testzwecke dieses Kurses genügt aber eine
+DDNS-Domain. Zeitgleich kann die damit erlernte Technik auch gut für
+Zwecke des Selfhostings im heimischen Wohnzimmer oder in einem kleinen
+Büro ohne statische IP-Adresse angewendet werden. Hierfür muss dann nur
+regelmäßig die aktuelle öffentliche IP-Adresse des Internetanschlusses
+an den DDNS-Anbieter übermittelt werden, z.B. mit dem Programm
+<strong>DDClient</strong></p>
 <div id="dns" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -518,17 +524,6 @@ wird im DNS des DDNS-Anbieters die öffentliche IP-Adresse des Servers
 (in unserem Fall die Adresse des zentralen Proxy-Servers) ausgelesen und
 übermittelt. Dadurch wird die Anfrage an die richtige IP-Adresse
 geschickt.</p>
-<p>Es gibt verschiedene Anbieter für DDNS-Dienste. Gut geeignet sind
-z.B. <a href="https://noip.com" class="external-link">No-IP</a> oder <a href="https://www.ddnss.de/" class="external-link">DDNSS</a>.</p>
-<p>DDNS wird eigentlich primär verwendet, um an privaten
-Internetanschlüssen, die häufig eine sich ändernde IP-Adresse haben,
-immer über die gleiche Domain erreichbar zu sein. Im Fall des Kurses ist
-eine statische öffentliche IP-Adresse vorhanden und es wäre sauberer
-eine vollwertige Domain zu kaufen (oder im Rechenzentrum der Universität
-zu beantragen). Für die Testzwecke dieses Kurses genügt aber eine
-DDNS-Domain. Zeitgleich kann die damit erlernte Technik auch gut für
-Zwecke des Selfhostings im heimischen Wohnzimmer oder kleinen Büros ohne
-statische IP-Adresse angewendet werden.</p>
 <div class="section level3">
 <h3 id="umsetzung-ddns-unter-ubuntu">Umsetzung DDNS unter Ubuntu<a class="anchor" aria-label="anchor" href="#umsetzung-ddns-unter-ubuntu"></a></h3>
 <p>Für die Implementierung des DDNS-Verfahrens wird wie folgt
@@ -545,77 +540,11 @@ beim DDNS-Anbieter eingetragen.</p>
 werden: <code>curl https://api.ipify.org/</code>
 </li>
 </ul></li>
-<li>
-<p>Ist keine statische IP-Adresse vorhanden (z.B. in einem
-Selfhosting-Setup im heimischen Wohnzimmer), wird wie folgt
-vorgegangen:</p>
-<ul><li>
-<p>ddclient auf dem Server installieren und konfigurieren:
-<code>sudo apt-get install ddclient</code></p>
-<ul><li><p>Im Anschließenden Dialog wird im Falle von No-IP <em>no-ip</em>
-gewählt, ansonsten <em>anderer</em></p></li>
-<li><p>als Benutzername und Passwort werden die Zugangsdaten des
-DDNS-Anbieters eingetragen</p></li>
-<li><p>als <em>IP-Adressen-Ermittlungsmethode</em> wird
-<em>Web-basierter IP-Ermittlungsdienst</em> gewählt</p></li>
-<li><p>der zu aktualisierende Rechner ist der beim DDNS-Anbieter
-reservierte Domainnamen</p></li>
-</ul></li>
-</ul></li>
-</ul><figure><img src="fig/08_ddclient01.png" alt="Konfigurationsdialog von DDClient. Es stehen mehrere DDNS-Anbieter zur Auswahl. Hervorgehoben ist no-ip.com" class="figure mx-auto d-block"><div class="figcaption">DDClient konfigurieren 1: Anbieter
-auswählen</div>
-</figure><figure><img src="fig/08_ddclient02.png" alt="Konfigurationsdialog von DDClient: festlegen der IP-Ermittlungsmethode, hervorgehoben ist die Option web-basierter IP-Ermittlungsdienst" class="figure mx-auto d-block"><div class="figcaption">DDClient konfigurieren 2:
-Ermittlungsmehode</div>
-</figure><figure><img src="fig/08_ddclient03.png" alt="Konfigurationsdialog von DDClient: eingabe des Domainnamens, als Platzhalter ist server.ddns-anbieter.de zu sehen" class="figure mx-auto d-block"><div class="figcaption">DDClient konfigurieren 3: Domainname</div>
-</figure><p>Nach der Installation sollte die <strong>Konfigurationsdatei</strong>
-überprüft und ggf. angepasst werden:
-<code>sudo nano /etc/ddclient.conf</code>. Je nach DDNS-Anbieter sieht
-die Konfigurationsdatei unterschiedlich aus.</p>
-<div class="tabs">
-<nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
-<button class="nav-link active" id="nav-tab-1-1" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-1" type="button" role="tab" aria-controls="nav-tabpanel-1-1" aria-selected="true">
-  <h3 class="tab-header" id="nav-tab-heading-1-1">
-  DDNSS.de
-  </h3>
-</button>
-<button class="nav-link" id="nav-tab-1-2" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-2" type="button" role="tab" aria-controls="nav-tabpanel-1-2" aria-selected="false">
-  <h3 class="tab-header" id="nav-tab-heading-1-2">
-  NO-IP:
-  </h3>
-</button>
-</div>
-</nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="co">#für ddnss.de</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="va">protocol</span><span class="op">=</span>dyndns2</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>https://api.ipify.org/ </span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="va">server</span><span class="op">=</span>ddnss.de</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="va">login</span><span class="op">=&lt;</span>DDNSSLoginName<span class="op">&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a><span class="va">password</span><span class="op">=</span><span class="st">'&lt;Passwort&gt;'</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a><span class="op">&lt;</span>domainname<span class="op">&gt;</span>.ddnss.de</span></code></pre>
-</div>
-</div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
-<div class="codewrapper sourceCode" id="cb2">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="co">#NO-IP.com</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="va">protocol</span><span class="op">=</span>noip</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>http://ip1.dynupdate.no-ip.com/</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a><span class="va">login</span><span class="op">=&lt;</span>noip-username<span class="op">&gt;</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a><span class="va">password</span><span class="op">=</span>’<span class="op">&lt;</span>noip-passwort<span class="op">&gt;</span>’</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a><span class="op">&lt;</span>noip-Domainname<span class="op">&gt;</span></span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<p>Wird die Konfigurationsdatei manuell geändert, muss ddclient neu
-gestartet werden:
-<code>sudo systemctl restart ddclient.service</code></p>
-</div>
+<li><p>Ist keine statische IP-Adresse vorhanden (z.B. in einem
+Selfhosting-Setup im heimischen Wohnzimmer) kann wie im Kurs <a href="https://dr-eberle-zentrum.github.io/self-hosted-datamanagement/08-installationsvorbereitung-2.html#umsetzung-ddns-am-raspberry-pi" class="external-link">Sys1:
+Die eigene Nextcloud mit dem Raspberry Pi: Self-hosted Data
+Management</a> geschildert vorgegangen werden.</p></li>
+</ul></div>
 </section><section><h2 class="section-heading" id="webserver-mit-docker">Webserver mit Docker<a class="anchor" aria-label="anchor" href="#webserver-mit-docker"></a></h2>
 <hr class="half-width"><p>Damit auf dem eigenen Server auf Anfragen aus dem Internet auch
 reagiert wird, muss ein Webserver installiert werden. Dazu kann in einem
@@ -631,46 +560,46 @@ Konfiguration vorgenommen.</p>
 Befehl)</p></li>
 <li><p>Dort die Compose-Datei erstellen
 (<code>nano compose.yaml</code>)</p></li>
-</ol><div class="codewrapper sourceCode" id="cb3">
+</ol><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a><span class="at"> </span><span class="fu">apache</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a><span class="at">       </span><span class="kw">-</span><span class="at"> </span><span class="st">'80:80'</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1" aria-label="code-block-3-8"></a><span class="at">       </span><span class="kw">-</span><span class="at"> ./website:/usr/local/apache2/htdocs</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="at"> </span><span class="fu">apache</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a><span class="at">       </span><span class="kw">-</span><span class="at"> </span><span class="st">'80:80'</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1" aria-label="code-block-1-8"></a><span class="at">       </span><span class="kw">-</span><span class="at"> ./website:/usr/local/apache2/htdocs</span></span></code></pre>
 </div>
 <ol start="4" style="list-style-type: decimal"><li><p>Volume-Verzeichnis für den Datenaustausch mit dem Container
 erstellen: <code>mkdir website</code></p></li>
 <li><p>Website-Beispiel erstellen: <code>nano website/index.html</code>,
 z.B. wie folgt</p></li>
-</ol><div class="codewrapper sourceCode" id="cb4">
+</ol><div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">HTML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode html" tabindex="0"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a>  <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Apache-Test<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a>  <span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a>      body {</span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a>          <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1" aria-label="code-block-4-8"></a>      }</span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1" aria-label="code-block-4-9"></a>      h1 {</span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1" aria-label="code-block-4-10"></a>          <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1" aria-label="code-block-4-11"></a>      }</span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1" aria-label="code-block-4-12"></a>      p {</span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1" aria-label="code-block-4-13"></a>          <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1" aria-label="code-block-4-14"></a>      }</span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1" aria-label="code-block-4-15"></a>  <span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1" aria-label="code-block-4-16"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1" aria-label="code-block-4-17"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1" aria-label="code-block-4-18"></a>  <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Welcome to Apache-Test<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb4-19"><a href="#cb4-19" tabindex="-1" aria-label="code-block-4-19"></a>  <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This is a simple paragraph to test the Apache server.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb4-20"><a href="#cb4-20" tabindex="-1" aria-label="code-block-4-20"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1" aria-label="code-block-4-21"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre>
+<pre class="sourceCode html" tabindex="0"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a>  <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Apache-Test<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a>  <span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a>      body {</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1" aria-label="code-block-2-7"></a>          <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1" aria-label="code-block-2-8"></a>      }</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1" aria-label="code-block-2-9"></a>      h1 {</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1" aria-label="code-block-2-10"></a>          <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1" aria-label="code-block-2-11"></a>      }</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1" aria-label="code-block-2-12"></a>      p {</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1" aria-label="code-block-2-13"></a>          <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1" aria-label="code-block-2-14"></a>      }</span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1" aria-label="code-block-2-15"></a>  <span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1" aria-label="code-block-2-16"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1" aria-label="code-block-2-17"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1" aria-label="code-block-2-18"></a>  <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Welcome to Apache-Test<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1" aria-label="code-block-2-19"></a>  <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This is a simple paragraph to test the Apache server.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1" aria-label="code-block-2-20"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1" aria-label="code-block-2-21"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre>
 </div>
 <ol start="6" style="list-style-type: decimal"><li><p>Docker Container starten: <code>sudo docker compose up</code>
 oder im Hintergrund <code>sudo docker compose up -d</code></p></li>
@@ -774,37 +703,37 @@ Internetrecherche schnell aufzeigen wird, verschiedene
 Möglichkeiten.</p>
 <p>Im Folgenden eine Möglichkeit, in welcher das Programm certbot als
 zweiter Container dem Docker Compose Projekt hinzugefügt wird:</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a><span class="at">   </span><span class="fu">apache</span><span class="kw">:</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a><span class="at">      </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a><span class="at">      </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a><span class="at">      </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a><span class="at">         </span><span class="kw">-</span><span class="at"> </span><span class="st">"80:80"</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a><span class="at">         </span><span class="kw">-</span><span class="at"> </span><span class="st">"443:443"</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a><span class="at">      </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a><span class="co">      #Webinhalte für certbot challenge</span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/usr/local/apache2/htdocs</span></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1" aria-label="code-block-5-11"></a><span class="co">      #Beispiel-Internetseite (deaktiviert für die Dauer der Zetifikatsausstellung)</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1" aria-label="code-block-5-12"></a><span class="co">      #- ./website/index.html:/usr/local/apache2/htdocs/index.html</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1" aria-label="code-block-5-13"></a><span class="at">      </span><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1" aria-label="code-block-5-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> webapp</span></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1" aria-label="code-block-5-15"></a><span class="at">   </span><span class="fu">certbot</span><span class="kw">:</span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1" aria-label="code-block-5-16"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache-certbot</span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1" aria-label="code-block-5-17"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> certbot/certbot:latest</span></span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1" aria-label="code-block-5-18"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1" aria-label="code-block-5-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/var/www/certbot:rw</span></span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1" aria-label="code-block-5-20"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf:/etc/letsencrypt:rw</span></span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1" aria-label="code-block-5-21"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/log:/var/log/letsencrypt:rw</span></span>
-<span id="cb5-22"><a href="#cb5-22" tabindex="-1" aria-label="code-block-5-22"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb5-23"><a href="#cb5-23" tabindex="-1" aria-label="code-block-5-23"></a><span class="at">      </span><span class="kw">-</span><span class="at"> webapp</span></span>
-<span id="cb5-24"><a href="#cb5-24" tabindex="-1" aria-label="code-block-5-24"></a></span>
-<span id="cb5-25"><a href="#cb5-25" tabindex="-1" aria-label="code-block-5-25"></a><span class="fu">networks</span><span class="kw">:</span></span>
-<span id="cb5-26"><a href="#cb5-26" tabindex="-1" aria-label="code-block-5-26"></a><span class="at">  </span><span class="fu">webapp</span><span class="kw">:</span></span>
-<span id="cb5-27"><a href="#cb5-27" tabindex="-1" aria-label="code-block-5-27"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> webapp</span></span>
-<span id="cb5-28"><a href="#cb5-28" tabindex="-1" aria-label="code-block-5-28"></a><span class="at">    </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a><span class="at">   </span><span class="fu">apache</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a><span class="at">      </span><span class="fu">image</span><span class="kw">:</span><span class="at"> httpd:latest</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a><span class="at">      </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a><span class="at">      </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a><span class="at">         </span><span class="kw">-</span><span class="at"> </span><span class="st">"80:80"</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a><span class="at">         </span><span class="kw">-</span><span class="at"> </span><span class="st">"443:443"</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1" aria-label="code-block-3-8"></a><span class="at">      </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1" aria-label="code-block-3-9"></a><span class="co">      #Webinhalte für certbot challenge</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1" aria-label="code-block-3-10"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/usr/local/apache2/htdocs</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1" aria-label="code-block-3-11"></a><span class="co">      #Beispiel-Internetseite (deaktiviert für die Dauer der Zetifikatsausstellung)</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1" aria-label="code-block-3-12"></a><span class="co">      #- ./website/index.html:/usr/local/apache2/htdocs/index.html</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1" aria-label="code-block-3-13"></a><span class="at">      </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1" aria-label="code-block-3-14"></a><span class="at">      </span><span class="kw">-</span><span class="at"> webapp</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1" aria-label="code-block-3-15"></a><span class="at">   </span><span class="fu">certbot</span><span class="kw">:</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1" aria-label="code-block-3-16"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> apache-certbot</span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1" aria-label="code-block-3-17"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> certbot/certbot:latest</span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1" aria-label="code-block-3-18"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1" aria-label="code-block-3-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/www:/var/www/certbot:rw</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1" aria-label="code-block-3-20"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf:/etc/letsencrypt:rw</span></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1" aria-label="code-block-3-21"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/log:/var/log/letsencrypt:rw</span></span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1" aria-label="code-block-3-22"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1" aria-label="code-block-3-23"></a><span class="at">      </span><span class="kw">-</span><span class="at"> webapp</span></span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1" aria-label="code-block-3-24"></a></span>
+<span id="cb3-25"><a href="#cb3-25" tabindex="-1" aria-label="code-block-3-25"></a><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb3-26"><a href="#cb3-26" tabindex="-1" aria-label="code-block-3-26"></a><span class="at">  </span><span class="fu">webapp</span><span class="kw">:</span></span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1" aria-label="code-block-3-27"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> webapp</span></span>
+<span id="cb3-28"><a href="#cb3-28" tabindex="-1" aria-label="code-block-3-28"></a><span class="at">    </span><span class="fu">external</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre>
 </div>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
@@ -824,7 +753,7 @@ einzelnen Parameter?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Im Unterschied zum ersten einfachen Beispiel, ist in diesem Projekt
 der certbot-Container als zweiter Dienst hinzugekommen. Außerdem hat der
@@ -890,23 +819,23 @@ SSLPassPhraseDialog  builtin
 </code></pre>
 <ol start="4" style="list-style-type: decimal"><li>Angepasste Apache-Konfiguration über die compose.yaml Datei
 einbinden:</li>
-</ol><div class="codewrapper sourceCode" id="cb7">
+</ol><div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1" aria-label="code-block-7-2"></a><span class="at">  </span><span class="fu">apache</span><span class="kw">:</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1" aria-label="code-block-7-3"></a><span class="co">    #... wie gehabt</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1" aria-label="code-block-7-4"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1" aria-label="code-block-7-5"></a><span class="co">    #Webinhalte für certbot challenge (deaktivieren nach der Zertifikatsausstellung)</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1" aria-label="code-block-7-6"></a><span class="co">    #  - ./certbot/www:/usr/local/apache2/htdocs:ro</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1" aria-label="code-block-7-7"></a><span class="co">    #Zertifikat und Key</span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1" aria-label="code-block-7-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf/live/&lt;ddns-domain&gt;/cert.pem:/usr/local/apache2/server.crt:ro</span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1" aria-label="code-block-7-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf/live/&lt;ddns-domain&gt;/privkey.pem:/usr/local/apache2/server.key:ro</span></span>
-<span id="cb7-10"><a href="#cb7-10" tabindex="-1" aria-label="code-block-7-10"></a><span class="co">    #Beispiel-Internetseite (aktivert nachdem, das Zertifikat ausgestellt wurde)</span></span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1" aria-label="code-block-7-11"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./website/index.html:/usr/local/apache2/htdocs/index.html</span></span>
-<span id="cb7-12"><a href="#cb7-12" tabindex="-1" aria-label="code-block-7-12"></a><span class="co">    #Konfiguration</span></span>
-<span id="cb7-13"><a href="#cb7-13" tabindex="-1" aria-label="code-block-7-13"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./apache-conf/:/usr/local/apache2/conf</span></span>
-<span id="cb7-14"><a href="#cb7-14" tabindex="-1" aria-label="code-block-7-14"></a><span class="co">    #...wie gehabt</span></span></code></pre>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a><span class="at">  </span><span class="fu">apache</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a><span class="co">    #... wie gehabt</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a><span class="co">    #Webinhalte für certbot challenge (deaktivieren nach der Zertifikatsausstellung)</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a><span class="co">    #  - ./certbot/www:/usr/local/apache2/htdocs:ro</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a><span class="co">    #Zertifikat und Key</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf/live/&lt;ddns-domain&gt;/cert.pem:/usr/local/apache2/server.crt:ro</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./certbot/conf/live/&lt;ddns-domain&gt;/privkey.pem:/usr/local/apache2/server.key:ro</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a><span class="co">    #Beispiel-Internetseite (aktivert nachdem, das Zertifikat ausgestellt wurde)</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1" aria-label="code-block-5-11"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ./website/index.html:/usr/local/apache2/htdocs/index.html</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1" aria-label="code-block-5-12"></a><span class="co">    #Konfiguration</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1" aria-label="code-block-5-13"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ./apache-conf/:/usr/local/apache2/conf</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1" aria-label="code-block-5-14"></a><span class="co">    #...wie gehabt</span></span></code></pre>
 </div>
 <ol start="5" style="list-style-type: decimal"><li>Apache-Konfiguration anpassen:
 <code>sudo nano apache-conf/httpd.conf</code>
@@ -1012,8 +941,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/08-webserver-docker-compose.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/08-webserver-docker-compose.html",
   "dateCreated": "2025-08-18",
-  "dateModified": "2026-08-18",
-  "datePublished": "2026-08-18"
+  "dateModified": "2026-08-19",
+  "datePublished": "2026-08-19"
 }
 
   </script><script>
