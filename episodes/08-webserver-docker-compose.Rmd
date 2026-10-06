@@ -73,8 +73,6 @@ Für die Implementierung des DDNS-Verfahrens wird wie folgt vorgegangen:
 
 - Account bei einem DDNS-Anbieter registrieren
 
-- Im Falle von *No-IP* muss im [Webportal](https://noip.com) des Anbieters nach der Registrierung noch ein Benutzername festgelegt werden
-
 - Beim gewählten Anbieter muss ein Domainname reserviert werden (A-Record für IPv4 oder AAAA-Record für IPv6)
 
 - Ist eine statische öffentliche IP-Adresse vorhanden, wird diese beim DDNS-Anbieter eingetragen.
