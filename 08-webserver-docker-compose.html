@@ -392,7 +392,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Webserver mit Docker Compose</h1>
-        <p>Zuletzt aktualisiert am 2026-09-29 |
+        <p>Zuletzt aktualisiert am 2026-10-06 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/docker-linuxserver-cloud/edit/main/episodes/08-webserver-docker-compose.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -482,8 +482,8 @@ und idealerweise auch einen öffentlich bekannten Domainnamen haben.</p>
 laufen, über eine IP-Adresse im Internet erreichbar. Ein zentraler
 Webserver ist als Proxy-Server konfiguriert und leitet Anfragen abhängig
 von der angefragten Domain intern an die jeweilige virtuelle Maschine
-weiter. Dort muss dann ein eigener Webserver die Anfrage annehmen und
-verarbeiten.</p>
+weiter. Auf den jeweiligen virtuellen Maschinen muss ein eigener
+Webserver die Anfrage annehmen und verarbeiten.</p>
 <p>Allerdings müssen Sie eine Domain für Ihren Server konfigurieren.
 Hierzu kann kostenpflichtig eine vollwertige Domain erworben werden
 (<code>domain.de</code>) oder man nutzt kostenlose DDNS-Dienste
@@ -491,7 +491,9 @@ Hierzu kann kostenpflichtig eine vollwertige Domain erworben werden
 <p>DDNS funktioniert unter Zuhilfenahme eines externen Dienstleisters.
 Bei diesem wird eine Subdomain beantragt, z.B.
 <em>server.ddns-anbieter.de</em>. Es gibt verschiedene Anbieter für
-DDNS-Dienste. Gut geeignet sind z.B. <a href="https://noip.com" class="external-link">No-IP</a> oder <a href="https://www.ddnss.de/" class="external-link">DDNSS</a>.</p>
+DDNS-Dienste. Eine Liste findet sich z.B. bei <a href="https://www.ionos.de/digitalguide/server/tools/dyndns-anbieter-im-ueberblick/" class="external-link">IONOS</a>.
+Der Anbieter <a href="https://dynv6.com" class="external-link">dynv6.com</a> scheint den
+Bedürfnissen des Kurses zu genügen (Stand Sommer 2026).</p>
 <p>DDNS wird eigentlich primär verwendet, um an privaten
 Internetanschlüssen, die häufig eine sich ändernde IP-Adresse haben,
 immer über die gleiche Domain erreichbar zu sein. Im Fall des Kurses ist
@@ -504,6 +506,14 @@ Büro ohne statische IP-Adresse angewendet werden. Hierfür muss dann nur
 regelmäßig die aktuelle öffentliche IP-Adresse des Internetanschlusses
 an den DDNS-Anbieter übermittelt werden, z.B. mit dem Programm
 <strong>DDClient</strong></p>
+<p>Wird beim DDNS-Anbieter eine sogennannte Wildcard-Domain beantragt,
+werden alle Anfragen, die an <em>server.ddns-anbieter.de</em>,
+<em>subdomain1.server.ddns-anbieter.de</em> oder
+<em>subdomain2.server.ddns-anbieter.de</em> gehen, an die hinterlegt
+IP-Adresse weitergeleitet. Da im Laufe des Kurses vier Domains benötigt
+werden, ist die Wildcard-Option eine gute Möglichkeit. Alternativ werden
+vier getrennte Domains beantragt, je nachdem welche Option der
+DDNS-Anbieter ermöglicht.</p>
 <div id="dns" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -919,7 +929,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Vorlage lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> von <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.21.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
+        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.21.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -941,8 +951,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/08-webserver-docker-compose.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/08-webserver-docker-compose.html",
   "dateCreated": "2025-08-18",
-  "dateModified": "2026-09-29",
-  "datePublished": "2026-09-29"
+  "dateModified": "2026-10-06",
+  "datePublished": "2026-10-06"
 }
 
   </script><script>
