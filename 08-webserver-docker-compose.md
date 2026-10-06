@@ -50,13 +50,15 @@ Einige wichtige Webserver sind:
 
 Um einen Webserver aus dem Internet erreichen zu können, muss der Server, auf welchem die Webserver-Software installiert ist, und das Netzwerk in welchem sich der Server befindet eine öffentliche IP-Adresse und idealerweise auch einen öffentlich bekannten Domainnamen haben.
 
-Für diesen Kurs ist der Hypervisor, auf welchem die virtuellen Server laufen, über eine IP-Adresse im Internet erreichbar. Ein zentraler Webserver ist als Proxy-Server konfiguriert und leitet Anfragen abhängig von der angefragten Domain intern an die jeweilige virtuelle Maschine weiter. Dort muss dann ein eigener Webserver die Anfrage annehmen und verarbeiten.
+Für diesen Kurs ist der Hypervisor, auf welchem die virtuellen Server laufen, über eine IP-Adresse im Internet erreichbar. Ein zentraler Webserver ist als Proxy-Server konfiguriert und leitet Anfragen abhängig von der angefragten Domain intern an die jeweilige virtuelle Maschine weiter. Auf den jeweiligen virtuellen Maschinen muss ein eigener Webserver die Anfrage annehmen und verarbeiten.
 
 Allerdings müssen Sie eine Domain für Ihren Server konfigurieren. Hierzu kann kostenpflichtig eine vollwertige Domain erworben werden (`domain.de`) oder man nutzt kostenlose DDNS-Dienste (DDNS=Dynamic Domain Name System). 
 
-DDNS funktioniert unter Zuhilfenahme eines externen Dienstleisters. Bei diesem wird eine Subdomain beantragt, z.B. *server.ddns-anbieter.de*. Es gibt verschiedene Anbieter für DDNS-Dienste. Gut geeignet sind z.B. [No-IP](https://noip.com) oder [DDNSS](https://www.ddnss.de/).
+DDNS funktioniert unter Zuhilfenahme eines externen Dienstleisters. Bei diesem wird eine Subdomain beantragt, z.B. *server.ddns-anbieter.de*. Es gibt verschiedene Anbieter für DDNS-Dienste. Eine Liste findet sich z.B. bei [IONOS](https://www.ionos.de/digitalguide/server/tools/dyndns-anbieter-im-ueberblick/). Der Anbieter [dynv6.com](https://dynv6.com) scheint den Bedürfnissen des Kurses zu genügen (Stand Sommer 2026).
 
 DDNS wird eigentlich primär verwendet, um an privaten Internetanschlüssen, die häufig eine sich ändernde IP-Adresse haben, immer über die gleiche Domain erreichbar zu sein. Im Fall des Kurses ist eine statische öffentliche IP-Adresse vorhanden und es wäre sauberer eine vollwertige Domain zu kaufen (oder im Rechenzentrum der Universität zu beantragen). Für die Testzwecke dieses Kurses genügt aber eine DDNS-Domain. Zeitgleich kann die damit erlernte Technik auch gut für Zwecke des Selfhostings im heimischen Wohnzimmer oder in einem kleinen Büro ohne statische IP-Adresse angewendet werden. Hierfür muss dann nur regelmäßig die aktuelle öffentliche IP-Adresse des Internetanschlusses an den DDNS-Anbieter übermittelt werden, z.B. mit dem Programm **DDClient**
+
+Wird beim DDNS-Anbieter eine sogennannte Wildcard-Domain beantragt, werden alle Anfragen, die an *server.ddns-anbieter.de*, *subdomain1.server.ddns-anbieter.de* oder *subdomain2.server.ddns-anbieter.de* gehen, an die hinterlegt IP-Adresse weitergeleitet. Da im Laufe des Kurses vier Domains benötigt werden, ist die Wildcard-Option eine gute Möglichkeit. Alternativ werden vier getrennte Domains beantragt, je nachdem welche Option der DDNS-Anbieter ermöglicht.
 
 :::callout
 ### DNS
