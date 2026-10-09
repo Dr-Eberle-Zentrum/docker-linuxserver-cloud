@@ -40,21 +40,25 @@ Benötige Daten werden über das ILIAS-Portal zur Verfügung gestellt
     
   - Username: ****
   
-  - Realm: PVE Proxmox Authentication Server  
+  - Realm: UniTuebingen-bwIDM
   
-  - Password: ******
+  - "Or sing in with bwIDM" auswählen
+  
+  - Login mit zentralem Uni-Tübingen-Account
+  
+  - Ggf. Freischaltung abwarten
 
   + Wählen Sie in der linken Seitenleiste Ihren virtuellen Server aus
 
   + Wählen Sie den Reiter "console" im vertikalen Menü
 
-- **Nach der Installation**: Zugriff per SSH:
+- **Nach der Installation des Betriebssystems**: Zugriff per SSH:
 
-  - Wireguard-VPN für Zugang zum Computerpool-Netzwerk (siehe ILIAS):
+  - Wireguard-VPN für Zugang zum Computerpool-Netzwerk:
   
     - [Wirguardclient](https://www.wireguard.com/install/) installiert: ✅
     
-    - Konfigurationsdatei von [ILIAS][ilias] heruntergeladen und geöffnet: ✅
+    - Konfigurationsdatei per Mail erhalten und im Wireguard-Client geladen: ✅
     
   - VPN testen:
   
