@@ -42,7 +42,7 @@ Benötige Daten werden über das ILIAS-Portal zur Verfügung gestellt
   
   - Realm: UniTuebingen-bwIDM
   
-  - "Or sing in with bwIDM" auswählen
+  - "Or sign in with bwIDM" auswählen
   
   - Login mit zentralem Uni-Tübingen-Account
   
@@ -56,7 +56,7 @@ Benötige Daten werden über das ILIAS-Portal zur Verfügung gestellt
 
   - Wireguard-VPN für Zugang zum Computerpool-Netzwerk:
   
-    - [Wirguardclient](https://www.wireguard.com/install/) installiert: ✅
+    - [Wireguardclient](https://www.wireguard.com/install/) installiert: ✅
     
     - Konfigurationsdatei per Mail erhalten und im Wireguard-Client geladen: ✅
     
