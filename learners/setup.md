@@ -36,13 +36,16 @@ Benötige Daten werden über das ILIAS-Portal zur Verfügung gestellt
   - Zugang Uni-VPN (EduVPN): ✅
   
   - URL: [Proxmox Web Console][proxmox]
-      ✅
-    
-  - Username: ****
   
   - Realm: UniTuebingen-bwIDM
   
   - "Or sign in with bwIDM" auswählen
+  
+![bwIDM auswählen](fig/Setup_Proxmox_Login_01.png){alt='Screenshot showing the login window with bwIDM option highlighted.'}
+  
+  - Universität Tübingen auswählen
+  
+![Universität Tübingen als Heimatorganisation auswäheln](fig/Setup_Proxmox_Login_01.png){alt='Screenshot showing the bwIDM-Interface with University Tübingen selected as "Heimatorganisation".'}
   
   - Login mit zentralem Uni-Tübingen-Account
   
