@@ -45,7 +45,7 @@ Benötige Daten werden über das ILIAS-Portal zur Verfügung gestellt
   
   - Universität Tübingen auswählen
   
-![Universität Tübingen als Heimatorganisation auswäheln](fig/Setup_Proxmox_Login_01.png){alt='Screenshot showing the bwIDM-Interface with University Tübingen selected as "Heimatorganisation".'}
+![Universität Tübingen als Heimatorganisation auswäheln](fig/Setup_Proxmox_Login_02.png){alt='Screenshot showing the bwIDM-Interface with University Tübingen selected as "Heimatorganisation".'}
   
   - Login mit zentralem Uni-Tübingen-Account
   
