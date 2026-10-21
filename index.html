@@ -310,7 +310,7 @@
 <div class="accordion accordion-flush" id="accordionFlush12">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading12">
-        <a href="11-nextcloud-aio-konfiuguration.html">11. Nextcloud AIO: Konfiguration</a>
+        <a href="11-nextcloud-aio-konfiguration.html">11. Nextcloud AIO: Konfiguration</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -451,23 +451,28 @@ gestellt</p>
 <p><strong>Zugriff über Proxmox Webconsole</strong>:</p>
 <ul><li><p>Zugang Uni-VPN (EduVPN): ✅</p></li>
 <li><p>URL: <a href="https://pool.dh-center.uni-tuebingen.de:8006/" class="external-link">Proxmox Web
-Console</a> ✅</p></li>
-<li><p>Username: ****</p></li>
-<li><p>Realm: PVE Proxmox Authentication Server</p></li>
-<li><p>Password: ******</p></li>
+Console</a></p></li>
+<li><p>Realm: UniTuebingen-bwIDM</p></li>
+<li><p>“Or sign in with bwIDM” auswählen</p></li>
+</ul></li>
+</ul><figure><img src="fig/Setup_Proxmox_Login_01.png" alt="Screenshot showing the login window with bwIDM option highlighted." class="figure mx-auto d-block"><div class="figcaption">bwIDM auswählen</div>
+</figure><ul><li>Universität Tübingen auswählen</li>
+</ul><figure><img src="fig/Setup_Proxmox_Login_01.png" alt='Screenshot showing the bwIDM-Interface with University Tübingen selected as "Heimatorganisation".' class="figure mx-auto d-block"><div class="figcaption">Universität Tübingen als Heimatorganisation
+auswäheln</div>
+</figure><ul><li><p>Login mit zentralem Uni-Tübingen-Account</p></li>
+<li><p>Ggf. Freischaltung abwarten</p></li>
 <li><p>Wählen Sie in der linken Seitenleiste Ihren virtuellen Server
 aus</p></li>
 <li><p>Wählen Sie den Reiter “console” im vertikalen Menü</p></li>
-</ul></li>
 <li>
-<p><strong>Nach der Installation</strong>: Zugriff per SSH:</p>
+<p><strong>Nach der Installation des Betriebssystems</strong>:
+Zugriff per SSH:</p>
 <ul><li>
-<p>Wireguard-VPN für Zugang zum Computerpool-Netzwerk (siehe
-ILIAS):</p>
-<ul><li><p><a href="https://www.wireguard.com/install/" class="external-link">Wirguardclient</a>
+<p>Wireguard-VPN für Zugang zum Computerpool-Netzwerk:</p>
+<ul><li><p><a href="https://www.wireguard.com/install/" class="external-link">Wireguardclient</a>
 installiert: ✅</p></li>
-<li><p>Konfigurationsdatei von <a href="https://ovidius.uni-tuebingen.de/" class="external-link">ILIAS</a> heruntergeladen und
-geöffnet: ✅</p></li>
+<li><p>Konfigurationsdatei per Mail erhalten und im Wireguard-Client
+geladen: ✅</p></li>
 </ul></li>
 <li>
 <p>VPN testen:</p>
@@ -534,8 +539,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/index.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/docker-linuxserver-cloud/index.html",
   "dateCreated": "2025-08-18",
-  "dateModified": "2026-10-06",
-  "datePublished": "2026-10-06"
+  "dateModified": "2026-10-21",
+  "datePublished": "2026-10-21"
 }
 
   </script><script>
